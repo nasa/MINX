@@ -47,10 +47,13 @@ MINX is platform independent and has been tested on Mac OS X, MS Windows, and Li
 * Project Menu -> Build Project
 
 ### Use MAKE_RT at the IDL Console to Create a MINX Stand-alone IDL Runtime Distribution
+
 #### For Mac OS X
 * `MAKE_RT, 'MINX4', '/Users/<username>/<MINX_package_destination>', SAVEFILE='/<MINX Source Path>/MINX/minx.sav', /VM, /MACINT64, /HIRES_MAPS`
+
 #### For Windows
 * `MAKE_RT, 'MINX4', 'C:\Users\<username>\<MINX_package_destination>', SAVEFILE='C:\<MINX Source Path>\MINX\minx.sav', /VM, /WIN32, /HIRES_MAPS`
+
 #### For Linux
 * `MAKE_RT, 'MINX4', '/home/<username>/<MINX_package_destination>', SAVEFILE='/<MINX Source Path>/MINX/minx.sav', /VM, /LIN32, /HIRES_MAPS`
 
