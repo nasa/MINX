@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
+  <Product Name='MINX' Id='5D3DA7A9-5889-48C7-B86D-9AB2F0D9884C' UpgradeCode='2AA17538-44CC-4C1F-AD90-F9CF74D61D84'
+    Language='1033' Codepage='1252' Version='1.4.3' Manufacturer='Jet Propulsion Lab / California Institute of Technology'>   
+    <Package Id='*' Keywords='Installer' Description="MINX Installer"
+      Comments='MINX Install Package' Manufacturer='Jet Propulsion Lab / California Institute of Technology'
+      InstallerVersion='100' Languages='1033' Compressed='yes' SummaryCodepage='1252' />
+
+    <Media Id='1' Cabinet='MINX.cab' EmbedCab='yes' DiskPrompt="CD-ROM #1" />
+    <Property Id='DiskPrompt' Value="MINX Installation [1]" />
+
+    <Directory Id='TARGETDIR' Name='SourceDir'>
+      <Directory Id='ProgramFilesFolder' Name='PFiles'>
+      <Directory Id="INSTALLDIR" Name="MINX">
+          </Directory></Directory>
+
+      <Directory Id="ProgramMenuFolder" Name="Programs">
+        <Directory Id="ProgramMenuDir" Name="MINX">
+          <Component Id="ProgramMenuDir" Guid="7C413F1D-87CF-47F6-920E-589C01E1869C">
+            <RemoveFolder Id='ProgramMenuDir' On='uninstall' />
+            <RegistryValue Root='HKCU' Key='Software\[Manufacturer]\[ProductName]' Type='string' Value='' KeyPath='yes' />
+          </Component>
+        </Directory>
+      </Directory>
+
+      <Directory Id="DesktopFolder" Name="Desktop" />
+    </Directory>
+    <Feature Id='Complete' Title='MINX' Description='Required Files' Display='expand' Level='1' ConfigurableDirectory='INSTALLDIR'>
+      <Feature Id='MainProgram' Title='Main Components' Description='Required files' Level='1'>
+      <ComponentRef Id='MINX_dist' />
+      <ComponentRef Id='ProgramMenuDir' />
+      </Feature>
+
+    </Feature>
+    <UI Id='Mondo'>
+      <UIRef Id="WixUI_Mondo" />
+      <UIRef Id="WixUI_ErrorProgressText" />
+      <!-- The next two lines remove the default license agreement step from the installer -->
+      <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="SetupTypeDlg" Order="3">1</Publish>
+      <Publish Dialog="SetupTypeDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg" Order="3">1</Publish>		
+    </UI>    
+    <InstallExecuteSequence>
+    </InstallExecuteSequence>
+    <InstallUISequence>
+    </InstallUISequence>
+  </Product>
+</Wix>

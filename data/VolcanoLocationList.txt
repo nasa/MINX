@@ -1,0 +1,3088 @@
+World Volcanos Location List: # Pts, Symbol, Color, Site Name, Elevation(m), Longitude, Latitude  ;  We thank the staff at the National Geophysical Data Center (NGDC) for establishing and maintaining the data used in this file.
+1543
+1 + purple Abu (571m)
+   131.600    34.500
+1 + purple Acamarachi (6046m)
+   -67.620   -23.300
+1 + purple Acatenango (3976m)
+   -90.876    14.501
+1 + purple Acigol-Nevsehir (1689m)
+    34.520    38.570
+1 + purple Acotango (6052m)
+   -69.050   -18.370
+1 + purple Adagdak (645m)
+  -176.600    51.980
+1 + purple Adams (3742m)
+  -121.490    46.206
+1 + purple Adatara (1718m)
+   140.280    37.620
+1 + purple Adwa (1733m)
+    40.840    10.070
+1 + purple Afdera (1295m)
+    40.850    13.080
+1 + purple Agmagan-Karadag (3560m)
+    44.750    40.275
+1 + purple Agrigan (965m)
+   145.670    18.770
+1 + purple Agua (3760m)
+   -90.743    14.465
+1 + purple Agua de Pau (947m)
+   -25.470    37.770
+1 + purple Aguilera (0m)
+   -73.830   -50.170
+1 + purple Agung (3142m)
+   115.508    -8.342
+1 + purple Ahyi (-137m)
+   145.030    20.420
+1 + purple Akademia Nauk (1180m)
+   159.450    53.980
+1 + purple Akagi (1828m)
+   139.180    36.530
+1 + purple Akan (1499m)
+   144.020    43.380
+1 + purple Akhtang (1956m)
+   158.650    55.430
+1 + purple Akita-Komaga-take (1637m)
+   140.800    39.750
+1 + purple Akita-Yake-yama (1366m)
+   140.770    39.970
+1 + purple Akuseki-jima (586m)
+   129.600    29.450
+1 + purple Akutan (1303m)
+  -165.970    54.130
+1 + purple Alaid (2339m)
+   155.550    50.858
+1 + purple Alamagan (744m)
+   145.830    17.600
+1 + purple Alayta (1501m)
+    40.570    12.880
+1 + purple Albano, Monte (949m)
+    12.700    41.730
+1 + purple Alcedo, Volcan (1130m)
+   -91.120    -0.430
+1 + purple Ale Bagu (1031m)
+    40.630    13.520
+1 + purple Alid (904m)
+    39.920    14.880
+1 + purple Alligator Lake (2217m)
+  -135.420    60.420
+1 + purple Almolonga (3197m)
+   -91.480    14.820
+1 + purple Alney-Chashakondzha (2598m)
+   159.650    56.700
+1 + purple Alngey (1853m)
+   160.400    57.700
+1 + purple Alu (429m)
+    40.550    13.820
+1 + purple Aluchin Group (1000m)
+   165.630    66.120
+1 + purple Alutu (2335m)
+    38.780     7.770
+1 + purple Amak (513m)
+  -163.150    55.420
+1 + purple Amasing (1030m)
+   127.500    -0.550
+1 + purple Ambalatungan Group (2329m)
+   121.100    17.320
+1 + purple Ambang (1795m)
+   124.420     0.750
+1 + purple Ambitle (450m)
+   153.650    -4.080
+1 + purple Amboy (288m)
+  -115.780    34.550
+1 + purple Ambre-Bobaomby (1475m)
+    49.100   -12.480
+1 + purple Ambrym (1334m)
+   168.120   -16.250
+1 + purple Amiata (1738m)
+    11.630    42.900
+1 + purple Amorong (376m)
+   120.805    15.828
+1 + purple Amsterdam Island (881m)
+    77.520   -37.830
+1 + purple Amukta (1066m)
+  -171.250    52.500
+1 + purple Anallajsi, Nevado (5750m)
+   -68.920   -17.920
+1 + purple Anatahan (788m)
+   145.670    16.350
+1 + purple Anaun (1828m)
+   158.830    56.320
+1 + purple Andahua Valley (4713m)
+   -72.330   -15.420
+1 + purple Andrus (2978m)
+  -132.330   -75.800
+1 + purple Aneityum (852m)
+   169.830   -20.200
+1 + purple Aniakchak (1341m)
+  -158.170    56.880
+1 + purple Anjuisky (1050m)
+   165.200    67.170
+1 + purple Ankaizina Field (2878m)
+    48.670   -14.300
+1 + purple Ankaratra Field (2644m)
+    47.200   -19.400
+1 + purple Antillanca Group (1990m)
+   -72.153   -40.771
+1 + purple Antipodes Island (402m)
+   178.770   -49.680
+1 + purple Antisana (5753m)
+   -78.141    -0.481
+1 + purple Antofagasta de la Sierra (4000m)
+   -67.500   -26.080
+1 + purple Antofalla (6100m)
+   -68.000   -25.530
+1 + purple Antuco (2979m)
+   -71.349   -37.406
+1 + purple Aoba (1496m)
+   167.830   -15.400
+1 + purple Aoga-shima (423m)
+   139.770    32.450
+1 + purple Apaneca Range (2036m)
+   -89.786    13.891
+1 + purple Apastepeque Field (700m)
+   -88.770    13.720
+1 + purple Apo (2954m)
+   125.273     6.987
+1 + purple Apoyeque (518m)
+   -86.342    12.242
+1 + purple Aracar (6082m)
+   -67.770   -24.270
+1 + purple Aragats (4090m)
+    44.120    40.550
+1 + purple Aramuaca, Laguna (180m)
+   -88.105    13.428
+1 + purple Ararat (5165m)
+    44.280    39.700
+1 + purple Arayat (1026m)
+   120.742    15.200
+1 + purple Ardoukoba (298m)
+    42.470    11.580
+1 + purple Arenal (1657m)
+   -84.703    10.463
+1 + purple Arhab, Harra of (3100m)
+    44.080    15.630
+1 + purple Arintica (5597m)
+   -69.050   -18.730
+1 + purple Arjuno-Welirang (3339m)
+   112.580    -7.725
+1 + purple Asacha (1910m)
+   157.827    52.355
+1 + purple Asama (2560m)
+   138.530    36.400
+1 + purple Asavyo (1200m)
+    41.600    13.070
+1 + purple Ascension (858m)
+   -14.370    -7.950
+1 + purple Askja (1516m)
+   -16.750    65.030
+1 + purple Asmara (500m)
+    41.520    11.270
+1 + purple Aso (1592m)
+   131.100    32.880
+1 + purple Assab Volc Field (987m)
+    42.430    12.950
+1 + purple Asuncion (857m)
+   145.400    19.670
+1 + purple Atacazo (4463m)
+   -78.617    -0.353
+1 + purple Atitlan (3535m)
+   -91.186    14.583
+1 + purple Atka (1533m)
+  -174.150    52.380
+1 + purple Atlasova (1764m)
+   160.650    57.970
+1 + purple Atlixcos, Cerro Los (800m)
+   -96.526    19.809
+1 + purple Atsonupuri (1205m)
+   147.130    44.804
+1 + purple Aucanquilcha, Cerro (6176m)
+   -68.470   -21.220
+1 + purple Auckland Field (260m)
+   174.870   -36.900
+1 + purple Augustine (1252m)
+  -153.420    59.370
+1 + purple Avachinsky (2741m)
+   158.830    53.255
+1 + purple Awu (1320m)
+   125.500     3.670
+1 + purple Axial Seamount (-1500m)
+  -130.000    45.950
+1 + purple Ayelu (2145m)
+    40.702    10.082
+1 + purple Azufral, Volcan (4070m)
+   -77.680     1.080
+1 + purple Azufre, Cerro del (5846m)
+   -68.230   -21.780
+1 + purple Azul, Cerro (1690m)
+   -91.420    -0.900
+1 + purple Azul, Cerro [Quizapu] (3788m)
+   -70.761   -35.653
+1 + purple Azul, Volcan (201m)
+   -83.870    12.530
+1 + purple Azuma (2024m)
+   140.250    37.730
+1 + purple Babuyan Claro (1180m)
+   121.940    19.523
+1 + purple Bachelor (2763m)
+  -121.688    43.979
+1 + purple Bagana (1750m)
+   155.195    -6.140
+1 + purple Baitoushan (2744m)
+   128.080    41.980
+1 + purple Bakenin (2278m)
+   158.070    53.905
+1 + purple Baker (3285m)
+  -121.820    48.786
+1 + purple Bal Haf, Harra of (233m)
+    48.330    14.050
+1 + purple Balagan-Tas (993m)
+   143.730    66.430
+1 + purple Balatocan (2450m)
+   124.920     8.800
+1 + purple Balbi (2715m)
+   154.980    -5.830
+1 + purple Bald Knoll (2135m)
+  -112.408    37.328
+1 + purple Baluan (254m)
+   147.280    -2.570
+1 + purple Baluran (1247m)
+   114.370    -7.850
+1 + purple Balut (852m)
+   125.375     5.400
+1 + purple Bam (685m)
+   144.850    -3.600
+1 + purple Bamus (2248m)
+   151.230    -5.200
+1 + purple Banahao (2158m)
+   121.480    14.070
+1 + purple Banda Api (640m)
+   129.871    -4.525
+1 + purple Bandai (1819m)
+   140.080    37.600
+1 + purple Banua Wuhu (-5m)
+   125.491     3.138
+1 + purple Baransky (1132m)
+   148.020    45.100
+1 + purple Barcena (332m)
+  -110.820    19.300
+1 + purple Bardarbunga (2000m)
+   -17.530    64.630
+1 + purple Barkhatnaya Sopka (870m)
+   158.270    52.823
+1 + purple Barren Island (354m)
+    93.875    12.292
+1 + purple Barrier, The (1032m)
+    36.570     2.320
+1 + purple Baru (3477m)
+   -82.558     8.800
+1 + purple Barva (2906m)
+   -84.100    10.135
+1 + purple Bas Dong Nai (392m)
+   107.200    10.800
+1 + purple Batur (1717m)
+   115.375    -8.242
+1 + purple Bayo, Cerro (5401m)
+   -68.580   -25.420
+1 + purple Bayonnaise Rocks (10m)
+   139.920    31.920
+1 + purple Bayuda Volc Field (0m)
+    32.750    18.330
+1 + purple Bazman (3490m)
+    60.000    28.070
+1 + purple Behm Canal-Rudyerd Bay (500m)
+  -131.050    55.320
+1 + purple Belenkaya (892m)
+   157.270    51.750
+1 + purple Belirang-Beriti (1958m)
+   102.180    -2.820
+1 + purple Belknap (2095m)
+  -121.841    44.285
+1 + purple Bely (2080m)
+   160.530    57.880
+1 + purple Berlin (3478m)
+  -136.000   -76.050
+1 + purple Beru (1100m)
+    39.750     8.950
+1 + purple Berutarube (1220m)
+   146.930    44.470
+1 + purple Besar (1899m)
+   103.670    -4.430
+1 + purple Bezymianny (2882m)
+   160.587    55.978
+1 + purple Bibinoi (900m)
+   127.720    -0.780
+1 + purple Big Cave (1259m)
+  -121.365    40.955
+1 + purple Bilate River Field (1700m)
+    38.100     7.070
+1 + purple Biliran (1187m)
+   124.534    11.523
+1 + purple Billy Mitchell (1544m)
+   155.225    -6.092
+1 + purple Bir Borhut (0m)
+    50.630    15.550
+1 + purple Bishoftu Volc Field (1850m)
+    38.980     8.780
+1 + purple Biu Plateau (0m)
+    12.000    10.750
+1 + purple Black Peak (1032m)
+  -158.800    56.530
+1 + purple Black Rock Desert (1800m)
+  -112.500    38.970
+1 + purple Blanca, Loma (2268m)
+   -71.009   -36.286
+1 + purple Bliznets (1244m)
+   159.780    56.970
+1 + purple Blue Lake Crater (1230m)
+  -121.770    44.420
+1 + purple Blup Blup (402m)
+   144.620    -3.508
+1 + purple Bobrof (738m)
+  -177.430    51.900
+1 + purple Bogatyr Ridge (1634m)
+   147.370    44.830
+1 + purple Bogoslof (101m)
+  -168.030    53.930
+1 + purple Boina (300m)
+    41.830    11.250
+1 + purple Boisa (240m)
+   144.963    -3.994
+1 + purple Bola (1155m)
+   150.030    -5.150
+1 + purple Bolshe-Bannaya (1200m)
+   157.780    52.900
+1 + purple Bolshoi Payalpan (1906m)
+   157.780    55.880
+1 + purple Bolshoi Semiachik (1720m)
+   160.020    54.320
+1 + purple Bolshoi-Kekuknaysky (1401m)
+   157.800    56.470
+1 + purple Bombalai (531m)
+   117.880     4.400
+1 + purple Bona-Churchill (5005m)
+  -141.750    61.380
+1 + purple Bora-Bericcio Complex (2285m)
+    39.030     8.270
+1 + purple Borale Ale (668m)
+    40.600    13.725
+1 + purple Borawli (812m)
+    40.980    13.300
+1 + purple Borawli Complex (875m)
+    41.450    11.630
+1 + purple Boset-Bericha (2447m)
+    39.475     8.558
+1 + purple Bouvet (780m)
+     3.350   -54.420
+1 + purple Bratan (2276m)
+   115.130    -8.280
+1 + purple Brava (900m)
+   -24.720    14.850
+1 + purple Bravo, Cerro (4000m)
+   -75.300     5.092
+1 + purple Brennisteinsfjoll (626m)
+   -21.830    63.920
+1 + purple Bridge River Cones (2500m)
+  -123.400    50.800
+1 + purple Bridgeman Island (240m)
+   -56.750   -62.050
+1 + purple Brimstone Island (-2000m)
+  -178.920   -30.230
+1 + purple Bristol Island (1100m)
+   -26.580   -59.030
+1 + purple Brushy Butte (1174m)
+  -121.443    41.178
+1 + purple Buckle Island (1239m)
+   163.250   -66.800
+1 + purple Bud Dajo (440m)
+   121.070     5.950
+1 + purple Bufumbira (2440m)
+    29.720    -1.230
+1 + purple Buldir (656m)
+   175.980    52.370
+1 + purple Bulusan (1565m)
+   124.050    12.770
+1 + purple Bunyaruguru Field (1554m)
+    30.080    -0.200
+1 + purple Burney, Monte (1758m)
+   -73.400   -52.330
+1 + purple Bus-Obo (1162m)
+   109.080    47.120
+1 + purple Butajiri-Silti Field (2281m)
+    38.350     8.050
+1 + purple Buzzard Creek (830m)
+  -148.420    64.070
+1 + purple Cabalian (945m)
+   125.220    10.287
+1 + purple Caburga (995m)
+   -71.830   -39.200
+1 + purple Cagua (1133m)
+   122.123    18.222
+1 + purple Calabozos (3508m)
+   -70.496   -35.558
+1 + purple Calayo (646m)
+   125.068     7.877
+1 + purple Calbuco (2003m)
+   -72.614   -41.326
+1 + purple Callaqui (3164m)
+   -71.450   -37.920
+1 + purple Cameroon, Mt. (4095m)
+     9.170     4.203
+1 + purple Camiguin de Babuyanes (712m)
+   121.860    18.830
+1 + purple Campi Flegrei (458m)
+    14.139    40.827
+1 + purple Campi Flegrei Mar Sicilia (-8m)
+    12.700    37.100
+1 + purple Candlemas Island (550m)
+   -26.670   -57.080
+1 + purple Canlaon (2435m)
+   123.132    10.412
+1 + purple Carlisle (1620m)
+  -170.050    52.900
+1 + purple Carran-Los Venados (1114m)
+   -72.070   -40.350
+1 + purple Carrizozo (1731m)
+  -105.930    33.780
+1 + purple Casiri, Nevados (5650m)
+   -69.820   -17.470
+1 + purple Cayambe (5790m)
+   -77.986     0.029
+1 + purple Cayute-La Vigueria (506m)
+   -72.270   -41.250
+1 + purple Ceboruco (2280m)
+  -104.508    21.125
+1 + purple Cendres, Ile des (-20m)
+   109.014    10.158
+1 + purple Central Island (550m)
+    36.042     3.500
+1 + purple Cereme (3078m)
+   108.400    -6.892
+1 + purple Ch'uga-ryong (452m)
+   127.330    38.330
+1 + purple Chacana (4643m)
+   -78.250    -0.375
+1 + purple Chachani, Nevado (6057m)
+   -71.530   -16.191
+1 + purple Chagulak (1142m)
+  -171.130    52.570
+1 + purple Chaine des Puys (1464m)
+     2.750    45.500
+1 + purple Chaiten (962m)
+   -72.646   -42.833
+1 + purple Chao (5100m)
+   -68.150   -22.120
+1 + purple Chapulul, Cerro (2143m)
+   -71.080   -38.370
+1 + purple Chascon, Cerro (5125m)
+   -67.900   -21.880
+1 + purple Cherny (1778m)
+   159.670    56.820
+1 + purple Chichinautzin (3930m)
+   -99.130    19.080
+1 + purple Chichon, El (1150m)
+   -93.228    17.360
+1 + purple Chiginagak (2075m)
+  -157.000    57.130
+1 + purple Chikurachki (1816m)
+   155.458    50.325
+1 + purple Chiliques (5778m)
+   -67.700   -23.580
+1 + purple Chillan, Nevados de (3212m)
+   -71.377   -36.863
+1 + purple Chinameca (1228m)
+   -88.320    13.475
+1 + purple Chingo Volc Field (1775m)
+   -89.730    14.120
+1 + purple Chiquimula Volc Field (1192m)
+   -89.550    14.830
+1 + purple Chiracha (1650m)
+    38.120     6.650
+1 + purple Chirinkotan (724m)
+   153.480    48.980
+1 + purple Chirip (1589m)
+   147.920    45.380
+1 + purple Chirpoi (742m)
+   150.875    46.525
+1 + purple Chokai (2237m)
+   140.030    39.080
+1 + purple Chyulu Hills (2188m)
+    37.880    -2.680
+1 + purple Ciguatepe, Cerro El (603m)
+   -86.142    12.530
+1 + purple Cinnamon Butte (1956m)
+  -122.108    43.241
+1 + purple Cinotepec, Cerro (665m)
+   -89.250    14.020
+1 + purple Clear Lake (1439m)
+  -122.770    38.970
+1 + purple Cleft Segment (-2140m)
+  -130.300    44.830
+1 + purple Cleveland (1730m)
+  -169.950    52.820
+1 + purple CoAxial Segment (-2400m)
+  -129.580    46.520
+1 + purple Coatepeque Caldera (746m)
+   -89.550    13.870
+1 + purple Cochons, Ile Aux (775m)
+    50.230   -46.100
+1 + purple Cofre de Perote (4282m)
+   -97.150    19.492
+1 + purple Colachi (5631m)
+   -67.650   -23.230
+1 + purple Coleman Seamount (0m)
+   157.170    -8.830
+1 + purple Colima (3850m)
+  -103.620    19.514
+1 + purple Colluma, Cerro (3876m)
+   -68.070   -18.500
+1 + purple Colo [Una Una] (507m)
+   121.608    -0.170
+1 + purple Comondu-La Purisima (780m)
+  -111.920    26.000
+1 + purple Concepcion (1700m)
+   -85.622    11.538
+1 + purple Conchagua (1250m)
+   -87.853    13.277
+1 + purple Conchaguita (550m)
+   -87.765    13.220
+1 + purple Condor, Cerro El (6532m)
+   -68.350   -26.620
+1 + purple Cook, Isla (150m)
+   -70.270   -54.950
+1 + purple Copahue (2965m)
+   -71.170   -37.850
+1 + purple Copiapo (6052m)
+   -69.130   -27.300
+1 + purple Corbetti Caldera (2320m)
+    38.430     7.180
+1 + purple Corcovado (2300m)
+   -72.800   -43.180
+1 + purple Cordon Caulle (1798m)
+   -72.200   -40.520
+1 + purple Cordon Chalviri (5623m)
+   -67.620   -23.850
+1 + purple Cordon de Puntas Negras (5852m)
+   -67.530   -23.750
+1 + purple Cordon del Azufre (5463m)
+   -68.520   -25.330
+1 + purple Coronado (440m)
+  -113.513    29.080
+1 + purple Coropuna (6377m)
+   -72.650   -15.520
+1 + purple Corvo (715m)
+   -31.070    39.670
+1 + purple Cosiguina (872m)
+   -87.570    12.980
+1 + purple Coso Volc Field (2400m)
+  -117.820    36.030
+1 + purple Cotopaxi (5911m)
+   -78.436    -0.677
+1 + purple Crater Lake (2487m)
+  -122.120    42.930
+1 + purple Crater Mountain (3233m)
+   145.080    -6.580
+1 + purple Craters of the Moon (2005m)
+  -113.500    43.420
+1 + purple Crow Lagoon (335m)
+  -130.230    54.700
+1 + purple Cu-Lao Re Group (181m)
+   109.120    15.380
+1 + purple Cuicocha (3246m)
+   -78.364     0.308
+1 + purple Cuilapa-Barbarena (1454m)
+   -90.400    14.330
+1 + purple Cumbal (4764m)
+   -77.880     0.980
+1 + purple Cumbres, Las (3940m)
+   -97.270    19.150
+1 + purple Curacoa (-33m)
+  -173.670   -15.620
+1 + purple Curtis Island (137m)
+  -178.561   -30.542
+1 + purple Dabbahu (1442m)
+    40.480    12.600
+1 + purple Dabbayra (1302m)
+    40.070    12.380
+1 + purple Dacht-I-Navar Group (3800m)
+    67.920    33.950
+1 + purple Daisetsu (2290m)
+   142.880    43.680
+1 + purple Dakataua (400m)
+   150.108    -5.056
+1 + purple Dalaffilla (613m)
+    40.550    13.792
+1 + purple Dallol (-48m)
+    40.300    14.242
+1 + purple Dama Ali (1068m)
+    41.630    11.280
+1 + purple Damavand (5670m)
+    52.109    35.951
+1 + purple Dana (1354m)
+  -161.220    55.620
+1 + purple Danau Complex (1778m)
+   105.970    -6.200
+1 + purple Dar-Alages (3329m)
+    45.542    39.700
+1 + purple Dariganga Volc Field (1778m)
+   114.000    45.330
+1 + purple Darwin, Volcan (1330m)
+   -91.280    -0.180
+1 + purple Daun, Bukit (2467m)
+   102.370    -3.380
+1 + purple Davidof (328m)
+   178.330    51.970
+1 + purple Davis Lake (2163m)
+  -121.820    43.570
+1 + purple Dawson Strait Group (500m)
+   150.880    -9.620
+1 + purple Deception Island (576m)
+   -60.650   -62.970
+1 + purple Demon (1205m)
+   148.850    45.500
+1 + purple Dempo (3173m)
+   103.130    -4.030
+1 + purple Denison (2318m)
+  -154.450    58.420
+1 + purple Descabezado Grande (3953m)
+   -70.750   -35.580
+1 + purple Devils Desk (1954m)
+  -154.300    58.480
+1 + purple Devils Garden (1698m)
+  -120.861    43.512
+1 + purple Dgida Basin (1500m)
+   103.250    50.520
+1 + purple Dhamar, Harras of (3500m)
+    44.670    14.570
+1 + purple Diable, Morne Au (861m)
+   -61.450    15.620
+1 + purple Diablotins, Morne (1430m)
+   -61.420    15.500
+1 + purple Diamond Craters (1435m)
+  -118.750    43.100
+1 + purple Didicas (244m)
+   122.202    19.077
+1 + purple Dieng Volc Complex (2565m)
+   109.920    -7.200
+1 + purple Diky Greben (1070m)
+   157.000    51.430
+1 + purple Dofen (1151m)
+    40.130     9.350
+1 + purple Doma Peaks (3568m)
+   143.150    -5.900
+1 + purple Domuyo (4709m)
+   -70.420   -36.630
+1 + purple Don Joao de Castro Bank (-14m)
+   -26.630    38.230
+1 + purple Dona Juana (4150m)
+   -76.920     1.470
+1 + purple Dotsero (2230m)
+  -107.030    39.650
+1 + purple Douglas (2140m)
+  -153.550    58.870
+1 + purple Dubbi (1625m)
+    41.808    13.580
+1 + purple Dukono (1185m)
+   127.880     1.680
+1 + purple Duncan Canal (15m)
+  -133.100    56.500
+1 + purple Durango Volc Field (2075m)
+  -104.450    24.150
+1 + purple Dutton (1506m)
+  -162.270    55.180
+1 + purple Dzenzursky (2155m)
+   158.922    53.637
+1 + purple E-san (618m)
+   141.170    41.800
+1 + purple Eagle Lake Field (1652m)
+  -120.830    40.630
+1 + purple Easter Island (530m)
+  -109.450   -27.120
+1 + purple Eastern Gemini Seamount (-80m)
+   170.280   -20.980
+1 + purple Ebeko (1156m)
+   156.020    50.680
+1 + purple Ebulobo (2124m)
+   121.180    -8.808
+1 + purple Eburru, Ol Doinyo (2856m)
+    36.230    -0.630
+1 + purple Ecuador, Volcan (790m)
+   -91.546    -0.020
+1 + purple Edgecumbe (976m)
+  -135.750    57.050
+1 + purple Edziza (2786m)
+  -130.630    57.720
+1 + purple Eggella (1046m)
+   158.520    56.570
+1 + purple Egmont (2518m)
+   174.070   -39.300
+1 + purple Egon (1703m)
+   122.450    -8.670
+1 + purple Ekarma (1170m)
+   153.930    48.958
+1 + purple Elbrus (5633m)
+    42.450    43.330
+1 + purple Elmenteita Badlands (2126m)
+    36.270    -0.520
+1 + purple Elovsky (1381m)
+   160.530    57.530
+1 + purple Emmons Lake (1465m)
+  -162.070    55.330
+1 + purple Emperor of China (-2850m)
+   124.220    -6.620
+1 + purple Emuruangogolak (1328m)
+    36.330     1.500
+1 + purple Epi (833m)
+   168.370   -16.680
+1 + purple Erciyes Dagi (3916m)
+    35.480    38.520
+1 + purple Erebus (3794m)
+   167.170   -77.530
+1 + purple Erta Ale (613m)
+    40.670    13.600
+1 + purple Es Safa (979m)
+    37.150    33.080
+1 + purple Escala (4000m)
+   -66.880   -21.600
+1 + purple Escorial, Cerro (5447m)
+   -68.370   -25.080
+1 + purple Esjufjoll (1760m)
+   -16.650    64.270
+1 + purple Esmeralda Bank (-43m)
+   145.250    15.000
+1 + purple Espenberg (243m)
+  -164.330    66.350
+1 + purple Est, Ile de l' (1090m)
+    52.200   -46.430
+1 + purple Esteli (899m)
+   -86.400    13.170
+1 + purple Etna (3350m)
+    15.004    37.734
+1 + purple Eyjafjoll (1666m)
+   -19.620    63.630
+1 + purple Falcon Island (-17m)
+  -175.420   -20.320
+1 + purple Falso Azufre (5890m)
+   -68.370   -26.800
+1 + purple Farallon de Pajaros (360m)
+   144.900    20.530
+1 + purple Fayal (1043m)
+   -28.730    38.600
+1 + purple Fedotych (965m)
+   160.400    57.130
+1 + purple Fentale (2007m)
+    39.930     8.975
+1 + purple Fernandina (1495m)
+   -91.550    -0.370
+1 + purple Firura, Nevados (5498m)
+   -72.630   -15.230
+1 + purple Fisher (1094m)
+  -164.350    54.670
+1 + purple Floreana (640m)
+   -90.450    -1.300
+1 + purple Flores (1600m)
+   -90.000    14.300
+1 + purple Flores (915m)
+   -31.170    39.400
+1 + purple Fogo (2829m)
+   -24.350    14.950
+1 + purple Fonualei (200m)
+  -174.325   -18.020
+1 + purple Fort Portal Field (1524m)
+    30.250     0.700
+1 + purple Fort Selkirk (1239m)
+  -137.380    62.930
+1 + purple Four Craters Lava Field (1501m)
+  -120.669    43.361
+1 + purple Fournaise, Piton de la (2631m)
+    55.713   -21.229
+1 + purple Fourpeaked (2104m)
+  -153.680    58.770
+1 + purple Fremrinamur (939m)
+   -16.650    65.430
+1 + purple Frosty (1920m)
+  -162.820    55.070
+1 + purple Fuego (3763m)
+   -90.880    14.473
+1 + purple Fuerteventura (529m)
+   -14.020    28.358
+1 + purple Fuji (3776m)
+   138.730    35.350
+1 + purple Fukujin (-217m)
+   143.442    21.925
+1 + purple Fukutoku-okanoba (-14m)
+   141.520    24.280
+1 + purple Furnas (805m)
+   -25.320    37.770
+1 + purple Fuss Peak (1772m)
+   155.250    50.270
+1 + purple Gabillema (1459m)
+    41.270    11.080
+1 + purple Gada Ale (287m)
+    40.408    13.975
+1 + purple Galapagos Rift (-2430m)
+   -86.150     0.792
+1 + purple Galeras (4276m)
+   -77.370     1.220
+1 + purple Gallego (1000m)
+   159.730    -9.350
+1 + purple Galunggung (2168m)
+   108.050    -7.250
+1 + purple Gamalama (1715m)
+   127.325     0.800
+1 + purple Gamchen (2576m)
+   160.702    54.973
+1 + purple Gamkonora (1635m)
+   127.520     1.375
+1 + purple Garbes (1000m)
+    42.200    11.420
+1 + purple Garbuna Group (564m)
+   150.030    -5.450
+1 + purple Gareloi (1573m)
+  -178.800    51.780
+1 + purple Garibaldi Lake (2316m)
+  -123.030    49.920
+1 + purple Garibaldi, Mt. (2678m)
+  -123.000    49.850
+1 + purple Garove (368m)
+   149.500    -4.692
+1 + purple Garua Harbour (565m)
+   150.088    -5.269
+1 + purple Gaua (797m)
+   167.500   -14.270
+1 + purple Gedamsa Caldera (1984m)
+    39.180     8.350
+1 + purple Gede (2958m)
+   106.980    -6.780
+1 + purple Genovesa (64m)
+   -89.958     0.320
+1 + purple Geodesistoy (1170m)
+   158.670    56.330
+1 + purple Geureudong (2885m)
+    96.820     4.813
+1 + purple Girekol (0m)
+    43.330    39.170
+1 + purple Glacier Peak (3213m)
+  -121.113    48.112
+1 + purple Gloria, La (3500m)
+   -97.250    19.330
+1 + purple Golaya (858m)
+   157.787    52.263
+1 + purple Golden Trout Creek (2886m)
+  -118.320    36.358
+1 + purple Golets-Tornyi Group (442m)
+   148.350    45.250
+1 + purple Gollu Dag (2143m)
+    34.570    38.250
+1 + purple Golovnin (541m)
+   145.530    43.850
+1 + purple Goodenough (220m)
+   150.350    -9.480
+1 + purple Gordon (2755m)
+  -143.080    62.130
+1 + purple Gorely (1829m)
+   158.030    52.558
+1 + purple Goriaschaia Sopka (891m)
+   151.750    46.830
+1 + purple Gorny Institute (2125m)
+   160.200    57.330
+1 + purple Graciosa (402m)
+   -27.970    39.020
+1 + purple Gran Canaria (1950m)
+   -15.580    28.000
+1 + purple Great Sitkin (1740m)
+  -176.130    52.080
+1 + purple Griggs (2317m)
+  -155.100    58.350
+1 + purple Grille, La (1087m)
+    43.330   -11.470
+1 + purple Grimsnes (214m)
+   -20.870    64.030
+1 + purple Grimsvotn (1725m)
+   -17.330    64.420
+1 + purple Groppo (930m)
+    40.250    11.730
+1 + purple Grozny Group (1211m)
+   147.870    45.020
+1 + purple Guadalupe (1100m)
+  -118.280    29.070
+1 + purple Guagua Pichincha (4784m)
+   -78.598    -0.171
+1 + purple Guallatiri (6071m)
+   -69.170   -18.420
+1 + purple Guayaques (5598m)
+   -67.580   -22.880
+1 + purple Guazapa (1438m)
+   -89.120    13.900
+1 + purple Gufa (600m)
+    42.530    12.550
+1 + purple Guguan (287m)
+   145.850    17.320
+1 + purple Guntur (2249m)
+   107.830    -7.130
+1 + purple Gunungapi Wetar (282m)
+   126.650    -6.642
+1 + purple Hachijo-jima (854m)
+   139.770    33.130
+1 + purple Hachimantai (1614m)
+   140.850    39.950
+1 + purple Hakkoda Group (1585m)
+   140.880    40.650
+1 + purple Hakone (1438m)
+   139.020    35.220
+1 + purple Haku-san (2702m)
+   136.780    36.150
+1 + purple Haleakala (3055m)
+  -156.250    20.708
+1 + purple Halla (1950m)
+   126.530    33.370
+1 + purple Hamman Demt, Jabal (1500m)
+    44.750    14.050
+1 + purple Hanish (422m)
+    42.730    13.720
+1 + purple Hargy (1148m)
+   151.100    -5.330
+1 + purple Haruj (1200m)
+    17.500    27.250
+1 + purple Haruna (1449m)
+   138.880    36.470
+1 + purple Hasan Dagi (3253m)
+    34.170    38.130
+1 + purple Haut Dong Nai (1000m)
+   108.200    11.600
+1 + purple Hayes (2788m)
+  -152.480    61.620
+1 + purple Haylan, Jabal (1550m)
+    44.780    15.430
+1 + purple Hayli Gubbi (521m)
+    40.720    13.500
+1 + purple Heard (2745m)
+    73.513   -53.106
+1 + purple Heart Peaks (2012m)
+  -131.970    58.600
+1 + purple Hekla (1491m)
+   -19.700    63.980
+1 + purple Helatoba-Tarutung (1100m)
+    98.930     2.030
+1 + purple Hell's Half Acre (1631m)
+  -112.450    43.500
+1 + purple Hengill (803m)
+   -21.330    64.180
+1 + purple Herbert (1290m)
+  -170.120    52.750
+1 + purple Hertali (900m)
+    40.330     9.780
+1 + purple Hibok-Hibok (1332m)
+   124.673     9.203
+1 + purple Hierro (1500m)
+   -18.030    27.730
+1 + purple Hijiori (516m)
+   140.180    38.600
+1 + purple Hiri (630m)
+   127.320     0.880
+1 + purple Hiuchi (2346m)
+   139.280    36.950
+1 + purple Hobicha Caldera (1800m)
+    37.830     6.780
+1 + purple Hodson (1005m)
+   -27.150   -56.700
+1 + purple Hofsjokull (1782m)
+   -18.920    64.780
+1 + purple Homa Mountain (1751m)
+    34.500    -0.380
+1 + purple Home Reef (-2m)
+  -174.775   -18.992
+1 + purple Honggeertu (1700m)
+   113.000    41.470
+1 + purple Hood (3426m)
+  -121.694    45.374
+1 + purple Hoodoo Mountain (1820m)
+  -131.280    56.780
+1 + purple Hornopiren (1572m)
+   -72.431   -41.874
+1 + purple Hualalai (2523m)
+  -155.870    19.692
+1 + purple Huanquihue Group (1300m)
+   -71.550   -39.870
+1 + purple Huaynaputina (4850m)
+   -70.850   -16.608
+1 + purple Hudson Mountains (749m)
+   -99.420   -74.330
+1 + purple Hudson, Cerro (1905m)
+   -72.970   -45.900
+1 + purple Huelemolle (810m)
+   -71.820   -39.300
+1 + purple Huequi (1318m)
+   -72.578   -42.377
+1 + purple Huila (5365m)
+   -76.050     2.920
+1 + purple Hulubelu (1040m)
+   104.600    -5.350
+1 + purple Humeros, Los (3150m)
+   -97.450    19.680
+1 + purple Hunga Tonga-Hunga Ha'apai (0m)
+  -175.380   -20.570
+1 + purple Hunter Island (297m)
+   172.050   -22.400
+1 + purple Hutapanjang (2021m)
+   101.600    -2.330
+1 + purple Hydrographers Range (1915m)
+   148.370    -9.000
+1 + purple Iamalele (200m)
+   150.530    -9.520
+1 + purple Ibu (1325m)
+   127.642     1.475
+1 + purple Ibusuki Volc Field (922m)
+   130.570    31.220
+1 + purple Ichinsky (3621m)
+   157.730    55.680
+1 + purple Iettunup (1340m)
+   161.080    58.400
+1 + purple Igwisi Hills (0m)
+    31.920    -4.870
+1 + purple Ijen (2799m)
+   114.242    -8.058
+1 + purple Iktunup (2300m)
+   160.770    58.080
+1 + purple Iliamna (3053m)
+  -153.080    60.030
+1 + purple Iliboleng (1659m)
+   123.258    -8.342
+1 + purple Ililabalekan (1018m)
+   123.420    -8.530
+1 + purple Ilimuda (1100m)
+   122.671    -8.478
+1 + purple Iliwerung (1018m)
+   123.590    -8.540
+1 + purple Illiniza (5248m)
+   -78.714    -0.659
+1 + purple Ilopango (450m)
+   -89.053    13.672
+1 + purple Ilyinsky (1578m)
+   157.200    51.490
+1 + purple Imagination Peak (1986m)
+  -122.201    42.552
+1 + purple Imun (1505m)
+    98.930     2.150
+1 + purple Imuruk Lake (610m)
+  -163.920    65.600
+1 + purple Indian Heaven (1513m)
+  -121.820    45.930
+1 + purple Ingakslugwat Hills (190m)
+  -164.470    61.430
+1 + purple Inielika (1559m)
+   120.980    -8.730
+1 + purple Inierie (2245m)
+   120.950    -8.875
+1 + purple Inyo Craters (2629m)
+  -119.020    37.692
+1 + purple Ipala Volc Field (1650m)
+   -89.630    14.550
+1 + purple Iraya (1009m)
+   122.010    20.469
+1 + purple Irazu (3432m)
+   -83.852     9.979
+1 + purple Iriga (1196m)
+   123.457    13.457
+1 + purple Iriomote-jima (-200m)
+   124.000    24.558
+1 + purple Irruputuncu (5163m)
+   -68.550   -20.730
+1 + purple Isanotski (2446m)
+  -163.730    54.750
+1 + purple Isarog (1966m)
+   123.370    13.658
+1 + purple Ischia (789m)
+    13.897    40.730
+1 + purple Iskut-Unuk River Cones (1880m)
+  -130.550    56.580
+1 + purple Isluga (5050m)
+   -68.830   -19.150
+1 + purple Itasy Volc Field (1800m)
+    46.770   -19.000
+1 + purple Ithnayn, Harrat (1625m)
+    40.200    26.580
+1 + purple Iult (1857m)
+   160.587    55.230
+1 + purple Ivao Group (1426m)
+   149.680    45.770
+1 + purple Iwaki (1625m)
+   140.300    40.650
+1 + purple Iwate (2041m)
+   141.000    39.850
+1 + purple Iwo-Tori-shima (217m)
+   128.250    27.850
+1 + purple Iwo-jima (161m)
+   141.330    24.750
+1 + purple Ixtepeque (1292m)
+   -89.680    14.420
+1 + purple Iya (637m)
+   121.630    -8.880
+1 + purple Iyang-Argapura (3088m)
+   113.570    -7.970
+1 + purple Izalco (1950m)
+   -89.633    13.813
+1 + purple Iztaccihuatl (5230m)
+   -98.642    19.179
+1 + purple Izu-Tobu (1406m)
+   139.120    34.920
+1 + purple Izumbwe-Mpoli (1568m)
+    33.400    -8.930
+1 + purple Jackies Butte (1420m)
+  -117.589    42.606
+1 + purple Jailolo (1130m)
+   127.420     1.080
+1 + purple Jalajala (743m)
+   121.330    14.350
+1 + purple Jalua (713m)
+    39.820    15.042
+1 + purple Jan Mayen (2277m)
+    -8.170    71.080
+1 + purple Jaraguay Volc Field (960m)
+  -114.500    29.330
+1 + purple Jefferson (3199m)
+  -121.800    44.692
+1 + purple Jingpohu (500m)
+   128.830    44.080
+1 + purple Jocotitlan (3900m)
+   -99.757    19.724
+1 + purple Jordan Craters (1473m)
+  -117.420    43.030
+1 + purple Joya, La (300m)
+   -85.980    11.920
+1 + purple Kaba (1952m)
+   102.620    -3.520
+1 + purple Kabargin Oth Group (3650m)
+    44.000    42.550
+1 + purple Kadovar (365m)
+   144.620    -3.620
+1 + purple Kagamil (893m)
+  -169.720    52.970
+1 + purple Kaguyak (901m)
+  -154.050    58.620
+1 + purple Kahoolawe (450m)
+  -156.570    20.570
+1 + purple Kaikohe-Bay of Islands (388m)
+   173.900   -35.300
+1 + purple Kaileney (1582m)
+   160.670    57.800
+1 + purple Kaitoku Seamount (-10m)
+   141.102    26.122
+1 + purple Kalatungan (2824m)
+   124.800     7.950
+1 + purple Kambalny (2156m)
+   156.870    51.300
+1 + purple Kamen (4585m)
+   160.593    56.020
+1 + purple Kamojang, Kawah (1730m)
+   107.800    -7.125
+1 + purple Kana Keoki (-700m)
+   157.030    -8.750
+1 + purple Kanaga (1307m)
+  -177.170    51.920
+1 + purple Kanpu (355m)
+   139.880    39.930
+1 + purple Karacalidag (1957m)
+    39.830    37.670
+1 + purple Karaha, Kawah (1155m)
+   108.080    -7.120
+1 + purple Karang (1778m)
+   106.042    -6.270
+1 + purple Karangetang [Api Siau] (1784m)
+   125.480     2.780
+1 + purple Karapinar Field (1302m)
+    33.650    37.670
+1 + purple Karisimbi (4507m)
+    29.450    -1.500
+1 + purple Karkar (1839m)
+   145.964    -4.649
+1 + purple Karpinsky Group (1345m)
+   155.370    50.130
+1 + purple Kars Plateau (3000m)
+    42.900    40.750
+1 + purple Karthala (2361m)
+    43.380   -11.750
+1 + purple Karymsky (1536m)
+   159.430    54.050
+1 + purple Kasatochi (314m)
+  -175.500    52.180
+1 + purple Kasbek (5050m)
+    44.500    42.700
+1 + purple Kasuga (-558m)
+   143.720    21.770
+1 + purple Katla (1512m)
+   -19.050    63.630
+1 + purple Katmai (2047m)
+  -154.980    58.270
+1 + purple Katunga (1707m)
+    30.180    -0.470
+1 + purple Katwe-Kikorongo Field (1067m)
+    29.920    -0.080
+1 + purple Kavachi (-20m)
+   157.950    -9.020
+1 + purple Kawi-Butak (2651m)
+   112.450    -7.920
+1 + purple Kebeney (1527m)
+   159.930    57.100
+1 + purple Kekurny (1377m)
+   158.850    56.400
+1 + purple Kelimutu (1640m)
+   121.830    -8.758
+1 + purple Kell (900m)
+   157.350    51.650
+1 + purple Keluo Group (670m)
+   125.920    49.370
+1 + purple Kelut (1731m)
+   112.308    -7.930
+1 + purple Kembar (2245m)
+    97.664     3.850
+1 + purple Kendang (2608m)
+   107.720    -7.230
+1 + purple Kerguelen Islands (1840m)
+    69.500   -49.580
+1 + purple Kerinci (3800m)
+   101.264    -1.814
+1 + purple Kerlingarfjoll (1488m)
+   -19.320    64.630
+1 + purple Ketoi (1172m)
+   152.475    47.350
+1 + purple Khangar (2000m)
+   157.380    54.750
+1 + purple Khanuy Gol (1886m)
+   102.750    48.670
+1 + purple Kharimkotan (1145m)
+   154.508    49.120
+1 + purple Khaybar, Harrat (2093m)
+    39.920    25.000
+1 + purple Khodutka (2090m)
+   157.703    52.063
+1 + purple Kialagvik (1575m)
+  -156.750    57.380
+1 + purple Kiaraberes-Gagak (1511m)
+   106.650    -6.730
+1 + purple Kick-'em-Jenny (-177m)
+   -61.630    12.300
+1 + purple Kieyo (2175m)
+    33.780    -9.230
+1 + purple Kikai (717m)
+   130.280    30.780
+1 + purple Kikhpinych (1552m)
+   160.253    54.487
+1 + purple Kilauea (1222m)
+  -155.292    19.425
+1 + purple Kilimanjaro (5895m)
+    37.350    -3.070
+1 + purple Kirishima (1700m)
+   130.870    31.930
+1 + purple Kishb, Harrat (1475m)
+    41.380    22.800
+1 + purple Kiska (1220m)
+   177.600    52.100
+1 + purple Kita-Fukutokutai (-73m)
+   141.419    24.414
+1 + purple Kita-Iwo-jima (792m)
+   141.230    25.430
+1 + purple Kizimen (2485m)
+   160.320    55.130
+1 + purple Klabat (1995m)
+   125.030     1.470
+1 + purple Kliuchevskoi (4835m)
+   160.638    56.057
+1 + purple Kolbeinsey Ridge (0m)
+   -18.500    66.670
+1 + purple Kolkhozhny (2161m)
+   160.770    55.070
+1 + purple Kolob (2727m)
+  -113.120    37.330
+1 + purple Kolokol Group (1328m)
+   150.050    46.042
+1 + purple Komaga-take (1140m)
+   140.680    42.070
+1 + purple Komarov (2070m)
+   160.720    55.032
+1 + purple Kone (1619m)
+    39.692     8.800
+1 + purple Koniuji (272m)
+  -175.130    52.220
+1 + purple Kookooligit Mountains (673m)
+  -170.430    63.600
+1 + purple Koolau (941m)
+  -157.800    21.370
+1 + purple Koranga (0m)
+   146.708    -7.330
+1 + purple Korath Range (912m)
+    35.880     5.100
+1 + purple Koro (522m)
+   179.400   -17.320
+1 + purple Korosi (1446m)
+    36.120     0.770
+1 + purple Koryaksky (3456m)
+   158.688    53.320
+1 + purple Kos (430m)
+    27.257    36.829
+1 + purple Koshelev (1812m)
+   156.750    51.357
+1 + purple Koussi, Emi (3415m)
+    18.530    19.800
+1 + purple Kozu-shima (574m)
+   139.150    34.220
+1 + purple Kozyrevsky (2016m)
+   158.380    55.580
+1 + purple Krafla (650m)
+   -16.780    65.730
+1 + purple Krainy (1554m)
+   159.030    56.370
+1 + purple Krakagiger (1491m)
+   -19.700    63.980
+1 + purple Krakatau (813m)
+   105.423    -6.102
+1 + purple Krasheninnikov (1856m)
+   160.273    54.593
+1 + purple Kristnitokugigar (301m)
+   -21.420    63.980
+1 + purple Krisuvik (379m)
+   -22.100    63.930
+1 + purple Kronotsky (3528m)
+   160.527    54.753
+1 + purple Ksudach (1079m)
+   157.530    51.800
+1 + purple Kuchino-shima (627m)
+   129.930    29.970
+1 + purple Kuchinoerabu-jima (649m)
+   130.220    30.430
+1 + purple Kuei-Shan-Tao (401m)
+   121.920    24.850
+1 + purple Kuju Group (1788m)
+   131.250    33.080
+1 + purple Kukak (2040m)
+  -154.350    58.470
+1 + purple Kula (750m)
+    28.520    38.580
+1 + purple Kulkev (915m)
+   158.370    56.370
+1 + purple Kunlun Volc Group (5808m)
+    80.200    35.520
+1 + purple Kuntomintar (828m)
+   154.020    48.770
+1 + purple Kunyit (2151m)
+   101.630    -2.592
+1 + purple Kupreanof (1895m)
+  -159.800    56.020
+1 + purple Kurikoma (1628m)
+   140.780    38.950
+1 + purple Kurile Lake (104m)
+   157.120    51.450
+1 + purple Kurose Hole (-107m)
+   139.680    33.400
+1 + purple Kurub (625m)
+    41.208    11.880
+1 + purple Kusatsu-Shirane (2176m)
+   138.550    36.620
+1 + purple Kutcharo (1000m)
+   144.430    43.550
+1 + purple Kuttara (581m)
+   141.180    42.500
+1 + purple Kutum Volc Field (0m)
+    25.800    14.500
+1 + purple Kuwae (-2m)
+   168.536   -16.829
+1 + purple Kverkfjoll (1920m)
+   -16.720    64.650
+1 + purple Kyatwa Volc Field (1430m)
+    30.250     0.450
+1 + purple La Palma (2426m)
+   -17.830    28.580
+1 + purple Labo (1544m)
+   122.792    14.020
+1 + purple Laguna Volc Field (654m)
+   121.300    14.120
+1 + purple Lajas, Las (926m)
+   -85.730    12.300
+1 + purple Lakagigar (1725m)
+    17.330    64.420
+1 + purple Lambafit (550m)
+   -19.400    64.080
+1 + purple Lamington (1680m)
+   148.150    -8.950
+1 + purple Lamongan (1651m)
+   113.342    -8.000
+1 + purple Langila (1330m)
+   148.420    -5.525
+1 + purple Langjokull (1360m)
+   -19.980    64.750
+1 + purple Lanin (3747m)
+   -71.500   -39.633
+1 + purple Lanzarote (670m)
+   -13.630    29.030
+1 + purple Larderello (500m)
+    10.870    43.250
+1 + purple Lascar (5592m)
+   -67.730   -23.370
+1 + purple Lassen Volc Center (3187m)
+  -121.508    40.492
+1 + purple Lastarria (5697m)
+   -68.500   -25.170
+1 + purple Late (518m)
+  -174.650   -18.806
+1 + purple Latukan (2158m)
+   124.470     7.650
+1 + purple Lautaro (3380m)
+   -73.550   -49.020
+1 + purple Lavic Lake (1495m)
+  -116.625    34.750
+1 + purple Lawu (3265m)
+   111.192    -7.625
+1 + purple Leizhou Bandao (259m)
+   109.780    20.830
+1 + purple Lengai, Ol Doinyo (2890m)
+    35.902    -2.751
+1 + purple Leonard Range (1190m)
+   126.397     7.393
+1 + purple Leroboleng (1117m)
+   122.842    -8.358
+1 + purple Leskov Island (190m)
+   -28.130   -56.670
+1 + purple Leutongey (1333m)
+   159.830    57.300
+1 + purple Level Mountain (2190m)
+  -131.350    58.420
+1 + purple Lewotobi (1703m)
+   122.775    -8.530
+1 + purple Lewotobi Perempuan (1703m)
+   122.780    -8.575
+1 + purple Lewotolo (1423m)
+   123.505    -8.272
+1 + purple Lexone (5340m)
+   -69.480   -17.870
+1 + purple Liado Hayk Field (878m)
+    40.280     9.570
+1 + purple Liamuiga (1156m)
+   -62.800    17.370
+1 + purple Licancabur (5916m)
+   -67.880   -22.830
+1 + purple Lihir (700m)
+   152.642    -3.125
+1 + purple Lindenberg Island (368m)
+   -60.050   -65.030
+1 + purple Lipari (602m)
+    14.950    38.480
+1 + purple Little Sitkin (1188m)
+   178.530    51.950
+1 + purple Ljosufjoll (988m)
+   -22.230    64.870
+1 + purple Llaima (3125m)
+   -71.729   -38.692
+1 + purple Llullaillaco (6739m)
+   -68.530   -24.720
+1 + purple Loihi (-975m)
+  -155.270    18.920
+1 + purple Loki-Fogrufjoll (1570m)
+   -17.800    64.480
+1 + purple Lokon-Empung (1580m)
+   124.792     1.358
+1 + purple Lolo (805m)
+   150.500    -5.470
+1 + purple Lolobau (858m)
+   151.158    -4.920
+1 + purple Loloru (1887m)
+   155.620    -6.520
+1 + purple Lomonosov Group (1681m)
+   155.430    50.250
+1 + purple Long Island (1280m)
+   147.120    -5.358
+1 + purple Long Valley (3390m)
+  -118.870    37.700
+1 + purple Longavi, Nevado de (3242m)
+   -71.161   -36.193
+1 + purple Longgang Group (1000m)
+   126.500    42.330
+1 + purple Longonot (2776m)
+    36.450    -0.920
+1 + purple Lonquimay (2865m)
+   -71.580   -38.377
+1 + purple Lopevi (1413m)
+   168.346   -16.507
+1 + purple Lower Chindwin (385m)
+    95.100    22.280
+1 + purple Lubukraya (1862m)
+    99.209     1.478
+1 + purple Lumut Balai, Bukit (2055m)
+   103.620    -4.220
+1 + purple Lunayyir, Harrat (1370m)
+    37.750    25.170
+1 + purple Lurus (539m)
+   113.580    -7.700
+1 + purple Lvinaya Past (528m)
+   147.000    44.620
+1 + purple Lysuholl (540m)
+   -23.250    64.870
+1 + purple Ma Alalta (1815m)
+    40.200    13.020
+1 + purple Maca (2960m)
+   -73.200   -45.100
+1 + purple Macauley Island (238m)
+  -178.470   -30.200
+1 + purple Macdonald (-50m)
+  -140.250   -28.980
+1 + purple Machin, Cerro (2650m)
+   -75.400     4.480
+1 + purple Macizo de Larancagua (5520m)
+   -68.530   -18.250
+1 + purple Macizo de Pacuni (5400m)
+   -68.800   -18.320
+1 + purple Maderas (1394m)
+   -85.515    11.446
+1 + purple Madilogo (850m)
+   147.570    -9.200
+1 + purple Magaso (1904m)
+   123.175     9.258
+1 + purple Mageik (2165m)
+  -155.250    58.200
+1 + purple Mahagnoa (800m)
+   124.853    10.872
+1 + purple Mahawu (1324m)
+   124.858     1.358
+1 + purple Maipo (5264m)
+   -69.833   -34.161
+1 + purple Makaturing (1940m)
+   124.320     7.647
+1 + purple Makian (1357m)
+   127.400     0.320
+1 + purple Makushin (2036m)
+  -166.930    53.900
+1 + purple Malabar (2343m)
+   107.650    -7.130
+1 + purple Malang Plain (680m)
+   112.680    -8.020
+1 + purple Malinao (1548m)
+   123.597    13.422
+1 + purple Malinche, La (4503m)
+   -98.030    19.230
+1 + purple Malindang (2435m)
+   123.630     8.220
+1 + purple Malindig (1157m)
+   122.018    13.240
+1 + purple Mallahle (1875m)
+    41.650    13.270
+1 + purple Maly Payalpan (1802m)
+   157.980    55.820
+1 + purple Maly Semiachik (1560m)
+   159.670    54.130
+1 + purple Managlase Plateau (1342m)
+   148.330    -9.080
+1 + purple Manam (1807m)
+   145.061    -4.100
+1 + purple Manareyjar (0m)
+   -17.100    66.300
+1 + purple Manda Hararo (600m)
+    40.820    12.170
+1 + purple Manda-Inakir (600m)
+    42.200    12.380
+1 + purple Mandalagan (1879m)
+   123.220    10.615
+1 + purple Manengouba (2411m)
+     9.830     5.030
+1 + purple Manuk (282m)
+   130.292    -5.530
+1 + purple Maquiling (1090m)
+   121.200    14.130
+1 + purple Marapi (2891m)
+   100.473    -0.381
+1 + purple Marchena (343m)
+   -90.470     0.330
+1 + purple Mare (308m)
+   127.400     0.570
+1 + purple Marha, Jabal el- (2650m)
+    44.220    15.280
+1 + purple Marion Island (1230m)
+    37.750   -46.900
+1 + purple Mariveles (1420m)
+   120.500    14.500
+1 + purple Markagunt Plateau (2840m)
+  -112.670    37.580
+1 + purple Maroa (1156m)
+   176.080   -38.420
+1 + purple Marra, Jebel (3042m)
+    24.270    12.950
+1 + purple Marsabit (1707m)
+    37.970     2.320
+1 + purple Martin (1860m)
+  -155.350    58.170
+1 + purple Masaraga (1328m)
+   123.600    13.320
+1 + purple Masaya (635m)
+   -86.161    11.984
+1 + purple Mascota Volc Field (2540m)
+  -104.830    20.620
+1 + purple Mashkovtsev (503m)
+   156.720    51.100
+1 + purple Mashu (855m)
+   144.570    43.570
+1 + purple Mat Ala (523m)
+    41.150    13.100
+1 + purple Matthew Island (177m)
+   171.320   -22.330
+1 + purple Matutum (2293m)
+   125.108     6.370
+1 + purple Maule, Laguna del (3092m)
+   -70.580   -36.020
+1 + purple Mauna Kea (4206m)
+  -155.470    19.820
+1 + purple Mauna Loa (4170m)
+  -155.608    19.475
+1 + purple May-ya-moto (950m)
+    29.330    -0.930
+1 + purple Mayon (2462m)
+   123.685    13.257
+1 + purple Mayor Island (355m)
+   176.250   -37.280
+1 + purple McDonald Islands (186m)
+    72.600   -53.030
+1 + purple Meager (2680m)
+  -123.500    50.630
+1 + purple Medicine Lake (2412m)
+  -121.570    41.580
+1 + purple Medvezhia (1124m)
+   148.830    45.380
+1 + purple Mega Basalt Field (1067m)
+    37.420     4.080
+1 + purple Megata (291m)
+   139.730    39.950
+1 + purple Mehetia (435m)
+  -148.070   -17.870
+1 + purple Meidob Volc Field (2000m)
+    26.470    15.320
+1 + purple Melbourne (2732m)
+   164.700   -74.350
+1 + purple Melimoyu (2400m)
+   -72.880   -44.080
+1 + purple Mencheca (1840m)
+   -72.038   -40.534
+1 + purple Mendeleev (887m)
+   145.700    43.980
+1 + purple Menengai (2278m)
+    36.070    -0.200
+1 + purple Mentolat (1660m)
+   -73.080   -44.670
+1 + purple Merapi (2947m)
+   110.442    -7.542
+1 + purple Merbabu (3145m)
+   110.430    -7.450
+1 + purple Mere Lava (1028m)
+   168.050   -14.450
+1 + purple Meru (4565m)
+    36.750    -3.250
+1 + purple Methana (760m)
+    23.336    37.615
+1 + purple Metis Shoal (43m)
+  -174.870   -19.180
+1 + purple Mezhdusopochny (1641m)
+   160.250    57.470
+1 + purple Michael (990m)
+   -26.450   -57.780
+1 + purple Michoacan-Guanajuato (3860m)
+  -102.250    19.480
+1 + purple Micotrin (1387m)
+   -61.330    15.330
+1 + purple Middle Gobi (1120m)
+   106.700    45.280
+1 + purple Milbanke Sound Group (335m)
+  -128.730    52.500
+1 + purple Milne (1540m)
+   151.780    46.820
+1 + purple Milos (751m)
+    24.439    36.699
+1 + purple Minami-Hiyoshi (-30m)
+   141.905    23.507
+1 + purple Minchinmavida (2404m)
+   -72.430   -42.780
+1 + purple Miravalles (2028m)
+   -85.153    10.748
+1 + purple Misti, El (5822m)
+   -71.409   -16.294
+1 + purple Miyake-jima (815m)
+   139.530    34.080
+1 + purple Mocho-Choshuenco (2422m)
+   -72.027   -39.927
+1 + purple Moffett (1196m)
+  -176.750    51.930
+1 + purple Moiro, Cerro (4250m)
+   -67.470   -21.680
+1 + purple Mojanda (4263m)
+   -78.270     0.130
+1 + purple Mombacho (1344m)
+   -85.968    11.826
+1 + purple Momotombo (1297m)
+   -86.540    12.422
+1 + purple Monaco Bank (-197m)
+   -25.880    37.600
+1 + purple Mondaca (2048m)
+   -70.800   -35.464
+1 + purple Mono Craters (2796m)
+  -119.000    37.880
+1 + purple Mono Lake Volc Field (2121m)
+  -119.030    38.000
+1 + purple Monowai Seamount (-100m)
+  -177.188   -25.887
+1 + purple Moti (950m)
+   127.400     0.450
+1 + purple Motlav (411m)
+   167.670   -13.670
+1 + purple Moua Pihaa (-180m)
+  -148.670   -18.320
+1 + purple Mousa Alli (2028m)
+    42.400    12.470
+1 + purple Moyuta (1662m)
+   -90.100    14.030
+1 + purple Muhavura (4127m)
+    29.670    -1.380
+1 + purple Mundafell (1491m)
+   -19.700    63.980
+1 + purple Mundua (179m)
+   149.350    -4.630
+1 + purple Musa River (808m)
+   148.130    -9.308
+1 + purple Mutnovsky (2322m)
+   158.195    52.453
+1 + purple Mutsu-Hiuchi-dake (781m)
+   141.070    41.430
+1 + purple Myojun Knoll (360m)
+   139.850    32.100
+1 + purple Myoko (2446m)
+   138.120    36.880
+1 + purple NE Udokan Plateau (2180m)
+   118.070    56.330
+1 + purple Nabro (2218m)
+    41.700    13.370
+1 + purple Nakano-shima (979m)
+   129.870    29.850
+1 + purple Namarunu (817m)
+    36.270     1.900
+1 + purple Nantai (2484m)
+   139.500    36.770
+1 + purple Naolinco Volc Field (2000m)
+   -96.750    19.670
+1 + purple Narage (307m)
+   149.125    -4.550
+1 + purple Narcondum (710m)
+    94.250    13.430
+1 + purple Narugo (462m)
+   140.730    38.730
+1 + purple Nasu (1917m)
+   139.970    37.120
+1 + purple Natib (1287m)
+   120.400    14.705
+1 + purple Nazko (1230m)
+  -123.730    52.900
+1 + purple Ndete Napu (750m)
+   121.780    -8.720
+1 + purple Negra, Sierra (1490m)
+   -91.170    -0.830
+1 + purple Negrillar, El (3500m)
+   -68.250   -24.180
+1 + purple Negrillar, La (4109m)
+   -68.600   -24.280
+1 + purple Negro de Mayasquer, Cerro (4445m)
+   -77.964     0.828
+1 + purple Negro, Cerro (728m)
+   -86.702    12.506
+1 + purple Nejapa-Miraflores (360m)
+   -86.320    12.120
+1 + purple Nemo Peak (1018m)
+   154.808    49.570
+1 + purple Nemrut Dagi (3050m)
+    42.020    38.650
+1 + purple Nevada, Sierra (6127m)
+   -68.580   -26.480
+1 + purple Nevis Peak (985m)
+   -62.580    17.150
+1 + purple Newberry Volcano (2434m)
+  -121.229    43.722
+1 + purple Newer Volcanics Prov (1011m)
+   142.500   -37.770
+1 + purple Ngaoundere Plateau (0m)
+    13.670     7.250
+1 + purple Ngauruhoe (2291m)
+   175.630   -39.158
+1 + purple Ngozi (2622m)
+    33.570    -8.970
+1 + purple Nieuwerkerk (-2285m)
+   124.675    -6.600
+1 + purple Nigorigawa (356m)
+   140.450    42.120
+1 + purple Nii-jima (432m)
+   139.270    34.370
+1 + purple Niigata-Yake-yama (2400m)
+   138.030    36.920
+1 + purple Nikko (-391m)
+   142.308    23.075
+1 + purple Nikko-Shirane (2578m)
+   139.380    36.800
+1 + purple Nila (781m)
+   129.500    -6.730
+1 + purple Nipesotsu-Upepesanke (2013m)
+   143.030    43.450
+1 + purple Niseko (1154m)
+   140.630    42.880
+1 + purple Nishino-shima (52m)
+   140.877    27.243
+1 + purple Nisyros (698m)
+    27.180    36.580
+1 + purple Niuafo'ou (260m)
+  -175.630   -15.600
+1 + purple Nonda (760m)
+   156.600    -7.670
+1 + purple Norikura (3026m)
+   137.550    36.120
+1 + purple North Gorda Ridge (-3000m)
+  -126.780    42.670
+1 + purple North Island (520m)
+    36.050     4.070
+1 + purple North Sister Field (3074m)
+  -121.770    44.170
+1 + purple North Vate (594m)
+   168.330   -17.450
+1 + purple Nosy-Be (214m)
+    48.480   -13.320
+1 + purple Novarupta (841m)
+  -155.160    58.270
+1 + purple Nuevo Mundo (5438m)
+   -66.480   -19.780
+1 + purple Numazawa (1100m)
+   139.580    37.430
+1 + purple Nunivak Island (511m)
+  -166.330    60.020
+1 + purple Nyambeni Hills (750m)
+    37.870     0.230
+1 + purple Nyamuragira (3058m)
+    29.200    -1.408
+1 + purple Nyiragongo (3470m)
+    29.250    -1.520
+1 + purple Ofu-Olosega (639m)
+  -169.618   -14.175
+1 + purple Ojos del Salado, Nevados (6887m)
+   -68.530   -27.120
+1 + purple Oka Volc Field (2077m)
+    98.980    52.700
+1 + purple Okataina (1111m)
+   176.500   -38.120
+1 + purple Oki-Dogo (151m)
+   133.330    36.170
+1 + purple Okmok (1073m)
+  -168.130    53.420
+1 + purple Oku Volc Field (3011m)
+    10.500     6.250
+1 + purple Ol Kokwe (1130m)
+    36.080     0.630
+1 + purple Olca-Paruma (5407m)
+   -68.480   -20.930
+1 + purple Olkaria (2434m)
+    36.292    -0.904
+1 + purple Olkoviy (636m)
+   157.477    52.077
+1 + purple Ollague (5868m)
+   -68.180   -21.300
+1 + purple Olot Volc Field (893m)
+     2.530    42.170
+1 + purple Omachi Seamount (-1700m)
+   140.800    29.220
+1 + purple Omanago Group (2367m)
+   139.500    36.780
+1 + purple On-take (3063m)
+   137.480    35.900
+1 + purple Opala (2475m)
+   157.335    52.543
+1 + purple Oraefajokull (2119m)
+   -16.650    64.000
+1 + purple Orizaba, Pico de (5675m)
+   -97.268    19.030
+1 + purple Ormus Islands (0m)
+    57.000    26.000
+1 + purple Orosi (1659m)
+   -85.473    10.980
+1 + purple Oshima (758m)
+   139.380    34.730
+1 + purple Oshima-Oshima (737m)
+   139.370    41.500
+1 + purple Osore-yama (879m)
+   141.080    41.320
+1 + purple Osorno (2652m)
+   -72.493   -41.100
+1 + purple Ostanets (719m)
+   157.322    52.146
+1 + purple Ostry (2552m)
+   160.820    58.180
+1 + purple Otdelniy (791m)
+   157.428    52.220
+1 + purple Overo, Cerro (4555m)
+   -67.670   -23.350
+1 + purple Ozernoy (562m)
+   157.380    51.880
+1 + purple Pacaya (2552m)
+   -90.601    14.381
+1 + purple Paco (524m)
+   125.520     9.593
+1 + purple Pagan (570m)
+   145.800    18.130
+1 + purple Pago (742m)
+   150.520    -5.580
+1 + purple Paka (1697m)
+    36.180     0.920
+1 + purple Palei-Aike Volc Field (250m)
+   -70.000   -52.000
+1 + purple Palena Volc Group (0m)
+   -72.500   -43.680
+1 + purple Palomo (4860m)
+   -70.295   -34.608
+1 + purple Paluweh (875m)
+   121.708    -8.320
+1 + purple Pampa Luxsar (5543m)
+   -68.200   -20.850
+1 + purple Pan de Azucar (3482m)
+   -77.720    -0.430
+1 + purple Panay (501m)
+   120.893    13.723
+1 + purple Pantelleria (836m)
+    12.020    36.770
+1 + purple Pantoja, Cerro (2112m)
+   -71.950   -40.770
+1 + purple Papandayan (2665m)
+   107.730    -7.320
+1 + purple Papayo (3600m)
+   -98.700    19.308
+1 + purple Paricutin Volcanic Field (3860m)
+  -102.250    19.480
+1 + purple Parinacota (6348m)
+   -69.150   -18.170
+1 + purple Parker (1824m)
+   124.892     6.120
+1 + purple Patah (2817m)
+   103.300    -4.270
+1 + purple Patates, Morne (960m)
+   -61.370    15.220
+1 + purple Patilla Pata (5300m)
+   -69.030   -18.050
+1 + purple Patoc (1865m)
+   120.980    17.147
+1 + purple Patuha (2434m)
+   107.370    -7.150
+1 + purple Paulet (353m)
+   -55.770   -63.580
+1 + purple Pavlof (2519m)
+  -161.900    55.420
+1 + purple Pavlof Sister (2142m)
+  -161.870    55.450
+1 + purple Payun Matru, Cerro (3691m)
+   -69.200   -36.420
+1 + purple Peinado (5740m)
+   -68.150   -26.620
+1 + purple Pelee (1397m)
+   -61.170    14.820
+1 + purple Penanggungan (1653m)
+   112.630    -7.620
+1 + purple Pendan (0m)
+   102.020    -2.820
+1 + purple Peng-Chia-Hsu (129m)
+   122.070    25.630
+1 + purple Penguin Island (180m)
+   -57.930   -62.100
+1 + purple Perbakti (1699m)
+   106.680    -6.750
+1 + purple Petacas (4054m)
+   -76.780     1.570
+1 + purple Peter I Island (1640m)
+   -90.580   -68.850
+1 + purple Peuet Sague (2801m)
+    96.329     4.914
+1 + purple Pico (2351m)
+   -28.400    38.470
+1 + purple Piip (-300m)
+   167.330    55.420
+1 + purple Pilas, Las (1088m)
+   -86.688    12.495
+1 + purple Pina, Cerro (4037m)
+   -68.650   -19.492
+1 + purple Pinacate (1200m)
+  -113.498    31.772
+1 + purple Pinatubo (1486m)
+   120.350    15.130
+1 + purple Pinta (780m)
+   -90.750     0.580
+1 + purple Piparo (140m)
+   -61.000    10.000
+1 + purple Piratkovsky (1322m)
+   157.849    52.113
+1 + purple Planchon-Peteroa (4107m)
+   -70.570   -35.240
+1 + purple Platanar (2267m)
+   -84.366    10.300
+1 + purple Pleiades, The (3040m)
+   165.500   -72.670
+1 + purple Plosky (1255m)
+   160.250    57.830
+1 + purple Plosky (1236m)
+   158.470    55.200
+1 + purple Plosky Volc Group (681m)
+   157.530    52.020
+1 + purple Poas (2708m)
+   -84.233    10.200
+1 + purple Pocdol Mountains (1102m)
+   123.958    13.050
+1 + purple Poco Leok (1675m)
+   120.480    -8.680
+1 + purple Pogranychny (1427m)
+   159.800    56.850
+1 + purple Popa (1518m)
+    95.230    20.870
+1 + purple Popocatepetl (5426m)
+   -98.622    19.023
+1 + purple Possession, Ile de la (934m)
+    51.630   -46.420
+1 + purple Potato Butte (1532m)
+  -121.430    40.630
+1 + purple Prestahnukur (1390m)
+   -20.580    64.600
+1 + purple Prevo Peak (1360m)
+   152.120    47.020
+1 + purple Prieto, Cerro (223m)
+  -115.305    32.418
+1 + purple Prince Edward Island (672m)
+    37.950   -46.630
+1 + purple Protector Shoal (-27m)
+   -28.080   -55.920
+1 + purple Puchuldiza (4500m)
+   -68.970   -19.420
+1 + purple Puesto Cortaderas (970m)
+   -69.620   -37.550
+1 + purple Pular (6233m)
+   -68.050   -24.180
+1 + purple Pulau Weh (617m)
+    95.280     5.820
+1 + purple Pululagua (3356m)
+   -78.463     0.038
+1 + purple Puntiagudo-Cordon Cenizo (2493m)
+   -72.264   -40.969
+1 + purple Purace (4650m)
+   -76.400     2.320
+1 + purple Purico Complex (5703m)
+   -67.750   -23.000
+1 + purple Putana (5890m)
+   -67.870   -22.570
+1 + purple Puyehue (2236m)
+   -72.117   -40.590
+1 + purple Puyuhuapi (255m)
+   -72.530   -44.300
+1 + purple Qal'eh Hasan Ali (0m)
+    57.570    29.400
+1 + purple Qualibou (777m)
+   -61.050    13.830
+1 + purple Quetena (5730m)
+   -67.420   -22.250
+1 + purple Quetrupillan (2360m)
+   -71.700   -39.500
+1 + purple Quezaltepeque (1200m)
+   -89.350    14.650
+1 + purple Quill, The (601m)
+   -62.950    17.480
+1 + purple Quilotoa (3914m)
+   -78.900    -0.850
+1 + purple Quimsachata (3923m)
+   -71.170   -14.370
+1 + purple Rabaul (688m)
+   152.203    -4.271
+1 + purple Ragang (2815m)
+   124.500     7.670
+1 + purple Rahah, Harrat ar (1660m)
+    36.170    27.800
+1 + purple Rahat, Harrat (1744m)
+    39.780    23.080
+1 + purple Raikoke (551m)
+   153.250    48.292
+1 + purple Rainier (4392m)
+  -121.758    46.870
+1 + purple Rajabasa (1281m)
+   105.625    -5.780
+1 + purple Ranakah (2100m)
+   120.520    -8.620
+1 + purple Ranau (1881m)
+   103.920    -4.830
+1 + purple Raoul Island (516m)
+  -177.920   -29.270
+1 + purple Rasshua (956m)
+   153.020    47.770
+1 + purple Raung (3332m)
+   114.042    -8.125
+1 + purple Rausu (1660m)
+   145.125    44.073
+1 + purple Recheschnoi (1984m)
+  -168.550    53.150
+1 + purple Reclus (0m)
+   -73.700   -50.980
+1 + purple Red Cones (2748m)
+  -119.050    37.580
+1 + purple Redondo, Cerro (1496m)
+   -71.700   -39.270
+1 + purple Redoubt (3108m)
+  -152.750    60.480
+1 + purple Reporoa (592m)
+   176.330   -38.420
+1 + purple Resago, Volcan (1550m)
+   -70.920   -36.450
+1 + purple Reventador (3562m)
+   -77.656    -0.078
+1 + purple Reykjanes (230m)
+   -22.500    63.880
+1 + purple Reykjaneshryggur (80m)
+   -23.330    63.670
+1 + purple Riang Kotang (200m)
+   122.892    -8.300
+1 + purple Rincon de la Vieja (1916m)
+   -85.324    10.830
+1 + purple Rinjani (3726m)
+   116.470    -8.420
+1 + purple Rishiri (1719m)
+   141.250    45.180
+1 + purple Ritter Island (140m)
+   148.121    -5.520
+1 + purple Robinson Crusoe (922m)
+   -78.850   -33.658
+1 + purple Robledo (4400m)
+   -67.720   -26.770
+1 + purple Rocard (-2100m)
+  -148.600   -17.642
+1 + purple Romanovka (1442m)
+   158.800    55.650
+1 + purple Rota (832m)
+   -86.750    12.550
+1 + purple Rotorua (757m)
+   176.270   -38.080
+1 + purple Roundtop (1871m)
+  -163.600    54.800
+1 + purple Royal Society Range (3000m)
+   163.600   -78.250
+1 + purple Ruang (725m)
+   125.425     2.280
+1 + purple Ruapehu (2797m)
+   175.570   -39.280
+1 + purple Ruby (-230m)
+   145.570    15.620
+1 + purple Ruby Mountain (1523m)
+  -133.320    59.680
+1 + purple Rudakov (542m)
+   149.830    45.880
+1 + purple Ruiz (5321m)
+   -75.322     4.895
+1 + purple Rumble III (-140m)
+   178.478   -35.745
+1 + purple Rumble IV (-450m)
+   178.050   -36.130
+1 + purple Rumble V (-700m)
+   178.197   -36.139
+1 + purple Rungwe (2961m)
+    33.670    -9.130
+1 + purple SW Usangu Basin (2179m)
+    33.800    -8.750
+1 + purple Saba (887m)
+   -63.230    17.630
+1 + purple Sabancaya (5967m)
+   -71.850   -15.780
+1 + purple Sacabaya, Volcan de (4215m)
+   -68.750   -18.620
+1 + purple Saddle Butte (1700m)
+  -117.800    43.000
+1 + purple Sairecabur (5971m)
+   -67.880   -22.730
+1 + purple Sakar (992m)
+   148.094    -5.414
+1 + purple Sakura-jima (1117m)
+   130.670    31.580
+1 + purple Salak (2211m)
+   106.730    -6.720
+1 + purple San Agustin, Cerro (4980m)
+   -67.750   -21.250
+1 + purple San Borja Volc Field (1360m)
+  -113.750    28.500
+1 + purple San Carlos (2260m)
+     8.520     3.350
+1 + purple San Cristobal (1745m)
+   -87.004    12.702
+1 + purple San Cristobal (759m)
+   -89.500    -0.880
+1 + purple San Diego (781m)
+   -89.480    14.270
+1 + purple San Felix (183m)
+   -80.120   -26.270
+1 + purple San Joaquin (2009m)
+     8.630     3.350
+1 + purple San Jorge (1053m)
+   -28.080    38.650
+1 + purple San Jose (5856m)
+   -69.897   -33.782
+1 + purple San Luis, Isla (180m)
+  -114.384    29.814
+1 + purple San Marcelino (2381m)
+   -89.630    13.853
+1 + purple San Martin (1650m)
+   -95.169    18.572
+1 + purple San Miguel (2130m)
+   -88.272    13.431
+1 + purple San Pedro (6145m)
+   -68.400   -21.880
+1 + purple San Pedro-Pellado (3621m)
+   -70.849   -35.989
+1 + purple San Quintin Volc Field (260m)
+  -115.996    30.468
+1 + purple San Salvador (1893m)
+   -89.286    13.736
+1 + purple San Vicente (725m)
+   -24.970    16.850
+1 + purple San Vicente (2182m)
+   -88.852    13.623
+1 + purple Sanbe (1126m)
+   132.620    35.130
+1 + purple Sand Mountain Field (1664m)
+  -121.930    44.380
+1 + purple Sanford (4949m)
+  -144.130    62.220
+1 + purple Sanganguey (2340m)
+  -104.730    21.450
+1 + purple Sangay (5230m)
+   -78.330    -2.030
+1 + purple Sangeang Api (1949m)
+   119.058    -8.180
+1 + purple Sano, Wai (903m)
+   120.025    -8.680
+1 + purple Santa Ana (2365m)
+   -89.630    13.853
+1 + purple Santa Clara (1465m)
+  -113.625    37.257
+1 + purple Santa Cruz (864m)
+   -90.330    -0.620
+1 + purple Santa Isabel (4950m)
+   -75.370     4.820
+1 + purple Santa Isabel (2972m)
+     8.750     3.580
+1 + purple Santa Isabel, Cerro (5100m)
+   -66.500   -21.670
+1 + purple Santa Maria (3772m)
+   -91.552    14.756
+1 + purple Santiago (920m)
+   -90.770    -0.220
+1 + purple Santiago, Cerro (1192m)
+   -89.870    14.330
+1 + purple Santo Antao (1979m)
+   -25.170    17.070
+1 + purple Santo Tomas (2260m)
+   120.550    16.330
+1 + purple Santo Tomas (3542m)
+   -91.479    14.710
+1 + purple Santorini (329m)
+    25.396    36.404
+1 + purple Sao Tome (2024m)
+     6.720     0.320
+1 + purple Sarigan (538m)
+   145.780    16.708
+1 + purple Sarik-Gajah (0m)
+   100.200     0.080
+1 + purple Sarychev Peak (1496m)
+   153.200    48.092
+1 + purple Satah Mountain (1921m)
+  -124.700    52.470
+1 + purple Savai'i (1858m)
+  -172.525   -13.612
+1 + purple Savo (510m)
+   159.820    -9.130
+1 + purple Sawad, Harra Es- (1737m)
+    46.120    13.580
+1 + purple Seal Nunataks Group (368m)
+   -60.050   -65.030
+1 + purple Sedankinsky (1241m)
+   160.080    57.230
+1 + purple Segererua Plateau (699m)
+    37.900     1.570
+1 + purple Seguam (1054m)
+  -172.520    52.320
+1 + purple Segula (1153m)
+   178.130    52.020
+1 + purple Sekincau Belirang (1719m)
+   104.320    -5.120
+1 + purple Semeru (3676m)
+   112.920    -8.108
+1 + purple Semisopochnoi (1221m)
+   179.620    51.950
+1 + purple Sempu (1549m)
+   124.730     1.142
+1 + purple Serdan-Oriental (3485m)
+   -97.470    19.270
+1 + purple Sergief (560m)
+  -174.930    52.030
+1 + purple Serua (641m)
+   130.000    -6.300
+1 + purple Sessagara (370m)
+   149.130    -9.480
+1 + purple Sete Cidades (856m)
+   -25.780    37.870
+1 + purple Seulawah Agam (1810m)
+    95.658     5.448
+1 + purple Severny (1936m)
+   160.870    58.280
+1 + purple Shala (2075m)
+    38.550     7.470
+1 + purple Sharat Kovakab (534m)
+    40.850    36.530
+1 + purple Shasta (4317m)
+  -122.200    41.420
+1 + purple Shiga (2036m)
+   138.520    36.700
+1 + purple Shikaribetsu Group (1430m)
+   143.080    43.280
+1 + purple Shikotsu (1320m)
+   141.330    42.700
+1 + purple Shiretoko-Iwo-zan (1563m)
+   145.170    44.130
+1 + purple Shiribetsu (1107m)
+   140.916    42.767
+1 + purple Shirinki (761m)
+   154.980    50.200
+1 + purple Shishaldin (2857m)
+  -163.970    54.750
+1 + purple Shishel (2525m)
+   160.370    57.450
+1 + purple Shiveluch (3283m)
+   161.360    56.653
+1 + purple Shoshone Lava Field (1525m)
+  -114.430    43.070
+1 + purple Sibayak (2212m)
+    98.520     3.200
+1 + purple Sibualbuali (1819m)
+    99.255     1.556
+1 + purple Silali (1528m)
+    36.230     1.150
+1 + purple Silay (1535m)
+   123.230    10.770
+1 + purple Silverthrone (3160m)
+  -126.300    51.430
+1 + purple Simbo (335m)
+   156.520    -8.292
+1 + purple Sinabung (2460m)
+    98.392     3.170
+1 + purple Sinarka (934m)
+   154.175    48.875
+1 + purple Singu Plateau (507m)
+    95.980    22.700
+1 + purple Singuil, Cerro (957m)
+   -89.700    14.030
+1 + purple Siple (3110m)
+  -126.670   -73.430
+1 + purple Sirung (862m)
+   124.148    -8.510
+1 + purple Slamet (3432m)
+   109.208    -7.242
+1 + purple Smirnov (1189m)
+   146.130    44.430
+1 + purple Smith Rock (136m)
+   140.050    31.320
+1 + purple Smith Volcano (2090m)
+   121.940    19.523
+1 + purple Snaefellsjokull (1448m)
+   -23.780    64.800
+1 + purple Snegovoy (2169m)
+   160.970    58.200
+1 + purple Snezhniy (2169m)
+   160.750    58.020
+1 + purple Snowy (2161m)
+  -154.680    58.330
+1 + purple Soche (3955m)
+   -77.580     0.552
+1 + purple Socompa (6051m)
+   -68.250   -24.400
+1 + purple Socorro (1050m)
+  -110.950    18.780
+1 + purple Sodore (1765m)
+    39.350     8.430
+1 + purple Sollipulli (2282m)
+   -71.520   -38.970
+1 + purple Soputan (1784m)
+   124.725     1.108
+1 + purple Sorikmarapi (2145m)
+    99.539     0.686
+1 + purple Sorkale (1611m)
+    41.725    13.180
+1 + purple Sotara (4400m)
+   -76.580     2.120
+1 + purple Soufriere Guadeloupe (1467m)
+   -61.670    16.050
+1 + purple Soufriere Hills (915m)
+   -62.180    16.720
+1 + purple Soufriere St. Vincent (1220m)
+   -61.180    13.330
+1 + purple South Island (700m)
+    36.600     2.630
+1 + purple South Sister (3157m)
+  -121.770    44.100
+1 + purple Southern Sikhote-Alin (0m)
+   135.500    44.500
+1 + purple Spectrum Range (2430m)
+  -130.680    57.430
+1 + purple Spurr (3374m)
+  -152.250    61.300
+1 + purple Squaw Ridge Field (1711m)
+  -120.754    43.472
+1 + purple Srednii (36m)
+   152.920    47.600
+1 + purple St. Andrew Strait (270m)
+   147.350    -2.380
+1 + purple St. Catherine (840m)
+   -61.670    12.150
+1 + purple St. Helens (2549m)
+  -122.180    46.200
+1 + purple St. Michael (715m)
+  -162.120    63.450
+1 + purple St. Paul (268m)
+    77.530   -38.720
+1 + purple St. Paul Island (203m)
+  -170.300    57.180
+1 + purple Steamboat Springs (1415m)
+  -119.720    39.375
+1 + purple Steller (2272m)
+  -154.400    58.430
+1 + purple Stromboli (926m)
+    15.213    38.789
+1 + purple Sturge Island (1167m)
+   164.830   -67.400
+1 + purple Suchitan Volc Field (2042m)
+   -89.780    14.400
+1 + purple Sukaria Caldera (1500m)
+   121.770    -8.792
+1 + purple Sumaco (3990m)
+   -77.626    -0.538
+1 + purple Sumbing (2507m)
+   101.728    -2.414
+1 + purple Sumbing (3371m)
+   110.058    -7.380
+1 + purple Sumiyoshi-ike (100m)
+   130.594    31.768
+1 + purple Sundoro (3136m)
+   109.992    -7.300
+1 + purple Sunset Crater (2447m)
+  -111.500    35.370
+1 + purple Suoh (1000m)
+   104.270    -5.250
+1 + purple Suphan Dagi (4434m)
+    42.820    38.920
+1 + purple Supply Reef (-8m)
+   145.100    20.130
+1 + purple Suretamatai (921m)
+   167.470   -13.800
+1 + purple Suswa (2356m)
+    36.350    -1.175
+1 + purple Suwanose-jima (799m)
+   129.720    29.530
+1 + purple Ta'u (931m)
+  -169.454   -14.230
+1 + purple Taal (400m)
+   120.993    14.002
+1 + purple Table Top-Wide Bay (800m)
+  -166.670    53.980
+1 + purple Taburete (1172m)
+   -88.532    13.435
+1 + purple Tacana (4110m)
+   -92.112    15.130
+1 + purple Tacora (5980m)
+   -69.770   -17.720
+1 + purple Taftan (4050m)
+    61.600    28.600
+1 + purple Tair, Jebel at (244m)
+    41.742    15.700
+1 + purple Tajumulco (4220m)
+   -91.903    15.034
+1 + purple Takahara (1795m)
+   139.780    36.900
+1 + purple Takahe (3460m)
+  -112.080   -76.280
+1 + purple Takawangha (1449m)
+  -178.020    51.870
+1 + purple Takuan Group (2210m)
+   155.608    -6.442
+1 + purple Talagabodas (2201m)
+   108.070    -7.208
+1 + purple Talakmau (2919m)
+    99.980     0.079
+1 + purple Talang (2597m)
+   100.679    -0.978
+1 + purple Tambora (2850m)
+   118.000    -8.250
+1 + purple Tampomas (1684m)
+   107.950    -6.770
+1 + purple Tanaga (1806m)
+  -178.130    51.880
+1 + purple Tandikat (2438m)
+   100.317    -0.433
+1 + purple Tangkubanparahu (2084m)
+   107.600    -6.770
+1 + purple Tao-Rusyr Caldera (1325m)
+   154.700    49.350
+1 + purple Tara, Batu (748m)
+   123.579    -7.792
+1 + purple Tarakan (318m)
+   127.792     1.780
+1 + purple Taryatu-Chulutu (2400m)
+    99.700    48.170
+1 + purple Tat Ali (700m)
+    41.070    13.280
+1 + purple Tata Sabaya (5430m)
+   -68.530   -19.130
+1 + purple Tate-yama (2621m)
+   137.600    36.570
+1 + purple Tateshina (2530m)
+   138.300    36.100
+1 + purple Tatio, El (4280m)
+   -68.030   -22.350
+1 + purple Tatun Group (1120m)
+   121.520    25.170
+1 + purple Taunshits (2353m)
+   159.800    54.530
+1 + purple Taupo (760m)
+   176.000   -38.820
+1 + purple Teahitia (-1600m)
+  -148.850   -17.570
+1 + purple Tecapa (1593m)
+   -88.502    13.494
+1 + purple Tecuamburro (1845m)
+   -90.407    14.156
+1 + purple Telica (1061m)
+   -86.845    12.602
+1 + purple Telomoyo (1894m)
+   110.400    -7.370
+1 + purple Telong, Bur Ni (2624m)
+    96.808     4.770
+1 + purple Tenduruk Dagi (3584m)
+    43.830    39.330
+1 + purple Tenerife (3715m)
+   -16.641    28.271
+1 + purple Tengchong (2865m)
+    98.470    25.320
+1 + purple Tengger Caldera (2329m)
+   112.950    -7.942
+1 + purple Tenorio (1916m)
+   -85.015    10.673
+1 + purple Teon (655m)
+   129.125    -6.920
+1 + purple Tepi (2728m)
+    35.430     7.420
+1 + purple Terceira (1023m)
+   -27.320    38.730
+1 + purple Theistareykjarbunga (564m)
+   -16.830    65.880
+1 + purple Thompson Island (0m)
+     5.500   -53.930
+1 + purple Thordarhyrna (1659m)
+   -17.600    62.270
+1 + purple Thule Islands (1075m)
+   -27.370   -59.450
+1 + purple Tianshan Volc Group (0m)
+    82.500    42.500
+1 + purple Tiatia (1819m)
+   146.270    44.358
+1 + purple Ticsani (5408m)
+   -70.595   -16.755
+1 + purple Tidore (1730m)
+   127.400     0.650
+1 + purple Tigalalu (422m)
+   127.420     0.070
+1 + purple Tigre, Isla El (760m)
+   -87.630    13.270
+1 + purple Tiho (500m)
+    42.050    11.530
+1 + purple Tilaran, Cerro (634m)
+   -84.978    10.451
+1 + purple Tinakula (851m)
+   165.800   -10.380
+1 + purple Tindfjallajokull (1463m)
+   -19.570    63.780
+1 + purple Tinguiririca (4280m)
+   -70.352   -34.814
+1 + purple Tipas (6660m)
+   -68.550   -27.200
+1 + purple Titila (1559m)
+   160.100    57.400
+1 + purple Tjornes Fracture Zone (0m)
+   -17.100    66.300
+1 + purple Tlevak Strait-Suemez Is. (50m)
+  -133.300    55.250
+1 + purple To-shima (508m)
+   139.280    34.520
+1 + purple Toba (2157m)
+    98.830     2.580
+1 + purple Tobaru (1035m)
+   127.675     1.625
+1 + purple Toconce, Cerro (5435m)
+   -68.100   -22.200
+1 + purple Tocorpuri, Cerros de (5808m)
+   -67.900   -22.430
+1 + purple Todoko-Ranu (979m)
+   127.430     1.220
+1 + purple Tofua (512m)
+  -175.070   -19.750
+1 + purple Toh, Tarso (2000m)
+    16.330    21.330
+1 + purple Tokachi (2077m)
+   142.680    43.420
+1 + purple Tolbachik (3682m)
+   160.330    55.830
+1 + purple Tolguaca (2806m)
+   -71.645   -38.310
+1 + purple Tolima (5200m)
+   -75.330     4.670
+1 + purple Toliman (3158m)
+   -91.189    14.612
+1 + purple Tolmachev Dol (1021m)
+   157.580    52.630
+1 + purple Toluca, Nevado de (4690m)
+   -99.758    19.108
+1 + purple Tondano Caldera (1202m)
+   124.830     1.230
+1 + purple Toney Mountain (3595m)
+  -115.830   -75.800
+1 + purple Tongariro (1978m)
+   175.642   -39.130
+1 + purple Tongkoko (1149m)
+   125.200     1.520
+1 + purple Tore (2200m)
+   154.930    -5.830
+1 + purple Torfajokull (1259m)
+   -19.170    63.920
+1 + purple Tori-shima (403m)
+   140.320    30.480
+1 + purple Toroeng Prong (800m)
+   108.000    14.930
+1 + purple Tortuga, Isla (210m)
+  -111.858    27.392
+1 + purple Tosa Sucha (1650m)
+    37.570     5.920
+1 + purple Tousside, Tarso (3265m)
+    16.450    21.030
+1 + purple Towada (1159m)
+   140.920    40.470
+1 + purple Traitor's Head (837m)
+   169.230   -18.750
+1 + purple Tres Virgenes (1940m)
+  -112.591    27.470
+1 + purple Tri Sestry (998m)
+   149.920    45.930
+1 + purple Trident (1864m)
+  -155.080    58.230
+1 + purple Trindade (600m)
+   -29.331   -20.514
+1 + purple Tristan da Cunha (2060m)
+   -12.280   -37.092
+1 + purple Trollagigar (1000m)
+   -18.130    64.430
+1 + purple Tromen (3978m)
+   -70.030   -37.142
+1 + purple Tseax River Cone (609m)
+  -128.900    55.120
+1 + purple Tshibinda (1460m)
+    28.750    -2.320
+1 + purple Tsurumi (1584m)
+   131.430    33.280
+1 + purple Tujle, Cerro (3550m)
+   -67.950   -23.830
+1 + purple Tulabug (3336m)
+   -78.613    -1.780
+1 + purple Tullu Moje (2349m)
+    39.130     8.158
+1 + purple Tumble Buttes (2191m)
+  -121.550    40.680
+1 + purple Tundroviy (739m)
+   157.600    52.250
+1 + purple Tungnafellsjokull (1535m)
+   -17.920    64.730
+1 + purple Tungurahua (5023m)
+   -78.442    -1.467
+1 + purple Tunkin Depression (1200m)
+   102.500    51.500
+1 + purple Tupungatito (6000m)
+   -69.800   -33.400
+1 + purple Turfan (0m)
+    89.250    42.900
+1 + purple Turrialba (3340m)
+   -83.770    10.030
+1 + purple Tutuila (653m)
+  -170.700   -14.295
+1 + purple Tutupaca (5815m)
+   -70.358   -17.025
+1 + purple Tuzgle, Cerro (5550m)
+   -66.480   -24.050
+1 + purple Tuzovsky (1533m)
+   159.970    57.320
+1 + purple Twin Buttes (1631m)
+  -121.600    40.780
+1 + purple Ubehebe Craters (752m)
+  -117.450    37.020
+1 + purple Ubinas (5672m)
+   -70.903   -16.355
+1 + purple Udina (2923m)
+   160.527    55.755
+1 + purple Udokan Volc Field (1980m)
+   117.470    56.180
+1 + purple Ugashik-Peulik (1474m)
+  -156.370    57.750
+1 + purple Uinkaret Field (1555m)
+  -113.130    36.380
+1 + purple Uka (1643m)
+   160.580    57.700
+1 + purple Ukinrek Maars (91m)
+  -156.520    57.830
+1 + purple Uksichan (1692m)
+   158.380    56.080
+1 + purple Ulawun (2334m)
+   151.330    -5.050
+1 + purple Uliaga (888m)
+  -169.770    53.070
+1 + purple Ulreung (984m)
+   130.870    37.500
+1 + purple Ulug-Arginsky (1800m)
+    98.000    52.330
+1 + purple Umboi (1548m)
+   147.875    -5.589
+1 + purple Umm Arafieb, Jebel (0m)
+    33.830    18.170
+1 + purple Ungaran (2050m)
+   110.330    -7.180
+1 + purple Unnamed (200m)
+   160.870    56.530
+1 + purple Unnamed (-3000m)
+  -158.750    21.750
+1 + purple Unnamed (-2566m)
+  -113.206   -17.436
+1 + purple Unnamed (0m)
+   142.900    21.000
+1 + purple Unnamed (-2000m)
+   146.256    -4.311
+1 + purple Unnamed (-2533m)
+  -124.250    31.750
+1 + purple Unnamed (-502m)
+   151.280    46.470
+1 + purple Unnamed (1300m)
+   126.073     7.443
+1 + purple Unnamed (0m)
+    33.570    -8.630
+1 + purple Unnamed (1555m)
+  -160.000    55.930
+1 + purple Unnamed (5400m)
+    91.700    35.850
+1 + purple Unnamed (700m)
+   158.300    52.880
+1 + purple Unnamed (-100m)
+   150.500    46.100
+1 + purple Unnamed (-930m)
+   147.208    45.030
+1 + purple Unnamed (216m)
+   168.592   -16.992
+1 + purple Unnamed (0m)
+   143.200    20.300
+1 + purple Unnamed (298m)
+   156.550    51.600
+1 + purple Unnamed (300m)
+  -155.420    57.870
+1 + purple Unnamed (0m)
+    80.750    11.750
+1 + purple Unnamed (0m)
+    45.000    12.250
+1 + purple Unnamed (450m)
+   158.520    52.920
+1 + purple Unnamed (-1300m)
+   147.780    -3.030
+1 + purple Unnamed (200m)
+   158.100    53.630
+1 + purple Unnamed (0m)
+    60.670    28.170
+1 + purple Unnamed (0m)
+   121.830    24.000
+1 + purple Unnamed (1436m)
+    36.425    32.658
+1 + purple Unnamed (-10m)
+   132.250    19.170
+1 + purple Unnamed (945m)
+    36.925    33.308
+1 + purple Unnamed (0m)
+    37.000    36.670
+1 + purple Unnamed (610m)
+   157.020    52.570
+1 + purple Unnamed (638m)
+   157.330    52.330
+1 + purple Unnamed (-560m)
+  -177.870   -29.180
+1 + purple Unnamed (-650m)
+  -169.070   -14.230
+1 + purple Unnamed (-100m)
+   122.330    25.420
+1 + purple Unnamed (0m)
+  -173.500    52.000
+1 + purple Unnamed (0m)
+   -78.780   -33.622
+1 + purple Unnamed (-7m)
+   -61.280    16.130
+1 + purple Unnamed (-5000m)
+   124.170     3.970
+1 + purple Unnamed (1185m)
+   158.950    56.820
+1 + purple Unnamed (0m)
+  -143.170   -55.970
+1 + purple Unnamed (-1000m)
+  -140.300   -53.900
+1 + purple Unnamed (-2400m)
+   168.630   -25.780
+1 + purple Unnamed (-240m)
+   158.030    -8.920
+1 + purple Unnamed (-2500m)
+  -104.300     9.820
+1 + purple Unnamed (-115m)
+   121.180    21.830
+1 + purple Unnamed (-6000m)
+   134.750    20.930
+1 + purple Unnamed (-13m)
+  -175.530   -20.850
+1 + purple Unnamed (-108m)
+   -27.750    66.000
+1 + purple Unnamed (-24m)
+   121.750    20.330
+1 + purple Unnamed (0m)
+  -175.330   -21.070
+1 + purple Unnamed (0m)
+   -72.170   -56.250
+1 + purple Unnamed (-1650m)
+   -34.500    49.000
+1 + purple Unnamed (-150m)
+   153.330    48.080
+1 + purple Unnamed (0m)
+   148.570    -5.200
+1 + purple Unnamed (1197m)
+    36.258    33.150
+1 + purple Unnamed (-500m)
+  -175.650   -21.380
+1 + purple Unnamed (3750m)
+    44.250    42.450
+1 + purple Unnamed (-1415m)
+   -21.830     7.000
+1 + purple Unnamed (1800m)
+    38.950     8.620
+1 + purple Unnamed (-1528m)
+   -15.830    -0.580
+1 + purple Unnamed (2987m)
+   164.580   -73.450
+1 + purple Unnamed (1300m)
+    39.630     8.700
+1 + purple Unnamed (-500m)
+   163.000   -76.830
+1 + purple Unnamed (1800m)
+    39.070     8.070
+1 + purple Unnamed (1889m)
+    38.930     7.950
+1 + purple Unnamed (-5300m)
+   -24.500    -3.500
+1 + purple Unnamed (-2900m)
+   -21.450     4.200
+1 + purple Unnamed (3400m)
+    43.600    41.550
+1 + purple Unnamed (4200m)
+   -68.630   -20.830
+1 + purple Unnamed (1200m)
+    37.670     5.650
+1 + purple Unnamed (-642m)
+   -76.830   -33.620
+1 + purple Unnamed (-1500m)
+   -65.600    88.270
+1 + purple Unnamed (-4200m)
+   -38.080    38.750
+1 + purple Unnamed (-2835m)
+   -25.830    39.950
+1 + purple Unnamed (350m)
+   -25.670    37.780
+1 + purple Unnamed (-4000m)
+  -163.830    23.580
+1 + purple Unnamed (0m)
+  -115.000    28.000
+1 + purple Unnamed (-3200m)
+   144.480    26.130
+1 + purple Unnamed (0m)
+   150.850    -4.750
+1 + purple Unnamed (0m)
+   161.750    55.920
+1 + purple Unzen (1500m)
+   130.300    32.750
+1 + purple Upolu (1100m)
+  -171.720   -13.935
+1 + purple Urataman (678m)
+   152.230    47.120
+1 + purple Ushishur (401m)
+   152.800    47.520
+1 + purple Ushkovsky (3943m)
+   160.470    56.105
+1 + purple Usu (731m)
+   140.830    42.530
+1 + purple Usulutan (1449m)
+   -88.471    13.419
+1 + purple Utila Island (90m)
+   -86.900    16.100
+1 + purple Uturuncu (6008m)
+   -67.220   -22.270
+1 + purple Uwayrid, Harrat (1900m)
+    37.250    27.080
+1 + purple Uzon (1617m)
+   159.970    54.500
+1 + purple Vakak Group (3190m)
+    67.970    34.250
+1 + purple Valles Caldera (3430m)
+  -106.570    35.870
+1 + purple Vatnafjoll (1235m)
+   -19.670    63.920
+1 + purple Veer (350m)
+   158.420    53.630
+1 + purple Veniaminof (2507m)
+  -159.380    56.170
+1 + purple Verkhovoy (1400m)
+   159.530    56.520
+1 + purple Vernadskii Ridge (1183m)
+   155.970    50.550
+1 + purple Vestmannaeyjar (279m)
+   -20.280    63.430
+1 + purple Vesuvius (1281m)
+    14.426    40.821
+1 + purple Veteran (0m)
+   109.050     9.830
+1 + purple Victory (1925m)
+   149.070    -9.200
+1 + purple Viedma, Volcan (1300m)
+   -73.280   -49.358
+1 + purple Villarrica (2847m)
+   -71.930   -39.420
+1 + purple Vilyuchik (2173m)
+   158.300    52.680
+1 + purple Visoke (3711m)
+    29.492    -1.470
+1 + purple Visokiy (1234m)
+   157.930    52.430
+1 + purple Volcanico, Cerro (0m)
+   -71.650   -42.070
+1 + purple Voon, Tarso (3100m)
+    17.280    20.920
+1 + purple Voyampolsky (1225m)
+   160.620    58.370
+1 + purple Vsevidof (2149m)
+  -168.680    53.130
+1 + purple Vulcano (500m)
+    14.962    38.404
+1 + purple Vulsini (800m)
+    11.930    42.600
+1 + purple Waesche (3292m)
+  -126.880   -77.170
+1 + purple Waiowa (640m)
+   149.075    -9.570
+1 + purple Wallis Islands (143m)
+  -176.170   -13.300
+1 + purple Walo (15m)
+   150.900    -5.530
+1 + purple Wapi Lava Field (1604m)
+  -113.220    42.880
+1 + purple Washiba-Kumonotaira (2924m)
+   137.500    36.400
+1 + purple Washington (2376m)
+  -121.837    44.332
+1 + purple Wayang-Windu (2182m)
+   107.630    -7.208
+1 + purple Wells Gray-Clearwater (2015m)
+  -120.570    52.330
+1 + purple West Crater (1329m)
+  -122.080    45.880
+1 + purple West Eifel Volc Field (600m)
+     6.850    50.170
+1 + purple Westdahl (1654m)
+  -164.650    54.520
+1 + purple Whale Island (348m)
+   176.980   -37.858
+1 + purple Whangarei (397m)
+   174.270   -35.750
+1 + purple White Island (321m)
+   177.180   -37.520
+1 + purple Wilis (2563m)
+   111.758    -7.808
+1 + purple Wolf, Volcan (1710m)
+   -91.350     0.020
+1 + purple Wrangell (4317m)
+  -144.020    62.000
+1 + purple Wudalianchi (597m)
+   126.120    48.720
+1 + purple Wurlali (868m)
+   128.675    -7.125
+1 + purple Xianjindao (0m)
+   128.000    41.330
+1 + purple Yake-dake (2455m)
+   137.580    36.220
+1 + purple Yali (176m)
+    27.100    36.630
+1 + purple Yangudi (1383m)
+    41.042    10.580
+1 + purple Yantarni (1336m)
+  -157.180    57.020
+1 + purple Yanteles, Cerro (2050m)
+   -72.830   -43.420
+1 + purple Yar, Jabal (305m)
+    42.830    17.050
+1 + purple Yasur (361m)
+   169.425   -19.520
+1 + purple Yate (2187m)
+   -72.396   -41.755
+1 + purple Yeguada, La (1297m)
+   -80.910     8.523
+1 + purple Yelia (3384m)
+   145.858    -7.050
+1 + purple Yellowstone (2805m)
+  -110.670    44.430
+1 + purple Yersey (-3800m)
+   123.950    -7.530
+1 + purple Yojoa, Lake (1090m)
+   -87.980    14.980
+1 + purple Yomba (0m)
+   146.750    -4.920
+1 + purple Yotei (1893m)
+   140.820    42.830
+1 + purple Young Island (1340m)
+   162.450   -66.420
+1 + purple Yucamane (5550m)
+   -70.200   -17.180
+1 + purple Yumia, Cerro (4050m)
+   -67.500   -21.500
+1 + purple Yunaska (550m)
+  -170.630    52.630
+1 + purple Zacate Grande, Isla (600m)
+   -87.630    13.330
+1 + purple Zao (1841m)
+   140.450    38.150
+1 + purple Zaozerny (1349m)
+   159.950    56.880
+1 + purple Zapatera (629m)
+   -85.820    11.730
+1 + purple Zarechny (760m)
+   160.830    56.380
+1 + purple Zavaritsky (1567m)
+   158.385    53.905
+1 + purple Zavaritzki Caldera (624m)
+   151.950    46.925
+1 + purple Zavodovski (551m)
+   -27.570   -56.300
+1 + purple Zengyu (-418m)
+   122.458    26.180
+1 + purple Zheltovsky (1953m)
+   157.323    51.570
+1 + purple Zhupanovsky (2958m)
+   159.147    53.590
+1 + purple Zimina (3081m)
+   160.603    55.862
+1 + purple Zubair, Jebel (191m)
+    42.180    15.050
+1 + purple Zukur (624m)
+    42.750    14.020
+1 + purple Zuni-Bandera (2550m)
+  -108.000    34.800
