@@ -7,7 +7,7 @@
 ;                         Jet Propulsion Laboratory                        =
 ;                                   MISR                                   =
 ;                                                                          =
-;         Copyright 2007-2015, California Institute of Technology.         =
+;         Copyright 2007-2019, California Institute of Technology.         =
 ;                           ALL RIGHTS RESERVED.                           =
 ;                 U.S. Government Sponsorship acknowledged.                =
 ;                                                                          =
@@ -2391,7 +2391,7 @@ XMANAGER, 'test', baseID, /NO_BLOCK
 ; count the plume files. Red- and blue-band plumes are separate elements.
 ;---------------------------------------------------------------------------
 
-SPAWN, 'cd ' + ProjDir + '; ls 0* | grep "0*/*.txt$"', PlumeListAry
+SPAWN, 'cd ' + ProjDir + '; ls [0-1]* | grep "[0-1]*/*.txt$"', PlumeListAry
 num_plumes_list = N_ELEMENTS(PlumeListAry)
 
 ;---------------------------------------------------------------------------
@@ -2399,13 +2399,13 @@ num_plumes_list = N_ELEMENTS(PlumeListAry)
 ; directory, given the number of plume text files.
 ;---------------------------------------------------------------------------
 
-SPAWN, 'cd ' + ProjDir + '; ls 0* | grep "0*/*.png$"', png_ary
+SPAWN, 'cd ' + ProjDir + '; ls [0-1]* | grep "[0-1]*/*.png$"', png_ary
 num_png = N_ELEMENTS(png_ary)
 
-SPAWN, 'cd ' + ProjDir + '; ls 0* | grep "0*/*.jpg$"', jpg_ary
+SPAWN, 'cd ' + ProjDir + '; ls [0-1]* | grep "[0-1]*/*.jpg$"', jpg_ary
 num_jpg = N_ELEMENTS(jpg_ary)
 
-SPAWN, 'cd ' + ProjDir + '; ls 0* | grep "0*/*.mp4$"', mp4_ary
+SPAWN, 'cd ' + ProjDir + '; ls [0-1]* | grep "[0-1]*/*.mp4$"', mp4_ary
 num_mp4 = N_ELEMENTS(mp4_ary)
 
 WIDGET_CONTROL, baseID, /DESTROY
@@ -2493,10 +2493,11 @@ PRINTF, outunit, '-------------------------------'
 num_errors_x = 0
 
 FOR iplume=0,N_ELEMENTS(temp_plume_list)-1 DO BEGIN
-   subdir = STRMID(temp_plume_list[iplume], 1, 5)
+   subdir = STRMID(temp_plume_list[iplume], 1, 6)
    IF (STRMID(subdir, STRLEN(subdir)-1, 1) EQ '-') THEN $
       subdir = '0' + STRMID(subdir, 0, 4)
-   subdir = '0' + subdir
+   ; Commenting out. Needed for older version of MINX without leading0 in orbit   
+   ;subdir = '0' + subdir
    SPAWN, 'cd ' + ProjDir + '; ls -1 ' + subdir + !KON.Misc.Slash + $
           '*' + temp_plume_list[iplume] + '_* | wc -l', num_files1
    SPAWN, 'cd ' + ProjDir + '; ls -1 ' + subdir + !KON.Misc.Slash + $
@@ -2537,7 +2538,7 @@ XMANAGER, 'test', baseID, /NO_BLOCK
 ; (= num plumes * NFILE_PER_PLUME).
 ;---------------------------------------------------------------------------
 
-SPAWN, 'cd ' + ProjDir + '; ls -d 0*', orbit_list
+SPAWN, 'cd ' + ProjDir + '; ls -d [0-1]*', orbit_list
 
 PRINTF, outunit, ''
 PRINTF, outunit, 'Errors in per-Orbit File Count:'
@@ -2672,15 +2673,9 @@ WHILE (jj LT num_plumes_list AND kk LT num_plumes_rating) DO BEGIN
       PRINTF, outunit, FORMAT='(2(A-18,2X),2X,A7)', PlumeListAry[jj], $
               PlumeRatingAry[kk]
       num_errors_x += 1
-      IF (PlumeListAry[jj] LT PlumeRatingAry[kk]) THEN BEGIN
-         jj += 1
-      ENDIF ELSE BEGIN
-         kk += 1
-      ENDELSE
-   ENDIF ELSE BEGIN
-      jj += 1
-      kk += 1
-   ENDELSE
+   ENDIF
+   jj += 1
+   kk += 1
 ENDWHILE
 
 IF (num_errors_x EQ 0) THEN PRINTF, outunit, 'None'

@@ -7,7 +7,7 @@
 ;                         Jet Propulsion Laboratory                        =
 ;                                   MISR                                   =
 ;                                                                          =
-;         Copyright 2007-2015, California Institute of Technology.         =
+;         Copyright 2007-2019, California Institute of Technology.         =
 ;                           ALL RIGHTS RESERVED.                           =
 ;                 U.S. Government Sponsorship acknowledged.                =
 ;                                                                          =
@@ -129,9 +129,9 @@ FileName = STRMID(hdf_filename, nlen)
 ; Determine the orbit number.
 ;-----------------------------------------------------------------------
 
-npos = STRPOS(FileName, '_O0')
+npos = STRPOS(FileName, '_O')
 PathNum = FIX(STRMID(FileName, npos-3, 3))
-OrbitNum = LONG(STRMID(FileName, npos+3, 5))
+OrbitNum = LONG(STRMID(FileName, npos+2, 6))
 
 ;-----------------------------------------------------------------------
 ; Find the first and last block number from the file.
@@ -200,9 +200,9 @@ COMPILE_OPT IDL2, LOGICAL_PREDICATE
   ; as for the AS Surface file.
   ;--------------------------------------------------------------------
 
-  npos = STRPOS(FileName, '_O0')
+  npos = STRPOS(FileName, '_O')
   path_num = FIX(STRMID(FileName, npos-3, 3))
-  orbit_num = LONG(STRMID(FileName, npos+3, 5))
+  orbit_num = LONG(STRMID(FileName, npos+2, 6))
 
   IF (orbit_num NE OrbitNum) THEN BEGIN
     mmsg = ['Orbit number for Terrain file must', $

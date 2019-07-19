@@ -7,7 +7,7 @@
 ;                         Jet Propulsion Laboratory                        =
 ;                                   MISR                                   =
 ;                                                                          =
-;         Copyright 2007-2015, California Institute of Technology.         =
+;         Copyright 2007-2019, California Institute of Technology.         =
 ;                           ALL RIGHTS RESERVED.                           =
 ;                 U.S. Government Sponsorship acknowledged.                =
 ;                                                                          =
@@ -333,6 +333,10 @@ wTopWorkBase = WIDGET_INFO(wAnimateBase, FIND_BY_UNAME='TOP_WORK_BASE')
 WIDGET_CONTROL, wTopWorkBase, GET_UVALUE = state, /NO_COPY
 ret = 0
 
+; If state still isn't set, just return here
+IF state EQ !NULL THEN $
+  RETURN, ret
+  
 NCAMS = state.nframes - 1
 
 state.mousebtnstatus = 0

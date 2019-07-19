@@ -7,7 +7,7 @@
 ;                         Jet Propulsion Laboratory                        =
 ;                                   MISR                                   =
 ;                                                                          =
-;         Copyright 2007-2015, California Institute of Technology.         =
+;         Copyright 2007-2019, California Institute of Technology.         =
 ;                           ALL RIGHTS RESERVED.                           =
 ;                 U.S. Government Sponsorship acknowledged.                =
 ;                                                                          =
@@ -651,16 +651,26 @@ Retval = -1
 ;------------------------------------------------------------------------
 ; Load aerosol data for all the passed in points.
 ;------------------------------------------------------------------------
+IF (~ !SAV.Digitize.AS_22_OR_23) THEN BEGIN
+  GetPgeAerosolData, State, CoordStruct, NumPts, MisrCoords, AerTau_BE, $
+                     AerTau_LR, AerAngexp_BE, AerAngexp_LR, AerSsa, $
+                     AerTauFrac, retval
+  
+  IF (retval LT 0) THEN BEGIN
+     mssg = 'Could not load AEROSOL standard product data'
+     rval = DIALOG_MESSAGE(mssg, /ERROR, /CENTER)
+     RETURN
+  ENDIF
+ENDIF ELSE BEGIN
+  GetPgeAerosolV23Data, State, CoordStruct, NumPts, MisrCoords, AerTau_BE, $
+    AerAngexp_BE, AerSsa, AerTauFrac, retval
 
-GetPgeAerosolData, State, CoordStruct, NumPts, MisrCoords, AerTau_BE, $
-                   AerTau_LR, AerAngexp_BE, AerAngexp_LR, AerSsa, $
-                   AerTauFrac, retval
-
-IF (retval LT 0) THEN BEGIN
-   mssg = 'Could not load AEROSOL standard product data'
-   rval = DIALOG_MESSAGE(mssg, /ERROR, /CENTER)
-   RETURN
-ENDIF
+  IF (retval LT 0) THEN BEGIN
+    mssg = 'Could not load AEROSOL V23 standard product data'
+    rval = DIALOG_MESSAGE(mssg, /ERROR, /CENTER)
+    RETURN
+  ENDIF
+ENDELSE
 
 ;------------------------------------------------------------------------
 ; Store the aerosol data for the digitized points in the point

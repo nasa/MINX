@@ -7,7 +7,7 @@
 ;                           Jet Propulsion Laboratory                      =
 ;                                     MISR                                 =
 ;                                                                          =
-;           Copyright 2007-2015, California Institute of Technology.       =
+;           Copyright 2007-2019, California Institute of Technology.       =
 ;                             ALL RIGHTS RESERVED.                         =
 ;                   U.S. Government Sponsorship acknowledged.              =
 ;                                                                          =

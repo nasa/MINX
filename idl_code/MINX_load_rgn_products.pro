@@ -7,7 +7,7 @@
 ;                         Jet Propulsion Laboratory                        =
 ;                                   MISR                                   =
 ;                                                                          =
-;         Copyright 2007-2015, California Institute of Technology.         =
+;         Copyright 2007-2019, California Institute of Technology.         =
 ;                           ALL RIGHTS RESERVED.                           =
 ;                 U.S. Government Sponsorship acknowledged.                =
 ;                                                                          =
@@ -1514,8 +1514,8 @@ COMMON gmp_data, Cam_Azimuth, Cam_Zenith, Cam_Scatter, Cam_Glitter, $
 
 COMPILE_OPT IDL2, LOGICAL_PREDICATE
 
-DEBUG_PLT = 0  ;  set to 0 for production,
-               ;   1 for hi-res display test, 2 for lo-res
+DEBUG_PLT = 0  ; set to 0 for production,
+               ;            1 for hi-res display test, 2 for lo-res
 Retval = -1
 
 ;---------------------------------------------------------------------------
@@ -2225,6 +2225,280 @@ Angexp_LR_Grid = 0
 Taufrac_Grid = 0
 
 END  ;  GetPgeAerosolData
+
+;***************************************************************************
+PRO GetPgeAerosolV23Data, State, CoordStruct, NumPts, MisrCoords, AerTau_BE, $
+AerAngexp_BE, AerSsa, AerTauFrac, Retval
+;***************************************************************************
+; Load aerosol data fields corresponding to all blocks currently loaded.
+; All fields used are floats and all have -9999.0 as bad value fill.
+;---------------------------------------------------------------------------
+
+COMMON aer_data, Tau_BE_Grid, Angexp_BE_Grid, Ssa_Grid, Taufrac_Grid
+
+COMPILE_OPT IDL2, LOGICAL_PREDICATE
+
+Retval = -1
+
+AerTau_BE = 0
+AerSsa = 0
+AerAngexp_BE = 0
+AerTauFrac = 0
+
+;---------------------------------------------------------------------------
+; If aerosol data are already loaded, don't do it again.
+;---------------------------------------------------------------------------
+
+IF (~ !VAR.CurrFiles.AE2_Loaded) THEN BEGIN
+
+  whichorbit = (State.curframe GT 9)
+
+  ;------------------------------------------------------------------------
+  ; Set the orbit number string.
+  ;------------------------------------------------------------------------
+
+  orbit_str = STRTRIM(STRING(CoordStruct.(whichorbit).OrbitNum),2)
+
+  ;------------------------------------------------------------------------
+  ; Get the filename for aerosol data for this MISR path.
+  ;------------------------------------------------------------------------
+
+  file_filter = ['MISR*AEROSOL*' + orbit_str + '*.nc']
+  temp_AE2file = !VAR.CurrFiles.AE2file
+  GetLastFilename, CoordStruct.(whichorbit).PathNum, $
+    !KON.FileTyp.TypeAerosolNew, file_filter, 0, $
+    file_outpath, temp_AE2file
+  !VAR.CurrFiles.AE2file = temp_AE2file
+  IF (!VAR.CurrFiles.AE2file EQ '') THEN BEGIN
+    Retval = -2
+    RETURN
+  ENDIF
+
+  IF (~ FILE_TEST(!VAR.CurrFiles.AE2file)) THEN RETURN
+
+  ;------------------------------------------------------------------------
+  ; Set hourglass cursor.
+  ;------------------------------------------------------------------------
+
+  WIDGET_CONTROL, /HOURGLASS
+
+  ;------------------------------------------------------------------------
+  ; Loop over the bands for TAU best estimate field. Allocate arrays the
+  ; first time they are used after we know their size. All fields are in
+  ; the same grid, so open file and grid at beginning and close at end.
+  ;------------------------------------------------------------------------
+
+  OpenShut = [!KON.ProdTyp.OPEN_F, !KON.ProdTyp.KEEP_F]
+
+  Tau_BE_Grid = 0
+  databuf = 0
+  FOR iband=0,3 DO BEGIN
+
+    LoadHdf5Data, whichorbit, OpenShut, 1, !VAR.CurrFiles.AE2file, 'AS_V23_TAU_BE', $
+      iband, CoordStruct.(whichorbit).BlkBeg, $
+      CoordStruct.(whichorbit).BlkEnd, file_id, grid_id, $
+      databuf, status
+
+    IF (iband EQ 0) THEN $
+      OpenShut = [!KON.ProdTyp.KEEP_F, !KON.ProdTyp.KEEP_F]
+
+    IF (status NE 0) THEN BEGIN
+      mssg = 'LoadHdf5Data failed for Aerosol best estimate optical depth.'
+      rval = DIALOG_MESSAGE(mssg, /ERROR, /CENTER)
+      GOTO, cleanup14
+    ENDIF
+
+    IF (iband EQ 0) THEN $
+      Tau_BE_Grid = FLTARR(4,(SIZE(databuf))[1], $
+      (SIZE(databuf))[2]) + !KON.Misc.BADVALUE_REAL
+    Tau_BE_Grid[iband,*,*] = databuf
+
+  ENDFOR
+
+  ;------------------------------------------------------------------------
+  ; Loop over the bands for SSA field. Allocate arrays the first time they
+  ; are are used after we know their size.
+  ;------------------------------------------------------------------------
+
+  Ssa_Grid = 0
+  databuf = 0
+
+  FOR iband=0,3 DO BEGIN
+
+    LoadHdf5Data, whichorbit, OpenShut, 1, !VAR.CurrFiles.AE2file, 'AS_V23_SSA', $
+      iband, CoordStruct.(whichorbit).BlkBeg, $
+      CoordStruct.(whichorbit).BlkEnd, file_id, grid_id, $
+      databuf, status
+
+    IF (status NE 0) THEN BEGIN
+      mssg = 'LoadHdf5Data failed for Aerosol single scatter albedo.'
+      rval = DIALOG_MESSAGE(mssg, /ERROR, /CENTER)
+      GOTO, cleanup14
+    ENDIF
+
+    IF (iband EQ 0) THEN $
+      Ssa_Grid = FLTARR(4,(SIZE(databuf))[1], $
+      (SIZE(databuf))[2]) + !KON.Misc.BADVALUE_REAL
+    Ssa_Grid[iband,*,*] = databuf
+
+  ENDFOR
+
+  ;------------------------------------------------------------------------
+  ; Loop over the bands for TAU fraction field. Allocate arrays the first
+  ; time they are used after we know their size. Only data for the green
+  ; band are loaded. The 5 particle types are [small, medium, large,
+  ; spherical, non-spherical]
+  ;------------------------------------------------------------------------
+
+  Taufrac_Grid = 0
+  databuf = 0
+
+  FOR ipart=0,4 DO BEGIN
+    ; spherical fraction is derived as 1 - non-spherical 
+    IF (ipart EQ 3) THEN CONTINUE 
+    LoadHdf5Data, whichorbit, OpenShut, 1, !VAR.CurrFiles.AE2file, 'AS_V23_FRC', $
+      ipart, CoordStruct.(whichorbit).BlkBeg, $
+      CoordStruct.(whichorbit).BlkEnd, file_id, grid_id, $
+      databuf, status
+
+    IF (status NE 0) THEN BEGIN
+      mssg = 'LoadHdf5Data failed for Aerosol optical depth fraction.'
+      rval = DIALOG_MESSAGE(mssg, /ERROR, /CENTER)
+      GOTO, cleanup14
+    ENDIF
+
+    IF (ipart EQ 0) THEN BEGIN
+      Taufrac_Grid = FLTARR(5,(SIZE(databuf))[1], $
+      (SIZE(databuf))[2]) + !KON.Misc.BADVALUE_REAL
+    ENDIF
+    
+    Taufrac_Grid[ipart,*,*] = databuf
+    
+    ; Once we know non-spherical (ipart == 4), fill in spherical (ipart == 3)
+    IF (ipart EQ 4) THEN BEGIN
+      nonsphericalGoodIdx = WHERE(databuf NE !KON.Misc.BADVALUE_REAL, /NULL)
+      sphericalBuf = FLTARR((SIZE(databuf))[1], (SIZE(databuf))[2]) + !KON.Misc.BADVALUE_REAL
+      IF (nonsphericalGoodIdx NE !NULL) THEN BEGIN
+        sphericalBuf[nonsphericalGoodIdx] = 1. - databuf[nonsphericalGoodIdx]
+        Taufrac_Grid[3,*, *] = sphericalBuf
+      ENDIF
+    ENDIF
+  ENDFOR
+
+  ;------------------------------------------------------------------------
+  ; Get data for best estimate angstrom exponent field.
+  ;------------------------------------------------------------------------
+
+  Angexp_BE_Grid = 0
+  databuf = 0
+
+  LoadHdf5Data, whichorbit, OpenShut, 1, !VAR.CurrFiles.AE2file, 'AS_V23_AEX_BE', $
+    0, CoordStruct.(whichorbit).BlkBeg, $
+    CoordStruct.(whichorbit).BlkEnd, file_id, grid_id, $
+    databuf, status
+
+  IF (status NE 0) THEN BEGIN
+    mssg = 'LoadHdf5Data failed for Aerosol best estimate angstrom exponent.'
+    rval = DIALOG_MESSAGE(mssg, /ERROR, /CENTER)
+    GOTO, cleanup14
+  ENDIF
+
+  Angexp_BE_Grid = databuf
+ENDIF
+;---------------------------------------------------------------------------
+; Return if user didn't ask to get values at specific points.
+;---------------------------------------------------------------------------
+
+!VAR.CurrFiles.AE2_Loaded = 1
+databuf = 0
+Retval = 0
+IF (NumPts EQ 0) THEN RETURN
+
+;---------------------------------------------------------------------------
+; Allocate arrays. Caller must free them when done. This is currently done
+; only for best estimate parameters.
+;---------------------------------------------------------------------------
+
+Retval = -1
+
+AerTau_BE    = FLTARR(4,NumPts) + !KON.Misc.BADVALUE_REAL
+AerSsa       = FLTARR(4,NumPts) + !KON.Misc.BADVALUE_REAL
+AerTauFrac   = FLTARR(5,NumPts) + !KON.Misc.BADVALUE_REAL
+AerAngExp_BE = FLTARR(NumPts)   + !KON.Misc.BADVALUE_REAL
+
+;---------------------------------------------------------------------------
+; Get the size of the aerosol images at their resolution.
+;---------------------------------------------------------------------------
+
+sizes = SIZE(Angexp_BE_Grid)
+
+;---------------------------------------------------------------------------
+; Get the resolution coversion factors.
+;---------------------------------------------------------------------------
+
+dims = !KON.ProdTyp.ProdParms[!KON.ProdTyp.PROD_AS_V23_TAU_BE].Dims
+
+cross_ratio = FLOAT(!KON.Instr.HI_RES_PIX_CROSS) / dims[0]
+along_ratio = FLOAT(!KON.Instr.HI_RES_PIX_ALONG) / dims[1]
+
+;---------------------------------------------------------------------------
+; Convert points from block, line, sample to window coords, then convert
+; coordinates to the correct resolution. Window coordinates are the same as
+; "assembled" block coordinates except along-track coordinates are inverted
+; (bottom-to-top vs top-to-bottom), so don't do it again in MisrCrdToWndwCrd
+; (Invert = 0).
+;---------------------------------------------------------------------------
+
+MisrCrdToWndwCrd, State.Curframe, MisrCoords, wndw_crds, 0, Retval
+
+wndw_crds[0,*] = (FLOOR(wndw_crds[0,*] / cross_ratio) > 0) < (sizes[1] - 1)
+wndw_crds[1,*] = (FLOOR(wndw_crds[1,*] / along_ratio) > 0) < (sizes[2] - 1)
+
+;---------------------------------------------------------------------------
+; Loop over the points on the profile.
+;---------------------------------------------------------------------------
+
+FOR ipt=0,NumPts-1 DO BEGIN
+
+  ;------------------------------------------------------------------------
+  ; Copy the desired points to the return array.
+  ;------------------------------------------------------------------------
+
+  FOR iband=0,3 DO BEGIN
+    AerTau_BE[iband,ipt] = Tau_BE_Grid[iband,wndw_crds[0,ipt],wndw_crds[1,ipt]]
+    AerSsa[iband,ipt] = Ssa_Grid[iband,wndw_crds[0,ipt],wndw_crds[1,ipt]]
+  ENDFOR
+
+  FOR ipart=0,4 DO BEGIN
+    AerTauFrac[ipart,ipt] = Taufrac_Grid[ipart,wndw_crds[0,ipt],wndw_crds[1,ipt]]
+  ENDFOR
+
+  AerAngExp_BE[ipt] = Angexp_BE_Grid[wndw_crds[0,ipt],wndw_crds[1,ipt]]
+
+ENDFOR
+
+sizes = 0
+dims = 0
+wndw_crds = 0
+Retval = 0
+
+RETURN
+
+;---------------------------------------------------------------------------
+; Clean up the data on failure.
+;---------------------------------------------------------------------------
+
+cleanup14:
+!VAR.CurrFiles.AE2_Loaded = 0
+sizes = 0
+dims = 0
+wndw_crds = 0
+Tau_BE_Grid = 0
+Ssa_Grid = 0
+Angexp_BE_Grid = 0
+Taufrac_Grid = 0
+
+END  ;  GetPgeAerosolV23Data
 
 ;***************************************************************************
 PRO GetPgeLandData, State, CoordStruct, NumPts, MisrCoords, BHRdata, $
@@ -3834,6 +4108,431 @@ edges = 0
 Status = 0
 
 END  ;  LoadHdfData
+
+;****************************************************************************
+PRO LoadHdf5BlockInfo, Whichorbit, FileName, ProductName, ProdStruct, Ifield, $
+                       Blk, begX, begY, sizeX, sizeY, Status
+;****************************************************************************
+; Read block Xdim and Ydmin values for MISR V23 products
+;----------------------------------------------------------------------------
+
+COMMON coord_data, CoordStruct
+
+Status   = -1
+DO_DEBUG =  0
+
+;----------------------------------------------------------------------------
+; Make sure the file contains the block needed.
+;----------------------------------------------------------------------------
+
+GetFirstLastBlocks, FileName, begBlk, endBlk, Retval
+
+IF (Retval NE 0) THEN RETURN
+
+IF (begBlk GT Blk OR endBlk LT Blk) THEN BEGIN
+  mssg = ['File does not contain the MISR block requested.', $
+    'Correct the problem before trying again.']
+  rtrn = DIALOG_MESSAGE(mssg, /CENTER, /ERROR)
+  RETURN
+ENDIF
+
+;----------------------------------------------------------------------------
+; Set an error handler.
+;----------------------------------------------------------------------------
+
+CATCH, iErr
+IF (iErr NE 0) THEN BEGIN
+  mssg = ['There is a problem reading data from file:', FileName, $
+    'Fix the problem and try running again.']
+  rval = DIALOG_MESSAGE(mssg, /ERROR, /CENTER)
+  CATCH, /CANCEL
+  RETURN
+ENDIF
+
+FileId = H5F_OPEN(FileName)
+IF (FileId LT 0) THEN BEGIN
+  mssg = ['Error attempting to open file:', FileName]
+  rtrn = DIALOG_MESSAGE(mssg, /CENTER, /ERROR)
+  CATCH, /CANCEL
+  RETURN
+ENDIF
+
+BlockDatasetId = H5D_OPEN(FileId, ProdStruct.GridName + 'Block_Number')
+IF (BlockDatasetId LT 0) THEN BEGIN
+  mssg = ['Error attempting to open Block_Number field.']
+  rtrn = DIALOG_MESSAGE(mssg, /CENTER, /ERROR)
+  CATCH, /CANCEL
+  RETURN
+ENDIF
+BlockArr = H5D_READ(BlockDatasetId)
+H5D_CLOSE, BlockDatasetId
+BlockIndex = VALUE_LOCATE(BlockArr, Blk)
+
+XDatasetId = H5D_OPEN(FileId, ProdStruct.GridName + 'Block_Start_X_Index')
+IF (XDatasetId LT 0) THEN BEGIN
+  mssg = ['Error attempting to open Block_Start_X_Index field.']
+  rtrn = DIALOG_MESSAGE(mssg, /CENTER, /ERROR)
+  CATCH, /CANCEL
+  RETURN
+ENDIF
+XDimArr = H5D_READ(XDatasetId)
+H5D_CLOSE, XDatasetId
+begX = XDimArr[BlockIndex]
+
+YDatasetId = H5D_OPEN(FileId, ProdStruct.GridName + 'Block_Start_Y_Index')
+IF (XDatasetId LT 0) THEN BEGIN
+  mssg = ['Error attempting to open Block_Start_Y_Index field.']
+  rtrn = DIALOG_MESSAGE(mssg, /CENTER, /ERROR)
+  CATCH, /CANCEL
+  RETURN
+ENDIF
+YDimArr = H5D_READ(YDatasetId)
+H5D_CLOSE, YDatasetId
+begY = YDimArr[BlockIndex]
+
+GridGroupId = H5G_OPEN(FileId, ProdStruct.GridName)
+IF (GridGroupId LT 0) THEN BEGIN
+  mssg = ['Error attempting to open group: ', ProdStruct.GridName]
+  rtrn = DIALOG_MESSAGE(mssg, /CENTER, /ERROR)
+  CATCH, /CANCEL
+  RETURN
+ENDIF
+
+BlockXSizeId = H5A_OPEN_NAME(GridGroupId, 'block_size_in_lines')
+BlockXSize = H5A_READ(BlockXSizeId)
+H5A_CLOSE, BlockXSizeId
+sizeX = BlockXSize
+
+BlockYSizeId = H5A_OPEN_NAME(GridGroupId, 'block_size_in_samples')
+BlockYSize = H5A_READ(BlockYSizeId)
+H5A_CLOSE, BlockYSizeId
+sizeY = BlockYSize
+
+H5G_CLOSE, GridGroupId
+
+H5F_CLOSE, FileId
+Status = 0
+
+END  ;  LoadHdf5BlockInfo
+
+;****************************************************************************
+PRO LoadHdf5Data, Whichorbit, OpenShut, OffsetBlks, FileName, ProductName, $
+  Ifield, BlkBeg, BlkEnd, FileId, GridId, DataAry, Status
+;****************************************************************************
+; Read the requested data field from a MISR V23 standard product and offset it
+; to assemble the blocks into a smooth swath if requested.
+;----------------------------------------------------------------------------
+
+  COMMON coord_data, CoordStruct
+
+  Status   = -1
+  DO_DEBUG =  0
+
+  ;----------------------------------------------------------------------------
+  ; Make sure the file contains the block range needed.
+  ;----------------------------------------------------------------------------
+
+  GetFirstLastBlocks, Filename, begBlk, endBlk, Retval
+
+  IF (Retval NE 0) THEN RETURN
+
+  IF (begBlk GT BlkBeg OR endBlk LT BlkEnd) THEN BEGIN
+    mssg = ['File does not contain all the MISR blocks requested.', $
+      'Correct the problem before trying again.']
+    rtrn = DIALOG_MESSAGE(mssg, /CENTER, /ERROR)
+    RETURN
+  ENDIF
+
+  ;----------------------------------------------------------------------------
+  ; Find the requested product type and field.
+  ;----------------------------------------------------------------------------
+  found = 0
+
+  FOR iprod=0,!KON.ProdTyp.MaxGrids-1 DO BEGIN
+    IF (ProductName EQ !KON.ProdTyp.ProdParms[iprod].ProductName) THEN BEGIN
+      ProdStruct = !KON.ProdTyp.ProdParms[iprod]
+      found = 1
+      BREAK
+    ENDIF
+  ENDFOR
+
+  IF (~found) THEN BEGIN
+    mssg = 'Could not find product name: ' + ProductName
+    rval = DIALOG_MESSAGE(mssg, /ERROR, /CENTER)
+    RETURN
+  ENDIF
+  
+  ;----------------------------------------------------------------------------
+  ; Update the block begin and end values.
+  ;----------------------------------------------------------------------------
+
+  ProdStruct.Dims[2]   = BlkEnd - BlkBeg + 1
+  ProdStruct.Starts[2] = BlkBeg - 1  
+  
+  ;----------------------------------------------------------------------------
+  ; Set an error handler.
+  ;----------------------------------------------------------------------------
+  CATCH, iErr
+  IF (iErr NE 0) THEN BEGIN
+    mssg = ['There is a problem reading data from file:', FileName, $
+      'Fix the problem and try running again.']
+    rval = DIALOG_MESSAGE(mssg, /ERROR, /CENTER)
+    CATCH, /CANCEL
+    RETURN
+  ENDIF  
+  
+  ;----------------------------------------------------------------------------
+  ; Open the File for reading
+  ;----------------------------------------------------------------------------
+  FileId = H5F_OPEN(filename)
+  IF (FileId LT 0) THEN BEGIN
+    mssg = ['Error attempting to open file:', FileName]
+    rtrn = DIALOG_MESSAGE(mssg, /CENTER, /ERROR)
+    CATCH, /CANCEL
+    RETURN
+  ENDIF
+
+  ;----------------------------------------------------------------------------
+  ; Open the Dataset for reading
+  ;----------------------------------------------------------------------------
+  DatasetId = H5D_OPEN(FileId, ProdStruct.GridName + ProdStruct.FieldNames[Ifield])
+  IF (DatasetId LT 0) THEN BEGIN
+    mssg = ['Error attempting to open field: ', ProdStruct.GridName + ProdStruct.FieldNames[Ifield]]
+    rtrn = DIALOG_MESSAGE(mssg, /CENTER, /ERROR)
+    CATCH, /CANCEL
+    RETURN
+  ENDIF
+  DataspaceId = H5D_GET_SPACE(DatasetId)
+  
+  blockXstart = []
+  blockYstart = []
+  dataAry = []
+  
+  ;----------------------------------------------------------------------------
+  ; Read data one block at a time
+  ;----------------------------------------------------------------------------
+  FOR currBlock=BlkBeg,BlkEnd DO BEGIN
+    ;----------------------------------------------------------------------------
+    ; Lookup the block begin and end values as well as block size
+    ;----------------------------------------------------------------------------
+    LoadHdf5BlockInfo, Whichorbit, FileName, ProductName, ProdStruct, Ifield, currBlock, begX, begY, sizeX, sizeY, Status
+    IF (Status NE 0) THEN BEGIN
+      mssg = ['There is a problem reading data from file:', FileName, $
+        'Fix the problem and try running again.']
+      rval = DIALOG_MESSAGE(mssg, /ERROR, /CENTER)
+      CATCH, /CANCEL
+      RETURN
+    ENDIF
+    blockXstart = [blockXstart, [begX]]
+    blockYstart = [blockYstart, [begY]]
+    blockXsize = sizeX
+    blockYsize = sizeY
+    start = [begY, begX]
+    count = [sizeY, sizeX]
+    H5S_SELECT_HYPERSLAB, DataspaceId, start, count, /RESET
+    MemoryspaceId = H5S_CREATE_SIMPLE(count)
+    ;----------------------------------------------------------------------------
+    ; Read a single block of data and concat to end of dataAry
+    ;----------------------------------------------------------------------------    
+    blockAry = H5D_READ(DatasetId, FILE_SPACE=DataspaceId, MEMORY_SPACE=MemoryspaceId)    
+    dataAry = [[dataAry], [blockAry]]
+  ENDFOR
+  
+  ;----------------------------------------------------------------------------
+  ; Get the value which acts as the threshold below which (if negative) or
+  ; above which (if positive) the value is not valid.
+  ;----------------------------------------------------------------------------
+
+  BadValue = ProdStruct.BadValues[Ifield]
+  
+  
+  IF ProductName EQ 'AS_V23_TAU_BE' THEN BEGIN
+    ;----------------------------------------------------------------------------
+    ; For the new AEROSOL product, we don't report AOD at MISR wavelengths directly
+    ; AOD(lambda) = (c1 * lambda^2) + (c2 * lambda) + c3 where lambda is in micron
+    ;----------------------------------------------------------------------------
+    lambda = !KON.Instr.BAND_WAVELENGTHS[Ifield] / 1000. ; Convert from nm to micron
+    ;----------------------------------------------------------------------------
+    ; Read the scaling coefficients (c1, c2, c3)
+    ;----------------------------------------------------------------------------
+    ;----------------------------------------------------------------------------
+    ; Open the Dataset for reading
+    ;----------------------------------------------------------------------------
+    coeffDatasetId = H5D_OPEN(FileId, ProdStruct.GridName + 'Spectral_AOD_Scaling_Coeff')
+    IF (coeffDatasetId LT 0) THEN BEGIN
+      mssg = ['Error attempting to open field: ', ProdStruct.GridName + 'Spectral_AOD_Scaling_Coeff']
+      rtrn = DIALOG_MESSAGE(mssg, /CENTER, /ERROR)
+      CATCH, /CANCEL
+      RETURN
+    ENDIF
+    coeffDataspaceId = H5D_GET_SPACE(coeffDatasetId)    
+    coeffAry = []
+    FOR currBlock=BlkBeg,BlkEnd DO BEGIN
+      blkIndex = currBlock - BlkBeg
+      coeffStart = [0, blockYstart[blkIndex], blockXstart[blkIndex]]
+      ; sizeY, sizeX from reading primary AOD field above
+      coeffCount = [3, sizeY, sizeX]
+      
+      H5S_SELECT_HYPERSLAB, coeffDataspaceId, coeffStart, coeffCount, /RESET
+      coeffMemoryspaceId = H5S_CREATE_SIMPLE(coeffCount)
+
+      coeffBlockAry = H5D_READ(coeffDatasetId, FILE_SPACE=coeffDataspaceId, MEMORY_SPACE=coeffMemoryspaceId)
+      coeffAry = [[coeffAry], [coeffBlockAry]]
+    ENDFOR    
+    
+    c1 = REFORM(coeffAry[0, *,*])
+    c2 = REFORM(coeffAry[1, *,*])
+    c3 = REFORM(coeffAry[2, *,*])
+    coeffGoodIdx = WHERE(c1 NE BadValue, COMPLEMENT=coeffBadIdx, /NULL)
+    
+    dataGoodIdx = WHERE(dataAry NE BadValue, COMPLEMENT=dataBadIdx, /NULL)
+    
+    IF (dataGoodIdx NE !NULL) THEN BEGIN
+      dataAry[dataGoodIdx] = (c1[dataGoodIdx] * lambda^2) + (c2[dataGoodIdx] * lambda) + $
+                         (c3[dataGoodIdx])
+      ; Reset fill-values to fill-values if changed
+      dataAry[dataBadIdx] = BadValue
+      dataAry[coeffBadIdx] = BadValue
+    ENDIF
+    
+  ENDIF ;END IF ProductName EQ 'AS_V23_TAU_BE'
+
+  ;----------------------------------------------------------------------------
+  ; If done reading fields, close the Dataset and File. Cancel error handler.
+  ;----------------------------------------------------------------------------
+  H5D_CLOSE, DatasetId
+  H5F_CLOSE, FileId
+  CATCH, /CANCEL
+  
+  ; Setup fields used for offseting
+  ary_size  = SIZE(DataAry)
+  numBlk = BlkEnd - BlkBeg + 1
+  AryWidth  = ProdStruct.Dims[0]
+  AryHeight = ProdStruct.Dims[1]
+  TotHeight = ary_size[2]
+
+  IF (numBlk GT 1) THEN $
+    DataAry = REFORM(DataAry, [AryWidth, TotHeight], /OVERWRITE)
+
+
+
+  ;----------------------------------------------------------------------------
+  ; If we don't want to offset the blocks, then we're done.
+  ;----------------------------------------------------------------------------
+  numBlk = BlkEnd - BlkBeg + 1
+  IF (OffsetBlks EQ 0 OR numBlk EQ 1) THEN BEGIN
+    ProdStruct = 0
+    Status = 0
+    RETURN
+  ENDIF
+
+  ;----------------------------------------------------------------------------
+  ; Get the cumulative block offsets that were loaded from L1B2 AN file at
+  ; onset and are applicable to all MISR products for the same orbit. Offsets
+  ; are stored as multiples of 275 m pixels, and 64 pixels is the basic block
+  ; offset value. Cumulative values represent the number of pixels that blocks
+  ; must be moved left or right as the block number increases. Negative values
+  ; means move toward the left.
+  ;----------------------------------------------------------------------------
+
+  LoadedBlkBeg = CoordStruct.(Whichorbit).BlkBeg - 1
+  LoadedBlkEnd = CoordStruct.(Whichorbit).BlkEnd - 1
+  RequestBlkBeg = ProdStruct.Starts[2]
+  RequestBlkEnd = RequestBlkBeg + ProdStruct.Dims[2] - 1
+  begndx = RequestBlkBeg - LoadedBlkBeg
+  endndx = RequestBlkEnd - LoadedBlkBeg
+  blk_offsets = REFORM((*CoordStruct.(Whichorbit).BlkPixOffset)[begndx:endndx,1])
+
+  ;----------------------------------------------------------------------------
+  ; Compute the cumulative offsets for this data field's resolution. Handle the
+  ; stereo wind products specially, because the pixel size is > 64 L1B2 pixels.
+  ;----------------------------------------------------------------------------
+
+  blk_offsets = blk_offsets * AryWidth / 2048
+
+  ExpWidthLeft  = MIN(blk_offsets)
+  ExpWidthRight = MAX(blk_offsets)
+
+  ;----------------------------------------------------------------------------
+  ; Create a second array to concatenate with each block of the data array.
+  ; When added, the resulting image width is large enough to accommodate the
+  ; block offsets. Fill the array with the appropriate bad value indicators.
+  ; Concatenate the arrays. The data array is on the right.
+  ;----------------------------------------------------------------------------
+
+  IF (ExpWidthLeft LT 0) THEN BEGIN
+    data_type = (ary_size)[N_ELEMENTS(ary_size)-2]
+    ExpandAry = MAKE_ARRAY(ABS(ExpWidthLeft), TotHeight, TYPE=data_type, $
+      VALUE=BadValue)
+    DataAry   = [ExpandAry, DataAry]
+    ExpandAry = 0
+  ENDIF
+
+  IF (ExpWidthRight GT 0) THEN BEGIN
+    data_type = (ary_size)[N_ELEMENTS(ary_size)-2]
+    ExpandAry = MAKE_ARRAY(ExpWidthRight, TotHeight, TYPE=data_type, $
+      VALUE=BadValue)
+    DataAry   = [DataAry, ExpandAry]
+    ExpandAry = 0
+  ENDIF
+
+  ;----------------------------------------------------------------------------
+  ; Apply the cumulative block offsets to create a smooth swath image by moving
+  ; data left within each block by the offset appropriate to the resolution.
+  ;----------------------------------------------------------------------------
+
+  IF (numBlk GT 1) THEN BEGIN
+    FOR iblk=0,numBlk-1 DO BEGIN
+      ibeg = AryHeight * iblk
+      iend = AryHeight * (iblk + 1) - 1
+      blk_data = REFORM(DataAry[*,ibeg:iend])
+      blk_data = SHIFT(blk_data, [blk_offsets[iblk],0])
+      DataAry[*,ibeg:iend] = blk_data
+    ENDFOR
+  ENDIF
+
+  blk_offsets = 0
+  blk_data = 0
+  ProdStruct = 0
+
+  ;----------------------------------------------------------------------------
+  ; The next block is for debugging only.
+  ;----------------------------------------------------------------------------
+
+  IF (DO_DEBUG) THEN BEGIN
+    IF (BadValue LE 0) THEN ndxs = WHERE(DataAry LE BadValue, numndxs)
+    IF (BadValue GT 0) THEN ndxs = WHERE(DataAry GE BadValue, numndxs)
+    IF (numndxs GT 0) THEN DataAry[ndxs] = 0
+    PRINT, ' '
+    PRINT, FieldName
+    nelem = STRTRIM(STRING(N_ELEMENTS(SIZE(DataAry))),2) + 'I7'
+    PRINT, FORMAT='(A,'+nelem+',A,'+nelem+')', 'SIZE= ', SIZE(DataAry), $
+      ' Dims= ', edges
+    PRINT, 'MIN= ', MIN(DataAry), '  MAX= ', MAX(DataAry), '  FillValue= ', $
+      BadValue
+    edges = 0
+
+    Magnify = FLOOR(!KON.Misc.ScreenY / TotHeight)
+    Mag = 1
+    IF (Magnify GT  2) THEN Mag =  2
+    IF (Magnify GT  4) THEN Mag =  4
+    IF (Magnify GT  8) THEN Mag =  8
+    IF (Magnify GT 16) THEN Mag = 16
+    WINDOW, XSIZE=(AryWidth+ABS(ExpWidthLeft)+ExpWidthRight)*Mag, $
+      YSIZE=TotHeight*Mag, TITLE=FieldName, /FREE
+    TVSCL, REBIN(DataAry, (AryWidth+ABS(ExpWidthLeft)+ExpWidthRight)*Mag, $
+      TotHeight*Mag, /SAMPLE), /ORDER
+    rtrn = DIALOG_MESSAGE('Click when ready.', /INFO, /CENTER)
+    pwin = !D.WINDOW
+    SafeWDELETE, pwin, didit
+  ENDIF
+
+  edges = 0
+
+  Status = 0
+
+END  ;  LoadHdf5Data
+
 
 ;***************************************************************************
 PRO GetSwathMinMaxValues, DataType, MinVal, MaxVal

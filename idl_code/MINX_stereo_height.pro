@@ -7,7 +7,7 @@
 ;                         Jet Propulsion Laboratory                        =
 ;                                   MISR                                   =
 ;                                                                          =
-;         Copyright 2007-2015, California Institute of Technology.         =
+;         Copyright 2007-2019, California Institute of Technology.         =
 ;                           ALL RIGHTS RESERVED.                           =
 ;                 U.S. Government Sponsorship acknowledged.                =
 ;                                                                          =
@@ -350,6 +350,7 @@ PRO FindBestValue, Type, CamValuesIn, CamCorrCoeffs, CamNdxs, NumCamsReq, $
 ; Initialize parameters.
 ; Set next to 0 for production
 ;------------------------------------------------------------------------
+
 SHOW_CAM_DATA = 0  ; This is a useful diagnostic for testing.
                    ; 0 = don't show hts and winds;
                    ; 1 = show heights and winds;

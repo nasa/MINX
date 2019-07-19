@@ -7,7 +7,7 @@
 ;                            Jet Propulsion Laboratory                           =
 ;                                      MISR                                      =
 ;                                                                                =
-;            Copyright 2007-2015, California Institute of Technology.            =
+;            Copyright 2007-2019, California Institute of Technology.            =
 ;                              ALL RIGHTS RESERVED.                              =
 ;                    U.S. Government Sponsorship acknowledged.                   =
 ;                                                                                =
@@ -763,8 +763,8 @@ Status = -1
 ; Initialization.
 ;---------------------------------------------------------------------------
 
-DEBUG_ON = 0   ;   set to 0 for production;
-               ;    debugging displays if set to 1
+DEBUG_ON = 0   ;    set to 0 for production;
+               ;            debugging displays if set to 1
 
 USER_SELECT_PNG = 0  ; if 0, automatically save .png images
                      ; if 1, let user answer questions about saving
@@ -820,6 +820,24 @@ ENDIF ELSE BEGIN
 
 
 ENDELSE
+
+;---------------------------------------------------------------------------
+; Create a window to show 'Waiting...' during retrieval.
+;---------------------------------------------------------------------------
+
+;old_font = GetFontInfo(0)
+;SetFontInfo, {Type:!KON.FontTyp.FONT_DEVICE, Size:'14', Face:'bold'}
+;char_spac = (!P.FONT EQ !KON.FontTyp.FONT_DEVICE) ? 1.0 : 1.5
+;
+;pwin = !D.WINDOW
+;SafeWDELETE, pwin, didit
+;
+;WINDOW, wndw_work, XPOS=900, YPOS=600, XSIZE=350, YSIZE=80,TITLE=' '
+;PLOT, [0,0], [0,1], BACKGROUND=16777215, COLOR=16777215, XSTYLE=4, YSTYLE=4
+;mssg = 'Searching for overpass orbits......'
+;XYOUTS, 25,48, mssg, /DEVICE, COLOR=0, CHARSIZE=2
+;
+;SetFontInfo, old_font
 
 ;---------------------------------------------------------------------------
 ; Generate the system time to add into the filename, open (create) the

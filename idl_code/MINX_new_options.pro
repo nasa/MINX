@@ -7,7 +7,7 @@
 ;                         Jet Propulsion Laboratory                        =
 ;                                   MISR                                   =
 ;                                                                          =
-;         Copyright 2007-2015, California Institute of Technology.         =
+;         Copyright 2007-2019, California Institute of Technology.         =
 ;                           ALL RIGHTS RESERVED.                           =
 ;                 U.S. Government Sponsorship acknowledged.                =
 ;                                                                          =
@@ -36,6 +36,7 @@ cam_names = STRUPCASE(!KON.Instr.CAM_NAMES)
 
 orbit_str = STRTRIM(STRING(OrbitNum),2)
 nlen = STRLEN(orbit_str)
+IF (nlen EQ 6) THEN orbit_str = 'O' + orbit_str + '*'
 IF (nlen EQ 5) THEN orbit_str = 'O0' + orbit_str + '*'
 IF (nlen EQ 4) THEN orbit_str = 'O00' + orbit_str + '*'
 IF (nlen EQ 3) THEN orbit_str = 'O000' + orbit_str + '*'
@@ -64,9 +65,9 @@ dir_name = file_outpath
 nlen = STRLEN(dir_name)
 file_name = STRMID(input_filename, nlen)
 
-npos = STRPOS(file_name, '_O0')
+npos = STRPOS(file_name, '_O')
 path_num = FIX(STRMID(file_name, npos-3, 3))
-orbit_num = LONG(STRMID(file_name, npos+3, 5))
+orbit_num = LONG(STRMID(file_name, npos+2, 6))
 cam_name = STRMID(file_name, npos+9, 2)
 
 IF (orbit_num NE OrbitNum) THEN BEGIN
@@ -218,8 +219,8 @@ COMPILE_OPT IDL2
       RETURN
    ENDIF
 
-   npos = STRPOS(input_filename, '_O0')
-   OrbitNum[whichorbit] = LONG(STRMID(input_filename, npos+3, 5))
+   npos = STRPOS(input_filename, '_O')
+   OrbitNum[whichorbit] = LONG(STRMID(input_filename, npos+2, 6))
 
    ;------------------------------------------------------------------------
    ; Search for the other files in their directories or in same directory

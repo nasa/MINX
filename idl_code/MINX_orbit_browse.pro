@@ -7,7 +7,7 @@
 ;                         Jet Propulsion Laboratory                        =
 ;                                   MISR                                   =
 ;                                                                          =
-;         Copyright 2007-2015, California Institute of Technology.         =
+;         Copyright 2007-2019, California Institute of Technology.         =
 ;                           ALL RIGHTS RESERVED.                           =
 ;                 U.S. Government Sponsorship acknowledged.                =
 ;                                                                          =
@@ -189,9 +189,9 @@ FileName = STRMID(input_filename, nlen)
 ; Determine the orbit number and camera name.
 ;---------------------------------------------------------------------------
 
-npos = STRPOS(FileName, '_O0')
+npos = STRPOS(FileName, '_O')
 PathNum = FIX(STRMID(FileName, npos-3, 3))
-OrbitNum = LONG(STRMID(FileName, npos+3, 5))
+OrbitNum = LONG(STRMID(FileName, npos+2, 6))
 CamName = STRMID(FileName, npos+9, 2)
 
 ;---------------------------------------------------------------------------

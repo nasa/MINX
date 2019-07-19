@@ -7,7 +7,7 @@
 ;                         Jet Propulsion Laboratory                         =
 ;                                   MISR                                    =
 ;                                                                           =
-;        Copyright 2007-2015 by California Institute of Technology.         =
+;        Copyright 2007-2019 by California Institute of Technology.         =
 ;                          ALL RIGHTS RESERVED.                             =
 ;                                                                           =
 ; U.S. Government sponsorship acknowledged. Any commercial use must be      =
@@ -33,6 +33,27 @@ ON_IOERROR, bad_file
 sd_id = HDF_SD_START(Filename, /READ)
 IF ISA(sd_id, /NUMBER) THEN RETURN, sd_id
 
+bad_file:
+mssg = ['File: ' + Filename, 'may be the wrong type, empty or corrupted. ', $
+    'Inspect the file and related files and if necessary reorder ' + $
+    'the file before trying again.']
+rtrn_val = DIALOG_MESSAGE(mssg, /ERROR, /CENTER)
+ON_IOERROR, NULL
+RETURN, -1
+
+END  ;  HDF_StartInterface
+
+;****************************************************************************
+FUNCTION HDF5_StartInterface, Filename
+;****************************************************************************
+; Test whether the filename is a valid file and can be successfully opened
+; and read by the HF5_OPEN() function.
+;----------------------------------------------------------------------------
+
+ON_IOERROR, bad_file
+file_id = H5F_OPEN(Filename)
+IF ISA(file_id, /NUMBER) THEN RETURN, file_id
+
 bad_file: 
 mssg = ['File: ' + Filename, 'may be the wrong type, empty or corrupted. ', $
         'Inspect the file and related files and if necessary reorder ' + $
@@ -41,7 +62,7 @@ rtrn_val = DIALOG_MESSAGE(mssg, /ERROR, /CENTER)
 ON_IOERROR, NULL
 RETURN, -1
 
-END  ;  HDF_StartInterface
+END  ;  HDF5_StartInterface
 
 ;****************************************************************************
 PRO GetFirstLastBlocks, Filename, BegBlock, EndBlock, Retval
@@ -50,6 +71,35 @@ PRO GetFirstLastBlocks, Filename, BegBlock, EndBlock, Retval
 ;----------------------------------------------------------------------------
 
 Retval = -1
+
+IF Filename.EndsWith('.nc') THEN BEGIN
+  file_id = HDF5_StartInterface(Filename)
+  IF (file_id LE 0) THEN RETURN
+  
+  start_id = H5A_OPEN_NAME(file_id,'Start_block')
+  IF (start_id LE 0) THEN BEGIN
+    mssg = ['Could not find Start_block in:', Filename]
+    rval = DIALOG_MESSAGE(mssg, /INFORMATION, /CENTER)
+    H5F_CLOSE, file_id
+    RETURN
+  ENDIF  
+  BegBlock = H5A_READ(start_id)
+  H5A_CLOSE, start_id
+  
+  end_id = H5A_OPEN_NAME(file_id,'End_block')
+  IF (end_id LE 0) THEN BEGIN
+    mssg = ['Could not find End_block in:', Filename]
+    rval = DIALOG_MESSAGE(mssg, /INFORMATION, /CENTER)
+    H5F_CLOSE, file_id
+    RETURN
+  ENDIF  
+  EndBlock = H5A_READ(end_id)
+  H5A_CLOSE, end_id 
+  
+  H5F_CLOSE, file_id
+  Retval = 0
+  RETURN
+ENDIF  
 
 sd_id = HDF_StartInterface(Filename)
 IF (sd_id LE 0) THEN RETURN
@@ -2944,7 +2994,7 @@ redo_animate:
           IF (PlumeOption EQ -1) THEN BREAK
 
           IF (PlumeOption EQ  0) THEN ProcessModVolcHotSpots,  DefaultProjDir
-          IF (PlumeOption EQ  1) THEN DownloadMOD14Granules,   '', ''
+          ; PlumeOption EQ 1 skipped. Used to be reverb to download MOD14 data
           IF (PlumeOption EQ  2) THEN ProcessModisFirePixels,  DefaultProjDir
           IF (PlumeOption EQ  3) THEN CreateMisrOrderScript,   DefaultProjDir
           IF (PlumeOption EQ  4) THEN CheckMisrFileOrder,      DefaultProjDir

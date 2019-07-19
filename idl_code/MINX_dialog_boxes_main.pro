@@ -7,7 +7,7 @@
 ;                         Jet Propulsion Laboratory                        =
 ;                                   MISR                                   =
 ;                                                                          =
-;         Copyright 2007-2015, California Institute of Technology.         =
+;         Copyright 2007-2019, California Institute of Technology.         =
 ;                           ALL RIGHTS RESERVED.                           =
 ;                 U.S. Government Sponsorship acknowledged.                =
 ;                                                                          =
@@ -32,7 +32,7 @@ HelpMsg = $
     [' '], ['OS: ' + op_sys + idl_version], $
     ['--------------------------------------------------------------------    '], $
     [' '], $
-    ['Copyright 2007-2015, by the California Institute of Technology.'], $
+    ['Copyright 2007-2019, by the California Institute of Technology.'], $
     ['ALL RIGHTS RESERVED.'], $
     [' '], $
     ['United States Government Sponsorship acknowledged. Any commercial use'], $
@@ -323,14 +323,6 @@ CASE 1 OF
                GOTO, gohere
             ENDELSE
          ENDIF
-         max_orb = !KON.Misc.LARGE_POS_NUM
-         IF (temp GT max_orb) THEN BEGIN
-            WIDGET_CONTROL, widget_struct_locate.integer2, SET_VALUE=max_orb
-            mssg = ['The largest orbit number accepted by MINX is 99999.', $
-                    'Value has been reset.']
-            rtrn = DIALOG_MESSAGE(mssg, /CENTER, /ERROR)
-            GOTO, gohere
-         ENDIF
          WidgetStructLocate.PathNum = 0
          WidgetStructLocate.OrbitNum = LONG(temp)
       ENDIF
@@ -422,7 +414,7 @@ button1b = WIDGET_BUTTON( base1a, VALUE='Orbit Number' )
 
 base2 = WIDGET_BASE( base0, /COLUMN, /FRAME )
 label2 = WIDGET_LABEL( base2, VALUE=' Enter Orbit Number:' )
-integer2 = CW_FIELD( base2, VALUE='0', /LONG, XSIZE=5, $
+integer2 = CW_FIELD( base2, VALUE='0', /LONG, XSIZE=6, $
                      TITLE='Path/Orbit Number' )
 
 base3 = WIDGET_BASE( base0, /COLUMN, /FRAME )
@@ -2801,8 +2793,6 @@ CASE 1 OF
 
    event.id EQ plume_util_struct.modvolc : BEGIN
    END
-   event.id EQ plume_util_struct.reverb : BEGIN
-   END
    event.id EQ plume_util_struct.modis : BEGIN
    END
    event.id EQ plume_util_struct.misr : BEGIN
@@ -2829,7 +2819,7 @@ CASE 1 OF
       !SAV.Util.PlumeOption = 0
 
       temp0 = WIDGET_INFO(plume_util_struct.modvolc,  /BUTTON_SET)
-      temp1 = WIDGET_INFO(plume_util_struct.reverb,   /BUTTON_SET)
+      ; temp1 skipped. Used to be reverb to download MOD14 data
       temp2 = WIDGET_INFO(plume_util_struct.modis,    /BUTTON_SET)
       
       IF (!VAR.ProdOrDev EQ !KON.Misc.MINX_DEV_VER) THEN BEGIN
@@ -2857,7 +2847,7 @@ CASE 1 OF
       ENDELSE
 
       IF (temp0  EQ 1) THEN !SAV.Util.PlumeOption = 0
-      IF (temp1  EQ 1) THEN !SAV.Util.PlumeOption = 1
+      ; temp1 skipped. Used to be reverb to download MOD14 data
       IF (temp2  EQ 1) THEN !SAV.Util.PlumeOption = 2
       IF (temp3  EQ 1) THEN !SAV.Util.PlumeOption = 3
       IF (temp4  EQ 1) THEN !SAV.Util.PlumeOption = 4
@@ -2921,7 +2911,6 @@ listname = WIDGET_LABEL(base0, /ALIGN_CENTER, $
 base1 = WIDGET_BASE(base0, /COLUMN, /EXCLUSIVE, FRAME=1)
 
 modvolc = WIDGET_BUTTON(base1, VALUE="Process ModVolc Fire Pixel File")
-reverb  = WIDGET_BUTTON(base1, VALUE="Download MODIS MOD14 Fire Granules")
 modis   = WIDGET_BUTTON(base1, VALUE="Process MODIS MOD14 Fire Granules")
 
 IF (!VAR.ProdOrDev EQ !KON.Misc.MINX_DEV_VER) THEN BEGIN
@@ -2950,7 +2939,6 @@ WIDGET_CONTROL, modvolc, SET_BUTTON=1
 
 plume_util_struct = { $
    modvolc          : modvolc, $
-   reverb           : reverb, $
    modis            : modis, $
    misr             : misr, $
    orderstat        : orderstat, $

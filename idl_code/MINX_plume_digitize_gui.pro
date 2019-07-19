@@ -7,7 +7,7 @@
 ;                         Jet Propulsion Laboratory                        =
 ;                                   MISR                                   =
 ;                                                                          =
-;         Copyright 2007-2015, California Institute of Technology.         =
+;         Copyright 2007-2019, California Institute of Technology.         =
 ;                           ALL RIGHTS RESERVED.                           =
 ;                 U.S. Government Sponsorship acknowledged.                =
 ;                                                                          =
@@ -660,6 +660,7 @@ WIDGET_CONTROL, StructObj.FLOAT_MAXWND, SET_VALUE=!KON.Digitize.MAX_WIND
 WIDGET_CONTROL, StructObj.BUTTON_POLYGON,/SET_BUTTON
 WIDGET_CONTROL, StructObj.BUTTON_WIND, /SET_BUTTON
 WIDGET_CONTROL, StructObj.BUTTON_BIDIRWIND, SET_BUTTON=0
+WIDGET_CONTROL, StructObj.BUTTON_AS_V23, /SET_BUTTON
 WIDGET_CONTROL, StructObj.BUTTON_BAND_BOTH, /SET_BUTTON
 WIDGET_CONTROL, StructObj.BUTTON_MATCHER_MEDIUM, /SET_BUTTON
 WIDGET_CONTROL, StructObj.BUTTON_RELAX_THRESH, SET_BUTTON=0
@@ -686,6 +687,7 @@ WIDGET_CONTROL, StructObj.BUTTON_LINE, SENSITIVE=1
 !SAV.Digitize.GEOM_TYPE          = !KON.GeomObjTyp.GEOM_POLYGON_OBJ
 !SAV.Digitize.WIND_TYPE          = !KON.WindObjTyp.WIND_USER_DIREC_OBJ
 !SAV.Digitize.BI_DIR_WIND        = !KON.Digitize.BI_DIR_WIND
+!SAV.Digitize.AS_22_OR_23        = !KON.Digitize.AS_22_OR_23
 !SAV.Digitize.RETRIEVE_BAND_TYPE = !KON.BandObjTyp.BOTH_BAND
 !SAV.Digitize.USE_BAND_NDX       = !KON.Instr.RED
 !SAV.Digitize.MATCHER_SM_LG      = !KON.Digitize.MATCHER_SM_LG
@@ -900,6 +902,8 @@ CASE 1 OF
 ;------------
    event.id EQ struct_obj.BUTTON_BIDIRWIND : BEGIN
    END
+   event.id EQ struct_obj.BUTTON_AS_V23 : BEGIN
+   END   
    event.id EQ struct_obj.BUTTON_RELAX_THRESH : BEGIN
    END
 ;------------
@@ -1072,6 +1076,8 @@ CASE 1 OF
 
       struct_obj.BI_DIR_WIND = $
             WIDGET_INFO(struct_obj.BUTTON_BIDIRWIND, /BUTTON_SET)
+      struct_obj.AS_22_OR_23 = $
+            WIDGET_INFO(struct_obj.BUTTON_AS_V23, /BUTTON_SET)
 ;------------
       temp = WIDGET_INFO(struct_obj.BUTTON_BAND_RED,  /BUTTON_SET)
       IF (temp EQ 1) THEN struct_obj.RETRIEVE_BAND_TYPE = $
@@ -1451,6 +1457,11 @@ COMMON dig_obj, StructObject
       TOOLTIP='Compute heights and winds for the chosen direction as well ' +$
               'as 180 degrees in the opposite direction.', $
       VALUE='Bi-directional wind')
+      
+  WID_BASE_3h = Widget_Base(WID_BASE_3, FRAME=1, TITLE='IDL', $
+      COLUMN=1, /NONEXCLUSIVE)
+  WID_BUTTON_AS_V23 = Widget_Button(WID_BASE_3h, /ALIGN_LEFT, $
+    TOOLTIP='Use NetCDF4/HDF5 version 23 AEROSOL files.', VALUE='V23 Aerosol')      
 
   WID_BASE_3d = Widget_Base(WID_BASE_3, FRAME=1, TITLE='', $
       COLUMN=1, /EXCLUSIVE)
@@ -1797,6 +1808,7 @@ COMMON dig_obj, StructObject
      BUTTON_HI_SPACING      : WID_BUTTON_HI_SPACING,      $
      BUTTON_VHI_SPACING     : WID_BUTTON_VHI_SPACING,     $
      BUTTON_BIDIRWIND       : WID_BUTTON_BIDIRWIND,       $
+     BUTTON_AS_V23          : WID_BUTTON_AS_V23,          $
      BUTTON_RELAX_THRESH    : WID_BUTTON_RELAX_THRESH,    $
      BUTTON_BAND_RED        : WID_BUTTON_BAND_RED,        $
      BUTTON_BAND_BLUE       : WID_BUTTON_BAND_BLUE,       $
@@ -1844,6 +1856,7 @@ COMMON dig_obj, StructObject
      GEOM_TYPE              : SVal.GEOM_TYPE,             $
      WIND_TYPE              : SVal.WIND_TYPE,             $
      BI_DIR_WIND            : SVal.BI_DIR_WIND,           $
+     AS_22_OR_23            : SVal.AS_22_OR_23,           $     
      RETRIEVE_BAND_TYPE     : SVal.RETRIEVE_BAND_TYPE,    $
      MATCHER_SM_LG          : SVal.MATCHER_SM_LG,         $
      RELAX_THRESH           : SVal.RELAX_THRESH,          $
@@ -1925,6 +1938,8 @@ COMMON dig_obj, StructObject
 
   IF (SVal.BI_DIR_WIND EQ 1) THEN $
      WIDGET_CONTROL, WID_BUTTON_BIDIRWIND, /SET_BUTTON
+  IF (SVal.AS_22_OR_23  EQ 1) THEN $
+     WIDGET_CONTROL, WID_BUTTON_AS_V23, /SET_BUTTON     
   IF (SVal.RELAX_THRESH EQ 1) THEN $
      WIDGET_CONTROL, WID_BUTTON_RELAX_THRESH, /SET_BUTTON
   IF (CoordStruct.(whichorbit).num_band EQ 1) THEN $
@@ -2050,6 +2065,7 @@ COMPILE_OPT IDL2, LOGICAL_PREDICATE
          GEOM_TYPE          : !SAV.Digitize.GEOM_TYPE, $
          WIND_TYPE          : !SAV.Digitize.WIND_TYPE, $
          BI_DIR_WIND        : !SAV.Digitize.BI_DIR_WIND, $
+         AS_22_OR_23        : !SAV.Digitize.AS_22_OR_23, $
          RETRIEVE_BAND_TYPE : !SAV.Digitize.RETRIEVE_BAND_TYPE, $
          MATCHER_SM_LG      : !SAV.Digitize.MATCHER_SM_LG, $
          RELAX_THRESH       : !SAV.Digitize.RELAX_THRESH, $
@@ -2097,6 +2113,7 @@ COMPILE_OPT IDL2, LOGICAL_PREDICATE
          !SAV.Digitize.SAMP_SPAC_NODIR = StructObject.SAMP_SPAC
       ENDELSE
       !SAV.Digitize.BI_DIR_WIND        = StructObject.BI_DIR_WIND
+      !SAV.Digitize.AS_22_OR_23        = StructObject.AS_22_OR_23
       !SAV.Digitize.RELAX_THRESH       = StructObject.RELAX_THRESH
       !SAV.Digitize.RETRIEVE_BAND_TYPE = StructObject.RETRIEVE_BAND_TYPE
       !SAV.Digitize.MATCHER_SM_LG      = StructObject.MATCHER_SM_LG

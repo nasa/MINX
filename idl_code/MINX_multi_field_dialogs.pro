@@ -7,7 +7,7 @@
 ;                         Jet Propulsion Laboratory                        =
 ;                                   MISR                                   =
 ;                                                                          =
-;         Copyright 2007-2015, California Institute of Technology.         =
+;         Copyright 2007-2019, California Institute of Technology.         =
 ;                           ALL RIGHTS RESERVED.                           =
 ;                 U.S. Government Sponsorship acknowledged.                =
 ;                                                                          =
@@ -453,9 +453,9 @@ CASE event.id OF
       WIDGET_CONTROL, field_struct.chosen_list, GET_UVALUE=List2
       WIDGET_CONTROL, field_struct.orbit_num_edit, GET_VALUE=orbit
       orbit_str = STRTRIM(STRING(orbit),2)
-      IF (orbit LT 995 OR orbit GT 99999L) THEN BEGIN
-         mssg = 'You must specify an orbit number between 995 ' + $
-                'and 99999. Try again.'
+      IF (orbit LT 995) THEN BEGIN
+         mssg = 'You must specify an orbit above 994.' + $
+                'Try again.'
          rtrn = DIALOG_MESSAGE(mssg, /CENTER, /ERROR)
          BREAK
       ENDIF
@@ -641,9 +641,8 @@ iskp9:   ii = 1
       ENDIF ELSE BEGIN
 
          WIDGET_CONTROL, field_struct.orbit_num_edit, GET_VALUE=temp
-         IF (temp LT 995L OR $
-             temp GT LONG(!KON.Misc.LARGE_POS_NUM)) THEN BEGIN               
-            msg = ['Orbit numbers must be between 995 and 99999. ' + $
+         IF (temp LT 995L) THEN BEGIN               
+            msg = ['Orbit numbers must be above 994. ' + $
                    'Try again.']
             rval = DIALOG_MESSAGE(msg, /INFORMATION, /CENTER)
             BREAK

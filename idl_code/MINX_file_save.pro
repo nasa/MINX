@@ -7,7 +7,7 @@
 ;                         Jet Propulsion Laboratory                        =
 ;                                   MISR                                   =
 ;                                                                          =
-;         Copyright 2007-2015, California Institute of Technology.         =
+;         Copyright 2007-2019, California Institute of Technology.         =
 ;                           ALL RIGHTS RESERVED.                           =
 ;                 U.S. Government Sponsorship acknowledged.                =
 ;                                                                          =
@@ -238,7 +238,6 @@ PRO CreateOrbitDirFile, BaseDir, BaseFilePre, BaseFilePost, UseOrbit, Ext, $
 COMPILE_OPT IDL2, LOGICAL_PREDICATE
 
 Retval = -1
-orbit_char = '0'
 
 ;---------------------------------------------------------------------------
 ; Set a trap for errors.
@@ -281,11 +280,11 @@ AllFile = BaseFilePre + orbit_str1 + BaseFilePost + '.' + Ext
 ; 6 characters with 0's preceding the number if needed. Add the 6th '0'
 ; separately so it can be changed easily later if the 'O' is used instead.
 ;---------------------------------------------------------------------------
+IF (STRLEN(orbit_str) EQ 5) THEN orbit_str = '0' + orbit_str
+IF (STRLEN(orbit_str) EQ 4) THEN orbit_str = '00' + orbit_str
+IF (STRLEN(orbit_str) EQ 3) THEN orbit_str = '000' + orbit_str
 
-IF (STRLEN(orbit_str) LT 5) THEN orbit_str = '0' + orbit_str
-IF (STRLEN(orbit_str) LT 5) THEN orbit_str = '0' + orbit_str
-
-AllDir = BaseDir + orbit_char + orbit_str + !KON.Misc.Slash
+AllDir = BaseDir + orbit_str + !KON.Misc.Slash
 
 ;---------------------------------------------------------------------------
 ; Create the directory if requested and make it globally available.
@@ -3265,10 +3264,17 @@ ipos = STRPOS(!VAR.CurrFiles.SVMfile, !KON.Misc.Slash, /REVERSE_SEARCH)
 filename = STRMID(!VAR.CurrFiles.SVMfile, ipos+1)
 PRINTF, unit, FORMAT='(2A)', 'SVM Classifiers file   : ', filename EQ '' ? $
         'Not Loaded' : filename
-ipos = STRPOS(!VAR.CurrFiles.AE1file, !KON.Misc.Slash, /REVERSE_SEARCH)
-filename = STRMID(!VAR.CurrFiles.AE1file, ipos+1)
-PRINTF, unit, FORMAT='(2A)', 'Aerosol product file   : ', filename EQ '' ? $
+IF (~ !SAV.Digitize.AS_22_OR_23) THEN BEGIN
+  ipos = STRPOS(!VAR.CurrFiles.AE1file, !KON.Misc.Slash, /REVERSE_SEARCH)
+  filename = STRMID(!VAR.CurrFiles.AE1file, ipos+1)
+  PRINTF, unit, FORMAT='(2A)', 'Aerosol product file   : ', filename EQ '' ? $
         'Not Loaded' : filename
+ENDIF ELSE BEGIN
+  ipos = STRPOS(!VAR.CurrFiles.AE2file, !KON.Misc.Slash, /REVERSE_SEARCH)
+  filename = STRMID(!VAR.CurrFiles.AE2file, ipos+1)
+  PRINTF, unit, FORMAT='(2A)', 'Aerosol product file   : ', filename EQ '' ? $
+        'Not Loaded' : filename
+ENDELSE
 ipos = STRPOS(!VAR.CurrFiles.BiomeFile, !KON.Misc.Slash, /REVERSE_SEARCH)
 filename = STRMID(!VAR.CurrFiles.BiomeFile, ipos+1)
 PRINTF, unit, FORMAT='(2A)', 'IGBP biome grid file   : ', filename EQ '' ? $

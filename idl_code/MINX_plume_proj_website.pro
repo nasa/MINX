@@ -7,7 +7,7 @@
 ;                         Jet Propulsion Laboratory                        =
 ;                                   MISR                                   =
 ;                                                                          =
-;         Copyright 2007-2015, California Institute of Technology.         =
+;         Copyright 2007-2019, California Institute of Technology.         =
 ;                           ALL RIGHTS RESERVED.                           =
 ;                 U.S. Government Sponsorship acknowledged.                =
 ;                                                                          =
@@ -504,7 +504,13 @@ NumInFields = N_TAGS(point_struct)
 ; NOTE - 0????? will be invalid when orbit numbering passes 99999
 ;---------------------------------------------------------------------------
 
-dir_list = FILE_SEARCH(BaseDir + '0?????', /TEST_DIRECTORY, COUNT=OrbitNum)
+dir_list = FILE_SEARCH(BaseDir + '[0-9]?????', /TEST_DIRECTORY, COUNT=OrbitNum)
+
+;---------------------------------------------------------------------------
+; Get the parameters needed to create the different geographic region maps.
+;---------------------------------------------------------------------------
+
+GetLocationBaseParams, NumGeoRgns, TextBoxHt, MapParams
 
 ;---------------------------------------------------------------------------
 ; Define the IGBP geographic region names.
@@ -813,7 +819,7 @@ PRINTF, UnitOut, FORMAT=FormatString, $
         RgnElement.hts_stddev_new, $                    ; 30
 ;
         RgnElement.mean_wind_dir, $                     ;
-        RgnElement.diff_dir_along, $                    ; 
+        RgnElement.diff_dir_along, $                    ;
         RgnElement.mean_total_wind, $                   ;
         RgnElement.stddev_total_wnd, $                  ;
         RgnElement.mean_cross_wind, $                   ;

@@ -7,7 +7,7 @@
 ;                         Jet Propulsion Laboratory                        =
 ;                                   MISR                                   =
 ;                                                                          =
-;         Copyright 2007-2015, California Institute of Technology.         =
+;         Copyright 2007-2019, California Institute of Technology.         =
 ;                           ALL RIGHTS RESERVED.                           =
 ;                 U.S. Government Sponsorship acknowledged.                =
 ;                                                                          =
@@ -29,7 +29,7 @@ COMPILE_OPT IDL2
 ; Get IDL version and set MINX version.
 ;---------------------------------------------------------------------------
 
-MINX_version = '4.0'
+MINX_version = '4.1'
 
 version = !VERSION.RELEASE
 npos = STRPOS(version, '.')
@@ -258,6 +258,7 @@ IF (~ Cons_Exists) THEN BEGIN
       RED  : 0, $
       NIR  : 3, $
       RGBbands : [0,1,2], $
+      BAND_WAVELENGTHS : [446.0, 558.0, 672.0, 867.0], $ ; in nm
 
       ULC_SOM_ALONG    :  7460.750,   $   ; SOM along coord of up-left pix in blk 1 in km
       ULC_SOM_CROSS    :  527.45,     $   ; SOM cross coord of up-left pix in blk 1 in km
@@ -440,7 +441,7 @@ IF (~ Cons_Exists) THEN BEGIN
        TypeAgp           :  6, $
        TypeGpGmp         :  7, $
        TypeAerosol       :  8, $ ; older version 22
-       TypeAerosolNew    :  9, $ ; new version in 2015?
+       TypeAerosolNew    :  9, $ ; newer version 23
        TypeLand          : 10, $
        TypeStereo        : 11, $
        TypeCloud         : 12, $
@@ -497,6 +498,8 @@ IF (~ Cons_Exists) THEN BEGIN
                     'GPGMP_GLT',                                        $
                     'AS_TAU_BE', 'AS_SSA',    'AS_AEX_BE', 'AS_FRC',    $
                     'AS_TAU_LR', 'AS_AEX_LR', 'AS_MIX',                 $
+                    'AS_V23_TAU_BE', 'AS_V23_SSA', 'AS_V23_FRC',        $
+                    'AS_V23_AEX_BE',                                    $
                     'AS_LAND1',  'AS_LAND2',                            $
                     'STER_11',   'STER_704',  'CLDZ_11',   'CLDC_11',   $
                     'CLD_176',   'TC_SVM',    'TC_ASCM',                $
@@ -526,37 +529,41 @@ IF (~ Cons_Exists) THEN BEGIN
          KEEP_F : 2,  $         ; indicates file status is not to be changed 
          SHUT_F : 3,  $         ; indicates file is to be closed
 
-         PROD_BRF_CONV  : 0, $  ; All these values get allocated during
-         PROD_AGP       : 0, $  ; program initialization - (see bottom of
-         PROD_GPGMP_SUN : 0, $  ; this function).
-         PROD_GPGMP_AZI : 0, $
-         PROD_GPGMP_ZEN : 0, $
-         PROD_GPGMP_SCT : 0, $
-         PROD_GPGMP_GLT : 0, $
-         PROD_AS_TAU_BE : 0, $
-         PROD_AS_SSA    : 0, $
-         PROD_AS_AEX_BE : 0, $
-         PROD_AS_FRC    : 0, $
-         PROD_AS_TAU_LR : 0, $
-         PROD_AS_AEX_LR : 0, $
-         PROD_AS_MIX    : 0, $
-         PROD_AS_LAND1  : 0, $
-         PROD_AS_LAND2  : 0, $
-         PROD_STER_11   : 0, $
-         PROD_STER_704  : 0, $
-         PROD_CLDZ_11   : 0, $
-         PROD_CLDC_11   : 0, $
-         PROD_CLD_176   : 0, $
-         PROD_TC_SVM    : 0, $
-         PROD_TC_ASCM   : 0, $
-         PROD_ALB_22    : 0, $
-         PROD_ALB_352a  : 0, $
-         PROD_ALB_352b  : 0, $
-         PROD_RCCM_MASK : 0, $
-         PROD_ELL_GM    : 0, $
-         PROD_ELL_LM    : 0, $
-         PROD_TER_GM    : 0, $
-         PROD_TER_LM    : 0, $
+         PROD_BRF_CONV      : 0, $  ; All these values get allocated during
+         PROD_AGP           : 0, $  ; program initialization - (see bottom of
+         PROD_GPGMP_SUN     : 0, $  ; this function).
+         PROD_GPGMP_AZI     : 0, $
+         PROD_GPGMP_ZEN     : 0, $
+         PROD_GPGMP_SCT     : 0, $
+         PROD_GPGMP_GLT     : 0, $
+         PROD_AS_TAU_BE     : 0, $
+         PROD_AS_SSA        : 0, $
+         PROD_AS_AEX_BE     : 0, $
+         PROD_AS_FRC        : 0, $
+         PROD_AS_TAU_LR     : 0, $
+         PROD_AS_AEX_LR     : 0, $
+         PROD_AS_MIX        : 0, $
+         PROD_AS_V23_TAU_BE : 0, $
+         PROD_AS_V23_SSA    : 0, $
+         PROD_AS_V23_FRC    : 0, $
+         PROD_AS_V23_AEX_BE : 0, $
+         PROD_AS_LAND1      : 0, $
+         PROD_AS_LAND2      : 0, $
+         PROD_STER_11       : 0, $
+         PROD_STER_704      : 0, $
+         PROD_CLDZ_11       : 0, $
+         PROD_CLDC_11       : 0, $
+         PROD_CLD_176       : 0, $
+         PROD_TC_SVM        : 0, $
+         PROD_TC_ASCM       : 0, $
+         PROD_ALB_22        : 0, $
+         PROD_ALB_352a      : 0, $
+         PROD_ALB_352b      : 0, $
+         PROD_RCCM_MASK     : 0, $
+         PROD_ELL_GM        : 0, $
+         PROD_ELL_LM        : 0, $
+         PROD_TER_GM        : 0, $
+         PROD_TER_LM        : 0, $
 
          MaxGrids  : MAX_NUM_GRIDS, $ 
          ProdNames : product_names, $
@@ -762,6 +769,7 @@ IF (~ Cons_Exists) THEN BEGIN
 
    digitize_vals = { $
       DIG_STATE_ZERO  : dig_zero, $ ; cleaner way to reset DIG_STATE to zeros.
+      AS_22_OR_23     : 1,    $ ; use HDF4 Aerosol (=0) or HDF5 V23 AEROSOL (=1) file(s)
       JPEG_OR_MP4     : 1,    $ ; save animations as JPG (=0) or MP4 (=1) file(s)
       FRAME_PER_SEC   : 6,    $ ; MP4 frame rate; doesn't affect size or quality
       BIT_RATE   : 12000000L, $ ; MP4 bit rate; affects size and quality
@@ -1208,6 +1216,8 @@ IF (~ Save_Exists) THEN BEGIN
    ; open it and restore the !SAV contents rather than reinitializing its
    ; values below. Get the name of the user's previous working data directory
    ; from the preferences file.
+   ; 
+   ; However, if upgrading, don't load SAV and reset prefs instead.
    ;------------------------------------------------------------------------
 
    old_working_dir = !KON.Misc.SystemHomeDir + 'Working' + !KON.Misc.Slash
@@ -1215,11 +1225,24 @@ IF (~ Save_Exists) THEN BEGIN
 
    IF (num_fullname) THEN BEGIN
       RESTORE, !KON.Misc.MINX_PREF_PATH
-      DEFSYSV, '!SAV', SAV_RESTORE_NAME
-      SAV_RESTORE_NAME = 0
-      IF (!SAV.DfltFiles[0].SavePath EQ !KON.Misc.MINX_VERSION_NUM) THEN BEGIN
-         old_working_dir = !SAV.WorkingDir
-         Save_Exists = 1
+      
+      ; Check if newly added name is found in prefs
+      dig_tags = TAG_NAMES(SAV_RESTORE_NAME.Digitize)
+      as_index = WHERE(dig_tags EQ "AS_22_OR_23", nmatch)
+      IF (~ nmatch) THEN BEGIN
+        mssg = ['A MINX upgrade has been detected. Resetting your preferences.']
+        rtrn = DIALOG_MESSAGE(mssg, /INFORMATION, /CENTER)
+        Save_Exists = 0
+        Reset_Prefs = 1
+      ENDIF ELSE Reset_Prefs = 0
+      
+      IF (~ Reset_Prefs) THEN BEGIN
+        DEFSYSV, '!SAV', SAV_RESTORE_NAME     
+        SAV_RESTORE_NAME = 0
+        IF (!SAV.DfltFiles[0].SavePath EQ !KON.Misc.MINX_VERSION_NUM) THEN BEGIN
+           old_working_dir = !SAV.WorkingDir
+           Save_Exists = 1
+        ENDIF
       ENDIF
    ENDIF
    
@@ -1275,7 +1298,7 @@ redo_home:
    default_files[!KON.FileTyp.TypeAgp]          = {Parms, 'AGP',           'Select AGP File (Terrain Hts)', new_working_dir}
    default_files[!KON.FileTyp.TypeGpGmp]        = {Parms, 'GpGmp',         'Select GP_GMP File (Geometry)', new_working_dir}
    default_files[!KON.FileTyp.TypeAerosol]      = {Parms, 'AerosolOld',    'Select AS_AEROSOL File', new_working_dir}
-   default_files[!KON.FileTyp.TypeAerosolNew]   = {Parms, 'AerosolNew',    'Select new AS_AEROSOL File', new_working_dir}
+   default_files[!KON.FileTyp.TypeAerosolNew]   = {Parms, 'AerosolNew',    'Select V23 AS_AEROSOL File', new_working_dir}
    default_files[!KON.FileTyp.TypeLand]         = {Parms, 'Land',          'Select AS_LAND File', new_working_dir}
    default_files[!KON.FileTyp.TypeStereo]       = {Parms, 'Stereo',        'Select TC_STEREO File', new_working_dir}
    default_files[!KON.FileTyp.TypeCloud]        = {Parms, 'Cloud',         'Select TC_CLOUD File', new_working_dir}
@@ -1327,6 +1350,8 @@ redo_home:
                               ;   6 = other;
                               ;   7 = ground;
                               ;   8-10 = not used yet.
+      AS_22_OR_23      : !KON.Digitize.AS_22_OR_23, $
+                              ; Use HDF4 Aerosol (=0) or HDF5 V23 Aerosol(=1)
       JPEG_OR_MP4      : !KON.Digitize.JPEG_OR_MP4, $
                               ; Save animation in ht retrieval as JPG(=0) or MP4(=1)
       FRAME_PER_SEC    : !KON.Digitize.FRAME_PER_SEC, $
@@ -2200,6 +2225,57 @@ ndxs = WHERE(Fields NE '', numFields)
                'RegParamsPerMixture', numFields, Fields, $
                [-9999., 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], $
                [32, 8, 1], [0, 0, 0] }
+
+;----------------------------------------------------------------------------
+; New V23 (netcdf) AS_AEROSOL data
+;----------------------------------------------------------------------------
+!KON.ProdTyp.PROD_AS_V23_TAU_BE = (Icnt += 1)
+Fields = ['Aerosol_Optical_Depth', 'Aerosol_Optical_Depth', $
+          'Aerosol_Optical_Depth', 'Aerosol_Optical_Depth', $
+          '', '', '', '', '']
+ndxs = WHERE(Fields NE '', numFields)
+!KON.ProdTyp.ProdParms[!KON.ProdTyp.PROD_AS_V23_TAU_BE] = $
+            { product_struct, !KON.ProdTyp.ProdNames[!KON.ProdTyp.PROD_AS_V23_TAU_BE], $
+            '/4.4_KM_PRODUCTS/', numFields, Fields, $
+            [-9999., -9999., -9999., -9999., 0.0, 0.0, 0.0, 0.0, 0.0], $
+            [128, 32, 1], [0, 0, 0] }
+;----------------------------------------------------------------------------            
+!KON.ProdTyp.PROD_AS_V23_SSA = (Icnt += 1)
+Fields = ['AUXILIARY/Single_Scattering_Albedo_446nm_Raw', $
+          'AUXILIARY/Single_Scattering_Albedo_558nm_Raw', $
+          'AUXILIARY/Single_Scattering_Albedo_672nm_Raw', $
+          'AUXILIARY/Single_Scattering_Albedo_867nm_Raw', $
+          '', '', '', '', '']
+ndxs = WHERE(Fields NE '', numFields)
+!KON.ProdTyp.ProdParms[!KON.ProdTyp.PROD_AS_V23_SSA] = $
+            { product_struct, !KON.ProdTyp.ProdNames[!KON.ProdTyp.PROD_AS_V23_SSA], $
+            '/4.4_KM_PRODUCTS/', numFields, Fields, $
+            [-9999., -9999., -9999., -9999., 0.0, 0.0, 0.0, 0.0, 0.0], $
+            [128, 32, 1], [0, 0, 0] } 
+;----------------------------------------------------------------------------
+!KON.ProdTyp.PROD_AS_V23_FRC = (Icnt += 1)
+Fields = ['Small_Mode_Aerosol_Optical_Depth',              $ ;Small
+          'Medium_Mode_Aerosol_Optical_Depth',             $ ; Medium
+          'Large_Mode_Aerosol_Optical_Depth',              $ ; Large
+          'UNUSUED! Derived Field, = (1 - non-spherical)', $ ; Spherical
+          'Nonspherical_Aerosol_Optical_Depth',            $ ; Non-spherical
+          '', '', '', '']
+ndxs = WHERE(Fields NE '', numFields)
+!KON.ProdTyp.ProdParms[!KON.ProdTyp.PROD_AS_V23_FRC] = $
+            { product_struct, !KON.ProdTyp.ProdNames[!KON.ProdTyp.PROD_AS_V23_FRC], $
+            '/4.4_KM_PRODUCTS/', numFields, Fields, $
+            [-9999., -9999., -9999., -9999., -9999., 0.0, 0.0, 0.0, 0.0], $
+            [128, 32, 1], [0, 0, 0] }
+;----------------------------------------------------------------------------                        
+!KON.ProdTyp.PROD_AS_V23_AEX_BE = (Icnt += 1)
+Fields = ['Angstrom_Exponent_550_860nm','', '', '', '', '', '', '', '']
+ndxs = WHERE(Fields NE '', numFields)
+!KON.ProdTyp.ProdParms[!KON.ProdTyp.PROD_AS_V23_AEX_BE] = $
+            { product_struct, !KON.ProdTyp.ProdNames[!KON.ProdTyp.PROD_AS_V23_AEX_BE], $
+            '/4.4_KM_PRODUCTS/', numFields, Fields, $
+            [-9999., 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], $
+            [128, 32, 1], [0, 0, 0] }                                   
+;----------------------------------------------------------------------------            
 
 ;----------------------------------------------------------------------------
 ; AS_LAND data

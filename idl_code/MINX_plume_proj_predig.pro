@@ -7,7 +7,7 @@
 ;                         Jet Propulsion Laboratory                        =
 ;                                   MISR                                   =
 ;                                                                          =
-;         Copyright 2007-2015, California Institute of Technology.         =
+;         Copyright 2007-2019, California Institute of Technology.         =
 ;                           ALL RIGHTS RESERVED.                           =
 ;                 U.S. Government Sponsorship acknowledged.                =
 ;                                                                          =
@@ -333,7 +333,7 @@ ShowRejections = 0       ; Set to 1 - 6 to show a message whenever a pixel
                          ; is eliminated for one of 6 reasons. For testing.
                          ; 99 = show for all reasons; 0 = don't show any
 
-MAX_PLUMES = 25000L      
+MAX_PLUMES = 25000L
 
 ;---------------------------------------------------------------------------
 ; Ask the user for some parameters: the first and last MISR block numbers to
@@ -842,6 +842,7 @@ IF (UseModisFirePix EQ 0) THEN BEGIN
       ;---------------------------------------------------------------------
 
       IF (orbit NE prev_orbit) THEN BEGIN
+         IF (orbit GT 99999) THEN orbit0 = STRTRIM(STRING(orbit),2)
          IF (orbit LE 99999) THEN orbit0 = '0'  + STRTRIM(STRING(orbit),2)
          IF (orbit LE  9999) THEN orbit0 = '00' + STRTRIM(STRING(orbit),2)
 
@@ -1360,195 +1361,201 @@ ENDIF
 
 WIDGET_CONTROL, baseID, /DESTROY
 
-;---------------------------------------------------------------------------
-; Allow the user to download MODIS MOD14 files now.
-;---------------------------------------------------------------------------
-
-IF (UseModisFirePix EQ 1) THEN BEGIN
-   
-   sGran = STRTRIM(STRING(num_granules),2)
-   mssg = ['Do you want MINX to download the MOD14 granules now?', ' ', $
-           'If not, you can download MOD14 granules later using the MINX option', $
-           '"Download MODIS MOD14 Fire Granules" on the Plume Utilities menu.', $
-           'At that time, choose this file as your list of granules to input:', $
-           out_URL_list_file]
-   rtrn = DIALOG_MESSAGE(mssg, /QUESTION, /CENTER)
-
-   IF (STRUPCASE(rtrn) EQ 'YES') THEN BEGIN
-
-      ;---------------------------------------------------------------------
-      ; Let user select the directory where MODIS granules will be downloaded
-      ; and stored if required. Create directory if it doesn't exist.
-      ;---------------------------------------------------------------------
-      
-      !SAV.DfltFiles[!KON.FileTyp.TypeMOD14dir].SavePath = DefaultProjDir + $
-                     'MOD14_Granules_Modvolc' + !KON.Misc.Slash
-         
-      GetLastFilename, 0, !KON.FileTyp.TypeMOD14dir, '*', 0, $
-                       Mod14GranuleDir, dummy
-      IF (Mod14GranuleDir EQ '') THEN RETURN
-      
-      IF (~ FILE_TEST(Mod14GranuleDir, /DIRECTORY)) THEN BEGIN
-         rtrn_val = MakeDirectory(Mod14GranuleDir)
-         rtrn_val = ChmodCatchError(Mod14GranuleDir, '777'O)
-      ENDIF
-
-      DownloadMOD14Granules, out_URL_list_file, Mod14GranuleDir, status
-      IF (status NE 0) THEN RETURN
-
-      mssg = ['Your MOD14 granules have been downloaded to this directory:', $
-              Mod14GranuleDir]
-      rtrn = DIALOG_MESSAGE(mssg, /INFORMATION, /CENTER)
-      
-   ENDIF ELSE BEGIN
-      
-      mssg = ['You can download the MOD14 granules later using the MINX option', $
-              '"Download MODIS MOD14 Fire Granules" in Plume Utilities.', $
-              'Choose this file as your list of granules to input:', $
-              out_URL_list_file]
-      rtrn = DIALOG_MESSAGE(mssg, /INFORMATION, /CENTER)
-   
-   ENDELSE
-   
-ENDIF
+; The below commented out since MODIS DAAC broke download when requring 
+;   earthdata login 
+;;---------------------------------------------------------------------------
+;; Allow the user to download MODIS MOD14 files now.
+;;---------------------------------------------------------------------------
+;
+;IF (UseModisFirePix EQ 1) THEN BEGIN
+;   
+;   sGran = STRTRIM(STRING(num_granules),2)
+;   mssg = ['Do you want MINX to download the MOD14 granules now?', ' ', $
+;           'If not, you can download MOD14 granules later using the MINX option', $
+;           '"Download MODIS MOD14 Fire Granules" on the Plume Utilities menu.', $
+;           'At that time, choose this file as your list of granules to input:', $
+;           out_URL_list_file]
+;   rtrn = DIALOG_MESSAGE(mssg, /QUESTION, /CENTER)
+;
+;   IF (STRUPCASE(rtrn) EQ 'YES') THEN BEGIN
+;
+;      ;---------------------------------------------------------------------
+;      ; Let user select the directory where MODIS granules will be downloaded
+;      ; and stored if required. Create directory if it doesn't exist.
+;      ;---------------------------------------------------------------------
+;      
+;      !SAV.DfltFiles[!KON.FileTyp.TypeMOD14dir].SavePath = DefaultProjDir + $
+;                     'MOD14_Granules_Modvolc' + !KON.Misc.Slash
+;         
+;      GetLastFilename, 0, !KON.FileTyp.TypeMOD14dir, '*', 0, $
+;                       Mod14GranuleDir, dummy
+;      IF (Mod14GranuleDir EQ '') THEN RETURN
+;      
+;      IF (~ FILE_TEST(Mod14GranuleDir, /DIRECTORY)) THEN BEGIN
+;         rtrn_val = MakeDirectory(Mod14GranuleDir)
+;         rtrn_val = ChmodCatchError(Mod14GranuleDir, '777'O)
+;      ENDIF
+;
+;      DownloadMOD14Granules, out_URL_list_file, Mod14GranuleDir, status
+;      IF (status NE 0) THEN RETURN
+;
+;      mssg = ['Your MOD14 granules have been downloaded to this directory:', $
+;              Mod14GranuleDir]
+;      rtrn = DIALOG_MESSAGE(mssg, /INFORMATION, /CENTER)
+;      
+;   ENDIF ELSE BEGIN
+;      
+;      mssg = ['You can download the MOD14 granules later using the MINX option', $
+;              '"Download MODIS MOD14 Fire Granules" in Plume Utilities.', $
+;              'Choose this file as your list of granules to input:', $
+;              out_URL_list_file]
+;      rtrn = DIALOG_MESSAGE(mssg, /INFORMATION, /CENTER)
+;   
+;   ENDELSE
+;   
+;   
+;ENDIF
 
 END  ;  ProcessModVolcHotSpots
 
 
-;***************************************************************************
-;***************************************************************************
-PRO DownloadMOD14Granules, MOD14_URL_ListFile, MOD14_Granule_Dir, Status
-;***************************************************************************
-;***************************************************************************
-; Procedure reads a file listing MODIS MOD 14 granule URLs for a project
-; either downloaded using the ModVolc option above or by the user directly
-; from the Reverb website without ModVolc. A sample item in such a file is:
-;    http://e4ftl01.cr.usgs.gov/MODIS_Dailies_C/MOLT/MOD14.005/2013.12.31/
-;         MOD14.A2013365.2355.005.2014001030532.hdf
-; Each file is downloaded into a subdirectory in user's project directory
-; with the default name of "MOD14_Granules_<Modvolc or User>/".
-;---------------------------------------------------------------------------
 
-COMPILE_OPT IDL2, LOGICAL_PREDICATE
-
-Status = -1
-
-;---------------------------------------------------------------------------
-; Get the name of the file containing the MOD14 granule URL list from the
-; user. Bypass this if the caller passed the file name.
-;---------------------------------------------------------------------------
-
-granule_source = 'Modvolc'
-MOD14ListFile = MOD14_URL_ListFile
-
-IF (MOD14ListFile EQ '') THEN BEGIN
-   Mod14ListDir = !SAV.DfltFiles[!KON.FileTyp.TypeUtilProjDir].SavePath
-
-   GetLastFilename, 0, !KON.FileTyp.TypeMOD14_URLfile, '*.txt', 0, Mod14ListDir, $
-                    MOD14ListFile
-   IF (MOD14ListFile EQ '') THEN RETURN
-   granule_source = 'User'
-ENDIF
-
-;---------------------------------------------------------------------------
-; Test that the file is of the correct type.
-;---------------------------------------------------------------------------
-
-buff = ''
-!ERROR_STATE.CODE = 0
-ON_IOERROR, bad_format2
-bad_format2:
-IF (!ERROR_STATE.CODE NE 0) THEN BEGIN
-   mssg = ['File ' + MOD14ListFile, $
-           'may have the wrong format for a MOD14 granule list file.', $
-           'Look for the correct file or fix the contents of this one.']
-   rtrn = DIALOG_MESSAGE(mssg, /CENTER, /ERROR)
-   !ERROR_STATE.CODE = 0
-   ON_IOERROR, NULL
-   RETURN
-ENDIF
-
-OPENR, Unit0, MOD14ListFile, /GET_LUN
-READF, Unit0, buff
-FREE_LUN, Unit0
-IF (STRMID(buff, 0, 14) NE STRMID(!SAV.MODISOrderFTPsite, 0, 14)) THEN BEGIN
-   !ERROR_STATE.CODE  = -1
-   GOTO, bad_format2
-ENDIF
-!ERROR_STATE.CODE = 0
-ON_IOERROR, NULL
-
-;---------------------------------------------------------------------------
-; Count the granules.
-;---------------------------------------------------------------------------
-
-numGran = FILE_LINES(MOD14ListFile)
-
-strGran = STRTRIM(STRING(numGran),2)
-
-;---------------------------------------------------------------------------
-; Get the name of the subdirectory where the MOD14 granules will be put.
-;---------------------------------------------------------------------------
-
-Mod14GranuleDir = MOD14_Granule_Dir
-
-IF (Mod14GranuleDir EQ '') THEN BEGIN
-   IF (!SAV.DfltFiles[!KON.FileTyp.TypeMOD14dir].SavePath EQ $
-       !SAV.DfltFiles[!KON.FileTyp.TypeUtilProjDir].SavePath OR $
-       !SAV.DfltFiles[!KON.FileTyp.TypeMOD14dir].SavePath EQ $
-       !KON.Misc.SystemHomeDir ) THEN $
-      !SAV.DfltFiles[!KON.FileTyp.TypeMOD14dir].SavePath = $
-               !SAV.DfltFiles[!KON.FileTyp.TypeUtilProjDir].SavePath + $
-               '_' + granule_source + !KON.Misc.SLASH
-   GetLastFilename, 0, !KON.FileTyp.TypeMOD14dir, '*', 0, Mod14GranuleDir, $
-                    Mod14GranuleDir
-   IF (Mod14GranuleDir EQ '') THEN RETURN
-ENDIF
-
-IF (~ FILE_TEST(Mod14GranuleDir, /DIRECTORY)) THEN BEGIN
-   rtrn_val = MakeDirectory(Mod14GranuleDir)
-   rtrn_val = ChmodCatchError(Mod14GranuleDir, '777'O)
-ENDIF
-
-;---------------------------------------------------------------------------
-; Show a no-block message window while the download is attempted.
-;---------------------------------------------------------------------------
-
-baseID = WIDGET_BASE(RESOURCE_NAME='test',UNITS=0,TITLE='Downloading .....', $
-                     XOFFSET=!KON.Misc.ScreenX / 2 - 120, $
-                     YOFFSET=!KON.Misc.ScreenY / 2 - 50)
-mssg = [' ','  MINX is downloading ' + strGran + $
-        ' MOD14 granules from the Reverb website.', $
-        '  Please be patient ...............................................', ' ']
-textID = WIDGET_TEXT(baseID, VALUE=mssg, /WRAP, XSIZE=70, YSIZE=4)
-WIDGET_CONTROL, /REALIZE, baseID
-XMANAGER, 'test', baseID, /NO_BLOCK
-
-;---------------------------------------------------------------------------
-; Read the MOD14 HDF names, retrieve the files from Reverb and put them in
-; the granule directory.
-;---------------------------------------------------------------------------
-
-buff = ''
-BegMidEnd = 0
-OPENR, Unit0, MOD14ListFile, /GET_LUN
-URL_obj = OBJ_NEW('IDLnetUrl')
-
-WHILE ~ EOF(Unit0) DO BEGIN
-   ReadNextAsciiLine, Unit0, BegMidEnd, buff
-   file_part = FILE_BASENAME(buff, FOLD_CASE=1)
-   mod14_path = Mod14GranuleDir + file_part
-   filename = URL_obj->Get(URL=buff, FILENAME=mod14_path)
-   IF (BegMidEnd EQ 3) THEN BREAK
-ENDWHILE
-
-OBJ_DESTROY, URL_obj
-FREE_LUN, Unit0
-WIDGET_CONTROL, baseID, /DESTROY
-
-Status = 0
-
-END  ;  DownloadMOD14Granules
+; The below commented out since MODIS DAAC broke download when requring 
+;   earthdata login 
+;;***************************************************************************
+;;***************************************************************************
+;PRO DownloadMOD14Granules, MOD14_URL_ListFile, MOD14_Granule_Dir, Status
+;;***************************************************************************
+;;***************************************************************************
+;; Procedure reads a file listing MODIS MOD 14 granule URLs for a project
+;; either downloaded using the ModVolc option above or by the user directly
+;; from the Reverb website without ModVolc. A sample item in such a file is:
+;;    http://e4ftl01.cr.usgs.gov/MODIS_Dailies_C/MOLT/MOD14.005/2013.12.31/
+;;         MOD14.A2013365.2355.005.2014001030532.hdf
+;; Each file is downloaded into a subdirectory in user's project directory
+;; with the default name of "MOD14_Granules_<Modvolc or User>/".
+;;---------------------------------------------------------------------------
+;
+;COMPILE_OPT IDL2, LOGICAL_PREDICATE
+;
+;Status = -1
+;
+;;---------------------------------------------------------------------------
+;; Get the name of the file containing the MOD14 granule URL list from the
+;; user. Bypass this if the caller passed the file name.
+;;---------------------------------------------------------------------------
+;
+;granule_source = 'Modvolc'
+;MOD14ListFile = MOD14_URL_ListFile
+;
+;IF (MOD14ListFile EQ '') THEN BEGIN
+;   Mod14ListDir = !SAV.DfltFiles[!KON.FileTyp.TypeUtilProjDir].SavePath
+;
+;   GetLastFilename, 0, !KON.FileTyp.TypeMOD14_URLfile, '*.txt', 0, Mod14ListDir, $
+;                    MOD14ListFile
+;   IF (MOD14ListFile EQ '') THEN RETURN
+;   granule_source = 'User'
+;ENDIF
+;
+;;---------------------------------------------------------------------------
+;; Test that the file is of the correct type.
+;;---------------------------------------------------------------------------
+;
+;buff = ''
+;!ERROR_STATE.CODE = 0
+;ON_IOERROR, bad_format2
+;bad_format2:
+;IF (!ERROR_STATE.CODE NE 0) THEN BEGIN
+;   mssg = ['File ' + MOD14ListFile, $
+;           'may have the wrong format for a MOD14 granule list file.', $
+;           'Look for the correct file or fix the contents of this one.']
+;   rtrn = DIALOG_MESSAGE(mssg, /CENTER, /ERROR)
+;   !ERROR_STATE.CODE = 0
+;   ON_IOERROR, NULL
+;   RETURN
+;ENDIF
+;
+;OPENR, Unit0, MOD14ListFile, /GET_LUN
+;READF, Unit0, buff
+;FREE_LUN, Unit0
+;IF (STRMID(buff, 0, 14) NE STRMID(!SAV.MODISOrderFTPsite, 0, 14)) THEN BEGIN
+;   !ERROR_STATE.CODE  = -1
+;   GOTO, bad_format2
+;ENDIF
+;!ERROR_STATE.CODE = 0
+;ON_IOERROR, NULL
+;
+;;---------------------------------------------------------------------------
+;; Count the granules.
+;;---------------------------------------------------------------------------
+;
+;numGran = FILE_LINES(MOD14ListFile)
+;
+;strGran = STRTRIM(STRING(numGran),2)
+;
+;;---------------------------------------------------------------------------
+;; Get the name of the subdirectory where the MOD14 granules will be put.
+;;---------------------------------------------------------------------------
+;
+;Mod14GranuleDir = MOD14_Granule_Dir
+;
+;IF (Mod14GranuleDir EQ '') THEN BEGIN
+;   IF (!SAV.DfltFiles[!KON.FileTyp.TypeMOD14dir].SavePath EQ $
+;       !SAV.DfltFiles[!KON.FileTyp.TypeUtilProjDir].SavePath OR $
+;       !SAV.DfltFiles[!KON.FileTyp.TypeMOD14dir].SavePath EQ $
+;       !KON.Misc.SystemHomeDir ) THEN $
+;      !SAV.DfltFiles[!KON.FileTyp.TypeMOD14dir].SavePath = $
+;               !SAV.DfltFiles[!KON.FileTyp.TypeUtilProjDir].SavePath + $
+;               '_' + granule_source + !KON.Misc.SLASH
+;   GetLastFilename, 0, !KON.FileTyp.TypeMOD14dir, '*', 0, Mod14GranuleDir, $
+;                    Mod14GranuleDir
+;   IF (Mod14GranuleDir EQ '') THEN RETURN
+;ENDIF
+;
+;IF (~ FILE_TEST(Mod14GranuleDir, /DIRECTORY)) THEN BEGIN
+;   rtrn_val = MakeDirectory(Mod14GranuleDir)
+;   rtrn_val = ChmodCatchError(Mod14GranuleDir, '777'O)
+;ENDIF
+;
+;;---------------------------------------------------------------------------
+;; Show a no-block message window while the download is attempted.
+;;---------------------------------------------------------------------------
+;
+;baseID = WIDGET_BASE(RESOURCE_NAME='test',UNITS=0,TITLE='Downloading .....', $
+;                     XOFFSET=!KON.Misc.ScreenX / 2 - 120, $
+;                     YOFFSET=!KON.Misc.ScreenY / 2 - 50)
+;mssg = [' ','  MINX is downloading ' + strGran + $
+;        ' MOD14 granules from the Reverb website.', $
+;        '  Please be patient ...............................................', ' ']
+;textID = WIDGET_TEXT(baseID, VALUE=mssg, /WRAP, XSIZE=70, YSIZE=4)
+;WIDGET_CONTROL, /REALIZE, baseID
+;XMANAGER, 'test', baseID, /NO_BLOCK
+;
+;;---------------------------------------------------------------------------
+;; Read the MOD14 HDF names, retrieve the files from Reverb and put them in
+;; the granule directory.
+;;---------------------------------------------------------------------------
+;
+;buff = ''
+;BegMidEnd = 0
+;OPENR, Unit0, MOD14ListFile, /GET_LUN
+;URL_obj = OBJ_NEW('IDLnetUrl')
+;
+;WHILE ~ EOF(Unit0) DO BEGIN
+;   ReadNextAsciiLine, Unit0, BegMidEnd, buff
+;   file_part = FILE_BASENAME(buff, FOLD_CASE=1)
+;   mod14_path = Mod14GranuleDir + file_part
+;   filename = URL_obj->Get(URL=buff, FILENAME=mod14_path)
+;   IF (BegMidEnd EQ 3) THEN BREAK
+;ENDWHILE
+;
+;OBJ_DESTROY, URL_obj
+;FREE_LUN, Unit0
+;WIDGET_CONTROL, baseID, /DESTROY
+;
+;Status = 0
+;
+;END  ;  DownloadMOD14Granules
 
 
 ;***************************************************************************
@@ -1792,7 +1799,7 @@ IF (Retval LT 0) THEN GOTO, error_rtrn
 ipos  = STRPOS(coremetadata, 'ORBITNUMBER')
 ipos  = STRPOS(coremetadata, 'VALUE', ipos)
 ipos  = STRPOS(coremetadata, '=', ipos)
-Orbit = STRMID(coremetadata, ipos+2, 5)
+Orbit = STRMID(coremetadata, ipos+2, 6)
 
 ipos = STRPOS(coremetadata, 'EQUATORCROSSINGDATE')
 ipos = STRPOS(coremetadata, 'VALUE', ipos)
@@ -2424,23 +2431,27 @@ block_list = GoodFirepix[*].block
 GoodFirepix = 0
 
 orb_blk_str = STRARR(nFirepix)
+orb_str = STRARR(nFirepix)
+blk_str = STRARR(nFirepix)
 
 FOR ipix=0L,nFirepix-1 DO BEGIN
-   blk_str = STRTRIM(STRING(block_list[ipix]),2)
-   IF (STRLEN(blk_str) LT 2) THEN blk_str = '0' + blk_str
-   IF (STRLEN(blk_str) LT 3) THEN blk_str = '0' + blk_str
-   orb_str = STRTRIM(STRING(orbit_list[ipix]),2)
-   IF (STRLEN(orb_str) LT 5) THEN orb_str = '0' + blk_str
-   orb_blk_str[ipix] = orb_str + blk_str
+   blk_str[ipix] = STRTRIM(STRING(block_list[ipix]),2)
+   IF (STRLEN(blk_str[ipix]) LT 2) THEN blk_str[ipix] = '0' + blk_str[ipix]
+   IF (STRLEN(blk_str[ipix]) LT 3) THEN blk_str[ipix] = '0' + blk_str[ipix]
+   orb_str[ipix] = STRTRIM(STRING(orbit_list[ipix]),2)
+   IF (STRLEN(orb_str[ipix]) LT 5) THEN orb_str[ipix] = '0' + orb_str[ipix]
+   orb_blk_str[ipix] = orb_str[ipix] + blk_str[ipix]
 ENDFOR
 orbit_list = 0
 block_list = 0
 
 orb_blk_str = orb_blk_str[UNIQ(orb_blk_str, SORT(orb_blk_str))]
+orb_str = orb_str[UNIQ(orb_blk_str, SORT(orb_blk_str))]
+blk_str = blk_str[UNIQ(orb_blk_str, SORT(orb_blk_str))]
 
 norb = N_ELEMENTS(orb_blk_str)
-orbit_list = LONG(STRMID(orb_blk_str[*], 0, 5))
-block_list =  FIX(STRMID(orb_blk_str[*], 5, 3))
+orbit_list = LONG(orb_str[*])
+block_list =  FIX(blk_str[*])
 orb_blk_str = 0
 
 ;---------------------------------------------------------------------------
@@ -2558,7 +2569,7 @@ FOR iorb=0L,nOrbits-1 DO BEGIN
          ; Write successful block-group data to the "Process" file.
          ;------------------------------------------------------------------
 
-         PRINTF, Unit1, FORMAT='(I5,1X,2I5,A14,I6,A)', orbitnum, $
+         PRINTF, Unit1, FORMAT='(I6,1X,2I5,A14,I6,A)', orbitnum, $
                         blkbeglist[igrp], blkendlist[igrp], $
                         firepix_orbit[0].date, $
                         ROUND(GoodGroups[nGroups].tot_power), ' MWatt'
@@ -2640,7 +2651,6 @@ COMPILE_OPT IDL2, LOGICAL_PREDICATE
 
 SAVED_WRITE = 1
 SAVED_READ  = 2
-
 ;set the following to 0 for production
 SAVED_MOD14_DATA = 0  ; 0 => do not save fire pixel data for reuse here
                       ; 1 => save fire pixel data for test
@@ -3315,10 +3325,7 @@ END  ;  ProcessModisFirePixels
 ;***************************************************************************
 PRO CreateMisrOrderScript, DefaultDir
 ;***************************************************************************
-; NOT IMPLEMENTED YET - This could be an additional important 
-; reason to use MINX. Call it from OverpassFinder, from the
-; ModVolc and MODIS procedures above and perhaps place it on the
-; main menu as an independent option.
+; NOT IMPLEMENTED YET - This could be an additional important
 ;---------------------------------------------------------------------------
 
 COMPILE_OPT IDL2, LOGICAL_PREDICATE
@@ -3437,8 +3444,9 @@ FOR iorbit=0,NumOrbits-1 DO BEGIN
 
    orbitnum = LONG(OrbitList[iorbit])
    orbitstr = STRTRIM(STRING(orbitnum),2)
-   IF (STRLEN(orbitstr) LT 5) THEN orbitstr = '0' + orbitstr
-   IF (STRLEN(orbitstr) LT 5) THEN orbitstr = '0' + orbitstr
+   IF (STRLEN(orbitstr) EQ 5) THEN orbitstr = '0' + orbitstr
+   IF (STRLEN(orbitstr) EQ 4) THEN orbitstr = '00' + orbitstr
+   IF (STRLEN(orbitstr) EQ 3) THEN orbitstr = '000' + orbitstr
 
    pathnum = PathFromOrbit(orbitnum)
    pathstr = STRTRIM(STRING(pathnum),2)
@@ -3600,8 +3608,8 @@ IF (agp_str_pos LT 0) THEN BEGIN
                     STRTRIM(STRING(nvalid),2) + ' orbits :'
       valid_orbits = STRARR(nvalid)
       FOR ivalid=0,nvalid-1 DO BEGIN
-         ipos = STRPOS(files_valid[ivalid], '_O0')
-         valid_orbits[ivalid] = STRMID(files_valid[ivalid], ipos+3, 5)
+         ipos = STRPOS(files_valid[ivalid], '_O')
+         valid_orbits[ivalid] = STRING(LONG(STRMID(files_valid[ivalid], ipos+2, 6)))
       ENDFOR
       PRINTF, Unit, FORMAT='(10(A,1x))', valid_orbits
    ENDIF
@@ -3616,8 +3624,8 @@ IF (nmissing GT 0) THEN BEGIN
       PRINTF, Unit, FORMAT='(10(A,1x))', paths_missing
    ENDIF ELSE BEGIN
       FOR imiss=0,nmissing-1 DO BEGIN
-         ipos = STRPOS(files_missing[imiss], '_O0')
-         missing_orbits[imiss] = STRMID(files_missing[imiss], ipos+3, 5)
+         ipos = STRPOS(files_missing[imiss], '_O')
+         missing_orbits[imiss] = STRING(LONG(STRMID(files_missing[imiss], ipos+2, 6)))
       ENDFOR
       PRINTF, Unit, FORMAT='(10(A,1x))', missing_orbits
    ENDELSE
@@ -3629,8 +3637,8 @@ IF (0) THEN BEGIN  ;  (nsmall GT 0) THEN BEGIN
                  STRTRIM(STRING(nmissing),2) + ' orbits :'
    small_orbits = STRARR(nsmall)
    FOR ismall=0,nsmall-1 DO BEGIN
-      ipos = STRPOS(files_small[ismall], '_O0')
-      small_orbits[ismall] = STRMID(files_small[ismall], ipos+3, 5)
+      ipos = STRPOS(files_small[ismall], '_O')
+      small_orbits[ismall] = STRING(LONG(STRMID(files_small[ismall], ipos+2, 6)))
    ENDFOR
    PRINTF, Unit, FORMAT='(10(A,1x))', small_orbits
 ENDIF
@@ -3657,7 +3665,7 @@ PRO GetDirAndTemplate, SampFile, FileTemplate, PathAlias, CamAlias, ProdDir, $
 ; the files. Allow the directory structure to be of the MISR ../bank/.. form,
 ; or allow all the files of a given product type to be in the same subdir,
 ; or they can be in 9 subdirectories named DF, BF, ... that are not of the
-; MISR form.
+; MISR SCF form.
 ;---------------------------------------------------------------------------
 
 COMPILE_OPT IDL2, LOGICAL_PREDICATE
@@ -3830,8 +3838,8 @@ IF (nvalid GT 0) THEN BEGIN
    orbit_save    = STRARR(nvalid)
    iorbitsave    = 0
    FOR ivalid=0,nvalid-1 DO BEGIN
-      ipos = STRPOS(files_valid[ivalid], '_O0')
-      valid_orbits[ivalid]  = STRMID(files_valid[ivalid], ipos+3, 5)
+      ipos = STRPOS(files_valid[ivalid], '_O')
+      valid_orbits[ivalid]  = STRING(LONG(STRMID(files_valid[ivalid], ipos+2, 6)))
       valid_cameras[ivalid] = STRMID(files_valid[ivalid], ipos+9, 2)
    ENDFOR
    uniq_orbit_ndxs = UNIQ(valid_orbits, SORT(valid_orbits))
@@ -3857,8 +3865,8 @@ IF (nmissing GT 0) THEN BEGIN
    missing_orbits  = STRARR(nmissing)
    missing_cameras = STRARR(nmissing)
    FOR imiss=0,nmissing-1 DO BEGIN
-      ipos = STRPOS(files_missing[imiss], '_O0')
-      missing_orbits[imiss]  = STRMID(files_missing[imiss], ipos+3, 5)
+      ipos = STRPOS(files_missing[imiss], '0')
+      missing_orbits[imiss]  = STRING(LONG(STRMID(files_missing[imiss], ipos+2, 6)))
       missing_cameras[imiss] = STRMID(files_missing[imiss], ipos+9, 2)
    ENDFOR
    uniq_orbit_ndxs = UNIQ(missing_orbits, SORT(missing_orbits))
@@ -3882,8 +3890,8 @@ IF (0) THEN BEGIN  ;  (nsmall GT 0) THEN BEGIN
    small_orbits  = STRARR(nsmall)
    small_cameras = STRARR(nsmall)
    FOR ismall=0,nsmall-1 DO BEGIN
-      ipos = STRPOS(files_small[ismall], '_O0')
-      small_orbits[ismall]  = STRMID(files_small[ismall], ipos+3, 5)
+      ipos = STRPOS(files_small[ismall], '_O')
+      small_orbits[ismall]  = STRING(LONG(STRMID(files_small[ismall], ipos+2, 6)))
       small_cameras[ismall] = STRMID(files_small[ismall], ipos+9, 2)
    ENDFOR
    uniq_orbit_ndxs = UNIQ(small_orbits, SORT(small_orbits))
@@ -3921,11 +3929,11 @@ PrologAlias = 'xPROLOGx'
 CameraAlias = 'xCAMx'
 
 agp_tmplt  = 'MISR_AM1_AGP_PxPATHx_xPROLOGx.hdf'
-gmp_tmplt  = 'MISR_AM1_GP_GMP_PxPATHx_O0xORBITx_xPROLOGx.hdf'
-clas_tmplt = 'MISR_AM1_TC_CLASSIFIERS_PxPATHx_O0xORBITx_xPROLOGx.hdf'
-aero_tmplt = 'MISR_AM1_AS_AEROSOL_PxPATHx_O0xORBITx_xPROLOGx.hdf'
-terr_tmplt = 'MISR_AM1_GRP_TERRAIN_GM_PxPATHx_O0xORBITx_xCAMx_xPROLOGx.hdf'
-elli_tmplt = 'MISR_AM1_GRP_ELLIPSOID_GM_PxPATHx_O0xORBITx_xCAMx_xPROLOGx.hdf'
+gmp_tmplt  = 'MISR_AM1_GP_GMP_PxPATHx_OxORBITx_xPROLOGx.hdf'
+clas_tmplt = 'MISR_AM1_TC_CLASSIFIERS_PxPATHx_OxORBITx_xPROLOGx.hdf'
+aero_tmplt = 'MISR_AM1_AS_AEROSOL_PxPATHx_OxORBITx_xPROLOGx.hdf'
+terr_tmplt = 'MISR_AM1_GRP_TERRAIN_GM_PxPATHx_OxORBITx_xCAMx_xPROLOGx.hdf'
+elli_tmplt = 'MISR_AM1_GRP_ELLIPSOID_GM_PxPATHx_OxORBITx_xCAMx_xPROLOGx.hdf'
 
 ;---------------------------------------------------------------------------
 ; Let the user select the input file containing the list of MISR orbits that
